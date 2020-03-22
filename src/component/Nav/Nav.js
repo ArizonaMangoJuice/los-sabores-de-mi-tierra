@@ -10,7 +10,7 @@ export default class Nav extends React.Component{
                 <NavButton iconName="fas fa-laptop-code" name="Source" />
                 <NavButton iconName="fab fa-wpforms" name="forms" />
                 <NavButton iconName="far fa-file" name="pages" />
-                <NavButton iconName="fas fa-power-off" name="logout" />
+                <NavButton iconName="fas fa-power-off" name="logout" bottom='bottom'/>
             </nav>
         )
     }
