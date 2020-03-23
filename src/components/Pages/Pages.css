@@ -1,0 +1,10 @@
+.dashboard-container{
+    min-height: 100vh;
+    margin: 0 0 0 50px ;
+    background-color: #f2f2f2;
+}
+
+.dev-border{
+    border: 1px solid red;
+}
+
