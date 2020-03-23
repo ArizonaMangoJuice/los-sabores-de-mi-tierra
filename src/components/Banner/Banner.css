@@ -3,6 +3,7 @@
 }
 
 .banner{
+    /* this color will be a prop to change the css */
     background-color: #6cb4dd;
     color: #f3f3f4;
     width: 400px;

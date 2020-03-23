@@ -9,7 +9,13 @@ export default class Pages extends React.Component{
     render(){
         return (
             <div className='dashboard-container'>
-                <Banner title='Create A Page!' />
+                <Banner title='Create A New Blog!' />
+                <div className='pages-flex-container '>
+                    <section className='margin-center title-card card-hover'>
+                        <p className='page-input-title'>Title:</p>
+                        <input className='page-title-input' type='text' />
+                    </section>
+                </div>
             </div>
         )
     }
