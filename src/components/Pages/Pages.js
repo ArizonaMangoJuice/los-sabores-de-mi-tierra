@@ -15,6 +15,9 @@ export default class Pages extends React.Component{
                 <PageTitleInput />
                 <div className='main-page '>
                     <PageBody />
+                    <div className='page-body page-settings main-color'>
+                            
+                    </div>
                 </div>
             </div>
         )
