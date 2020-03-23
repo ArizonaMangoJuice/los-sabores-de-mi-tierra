@@ -7,6 +7,7 @@ let text = ['Dashboard', 'Source', 'Forms', 'Pages', 'Logout'];
 let icons = ['fa-home','fa-laptop-code','fa-wpforms','fa-file','fa-power-off'];
 let color = Math.floor(Math.random() * Math.floor(5));
 
+
 const borderStyle = {
     borderLeft: `4px solid ${colors[color]}`
 }
