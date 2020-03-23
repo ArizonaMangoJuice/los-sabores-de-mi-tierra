@@ -1,6 +1,7 @@
 import React from 'react'
 import './Pages.css'
 import Banner from '../Banner/Banner';
+import PageTitleInput from '../PageTitleInput/PageTitleInput';
 export default class Pages extends React.Component{
     constructor(props){
         super(props);
@@ -10,11 +11,24 @@ export default class Pages extends React.Component{
         return (
             <div className='dashboard-container'>
                 <Banner title='Create A New Blog!' />
-                <div className='pages-flex-container '>
-                    <section className='margin-center title-card card-hover'>
-                        <p className='page-input-title'>Title:</p>
-                        <input className='page-title-input' type='text' />
-                    </section>
+                <PageTitleInput />
+                <div className='main-page '>
+                    <div className='page-body card-hover'>
+                        <nav className='body-tools'>
+                            <button className='body-tools'>
+                                button
+                            </button>
+                            <button className='body-tools'>
+                                button
+                            </button>
+                            <button className='body-tools'>
+                                button
+                            </button>
+                        </nav>
+                        <textarea placeholder='enter your text here' className='pages-text-area'>
+
+                        </textarea>
+                    </div>
                 </div>
             </div>
         )
