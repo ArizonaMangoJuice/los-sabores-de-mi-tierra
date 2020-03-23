@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+.dashboard-nav a {
+    text-decoration: none;
+}
+
 
 
 .dashboard-nav:hover{

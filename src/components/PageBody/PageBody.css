@@ -11,7 +11,25 @@
     width: 100%;
     height: 500px;
     font-size: 18px;
-    padding: 15px;
+    padding: 15px 25px;
     border: none;
     color: white;
+}
+
+.body-tools-nav{
+    padding: 15px 15px 0 15px
+}
+
+.body-tools-button{
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 5px 0 5px;
+    padding: 5px;
+}
+
+.body-tools-button:hover{
+    transition: .2s linear;
+    background-color: white;
+    color: #212121;
 }

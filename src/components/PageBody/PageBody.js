@@ -4,14 +4,14 @@ import './PageBody.css'
 export default function PageBody(props){
     return (
         <div className='page-body card-hover main-color'>
-            <nav className='body-tools main-color'>
-                <button className='body-tools'>
+            <nav className='body-tools-nav main-color'>
+                <button className='body-tools-button main-color'>
                     button
                 </button>
-                <button className='body-tools'>
+                <button className='body-tools-button main-color'>
                     button
                 </button>
-                <button className='body-tools'>
+                <button className='body-tools-button main-color'>
                     button
                 </button>
             </nav>
