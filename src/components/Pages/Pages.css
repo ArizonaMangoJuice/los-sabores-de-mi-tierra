@@ -1,8 +1,10 @@
 .dashboard-container{
     min-height: 100vh;
     margin: 0 0 0 50px ;
-    background-color: #f2f2f2;
-    color: #6cb4dd;
+    /* background-color: #f2f2f2; */
+    background: linear-gradient(179deg, #6CB4DD 54%, #2FA53D 100%) no-repeat 50% 50% / 100% 100%;
+
+    color: black;
 }
 
 .border-dev{
@@ -22,7 +24,7 @@
 
 .pages-text-area{
     box-sizing: border-box;
-    outline:#6cb4dd;
+    /* outline:#6cb4dd; */
     resize: none;
     overflow:auto;
     width: 100%;

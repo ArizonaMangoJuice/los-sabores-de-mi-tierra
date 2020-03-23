@@ -11,3 +11,20 @@ h1{
 .card-hover{
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4); 
 }
+
+/* web colors text */
+.tomato{
+  color:#e6463c;
+}
+.chocolate-orange{
+  color:#ee7f1e;
+}
+.slateblue{
+  color:#6450c8;
+}
+.cornflowerblue{
+  color:#6cb4dd;
+}
+.seagreen{
+  color:#2fa53e;
+}

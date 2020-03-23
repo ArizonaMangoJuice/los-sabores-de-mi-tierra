@@ -18,6 +18,7 @@ export default class Nav extends React.Component{
         let NavButtons = colors.map((e, i) => (
             <NavButton iconName={`fas ${icons[i]}`} 
                 name={text[i]} 
+                color={e}
                 border={{borderLeft: `4px solid ${e}`}} 
                 bottom={text.length-1 === i  ? 'bottom' : ''} />
         ));
