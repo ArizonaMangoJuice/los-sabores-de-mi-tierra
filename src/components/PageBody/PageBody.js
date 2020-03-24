@@ -5,9 +5,7 @@ import {changeBody} from '../../actions'
 
 const mapStateToProps = state => {
     return {
-        title: state.page.title,
         body: state.page.body,
-        linkName: state.page.linkName
     }
 }
 
