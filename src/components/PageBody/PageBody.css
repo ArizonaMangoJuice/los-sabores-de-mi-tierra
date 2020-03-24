@@ -6,7 +6,7 @@
 
 .pages-text-area{
     box-sizing: border-box;
-    /* outline:#6cb4dd; */
+    outline:none;
     resize: none;
     overflow:auto;
     width: 100%;
