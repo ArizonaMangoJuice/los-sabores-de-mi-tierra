@@ -1,7 +1,17 @@
 import React from 'react'
 import './PageBody.css'
+import { connect } from 'react-redux'
+import {changeBody} from '../../actions'
 
-export default function PageBody(props){
+const mapStateToProps = state => {
+    return {
+        title: state.page.title,
+        body: state.page.body,
+        linkName: state.page.linkName
+    }
+}
+
+function PageBody(props){
     return (
         <div className='page-body card-hover main-color'>
             <nav className='body-tools-nav main-color'>
@@ -15,9 +25,16 @@ export default function PageBody(props){
                     button
                 </button>
             </nav>
-            <textarea placeholder='enter your text here' className='pages-text-area main-color'>
+            <textarea 
+                onChange={(e) => props.dispatch(changeBody(e.target.value))} 
+                placeholder='enter your text here' 
+                className='pages-text-area main-color' 
+                value={props.body}
+            >
 
             </textarea>
         </div>
     )
 }
+
+export default connect(mapStateToProps)(PageBody)
