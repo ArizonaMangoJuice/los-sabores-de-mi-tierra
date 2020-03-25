@@ -6,17 +6,17 @@ import login from '../../actions'
 
 function Login(props){
     return (
-        <div className='page-container border-dev'>
-            <div className='-login-page-container'>
-                <div className='login-container border-dev'>
-                    <div className='logo half border-dev'>
+        <div className='page-container'>
+            <div className='login-page-container'>
+                <div className='login-container'>
+                    <div className='logo half'>
                       <i class="far fa-user"></i>
                     </div>
-                    <div className='login-form-container half border-dev'>
-                        <form className='main'>
-                            <input type='text' />
-                            <input type='password'/>
-                            <button>Login</button>
+                    <div className='login-form-container half'>
+                        <form className='login-form'>
+                            <input className='main-color card-hover' type='text' placeholder='Username'/>
+                            <input className='main-color card-hover' type='password' placeholder='Password'/>
+                            <button className='login-button card-hover'>Login</button>
                         </form>
                     </div>
                 </div>

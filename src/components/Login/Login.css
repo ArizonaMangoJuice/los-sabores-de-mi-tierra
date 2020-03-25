@@ -3,7 +3,10 @@
 }
 
 .login-page-container{
-
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-container{
@@ -12,6 +15,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    border-radius: 15px;
 }
 
 .logo{
@@ -27,3 +31,39 @@
     align-items: center;
 }
 
+.login-form{
+    width: 70%;
+    height: 200px;
+}
+
+.login-form input{
+    outline: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 18px;
+    height: 40px;
+    /* padding-left: 10px; */
+    border-radius: 25px;
+    color: white;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.login-form input::placeholder{
+    color: white;
+}
+
+.login-button{
+    display: block;
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    box-sizing: border-box;
+    border: none;
+    background-color: seagreen;
+    height: 40px;
+    border-radius: 25px;
+    color: white;
+}
