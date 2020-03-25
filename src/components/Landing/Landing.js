@@ -35,6 +35,7 @@ function Landing(props) {
             </div> 
         </div>
         <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/login'>Login</Link>
     </>);
 }
 
