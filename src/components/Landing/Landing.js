@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { Link, Switch } from 'react-router-dom';
 import {connect} from 'react-redux'
-import { fetchPages } from '../../actions';
+import { fetchPages, login } from '../../actions';
 import './Landing.css'
 const mapStateToProps = state => {
     return {
@@ -11,7 +11,10 @@ const mapStateToProps = state => {
 
 function Landing(props) {
     useEffect(()=> {
-        if (props.pages.length === 0)props.dispatch(fetchPages());
+        if (props.pages.length === 0) {
+            props.dispatch(fetchPages())
+            props.dispatch(login(', '))
+        }
     })
 
     let pages = props.pages.map(e => (
@@ -22,7 +25,7 @@ function Landing(props) {
             </div>
         </div>
     ))
-    
+
     return (
     <>
         <div className='recent-container'>
