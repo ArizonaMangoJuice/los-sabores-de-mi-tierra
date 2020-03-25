@@ -1,5 +1,9 @@
 .page-container{
     min-height: 100vh;
+    background-image: url(https://images.pexels.com/photos/3786208/pexels-photo-3786208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .login-page-container{
@@ -7,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* filter: blur(40px) */
 }
 
 .login-container{
@@ -16,6 +21,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 15px;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    
 }
 
 .logo{

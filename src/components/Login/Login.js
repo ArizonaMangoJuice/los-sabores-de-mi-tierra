@@ -8,7 +8,7 @@ function Login(props){
     return (
         <div className='page-container'>
             <div className='login-page-container'>
-                <div className='login-container'>
+                <div className='login-container card-hover relative'>
                     <div className='logo half'>
                       <i class="far fa-user"></i>
                     </div>
