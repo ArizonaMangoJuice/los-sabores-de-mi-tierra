@@ -3,6 +3,7 @@ import { Link, Switch } from 'react-router-dom';
 import {connect} from 'react-redux'
 import { fetchPages, login } from '../../actions';
 import './Landing.css'
+
 const mapStateToProps = state => {
     return {
         pages: state.landingPage.pages
@@ -13,7 +14,7 @@ function Landing(props) {
     useEffect(()=> {
         if (props.pages.length === 0) {
             props.dispatch(fetchPages())
-            props.dispatch(login(', '))
+            props.dispatch(login())
         }
     })
 

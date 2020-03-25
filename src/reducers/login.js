@@ -22,7 +22,7 @@ const loginReducer = (state = initialState, action) => {
         case AUTH_SUCCESS: 
             return {
                 ...state,
-                currentUser: action.currentUser,
+                currentUser: action.user,
                 error: null
             }
         case AUTH_ERROR: 
