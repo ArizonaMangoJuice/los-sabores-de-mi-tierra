@@ -17,11 +17,13 @@
 .logo{
     font-size: 250px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.login-form{
-    
+.login-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+

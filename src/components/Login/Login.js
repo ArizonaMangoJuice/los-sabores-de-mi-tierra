@@ -12,10 +12,11 @@ function Login(props){
                     <div className='logo half border-dev'>
                       <i class="far fa-user"></i>
                     </div>
-                    <div className='login-form half border-dev'>
-                        <form>
+                    <div className='login-form-container half border-dev'>
+                        <form className='main'>
                             <input type='text' />
                             <input type='password'/>
+                            <button>Login</button>
                         </form>
                     </div>
                 </div>
