@@ -16,6 +16,10 @@ h1{
   position: relative;
 }
 
+.half{
+  width: 50%;
+}
+
 /* web colors text */
 .tomato{
   color:#e6463c;

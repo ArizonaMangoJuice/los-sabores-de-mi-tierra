@@ -1,0 +1,27 @@
+.page-container{
+    min-height: 100vh;
+}
+
+.login-page-container{
+
+}
+
+.login-container{
+    width: 768px;
+    height: 499px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.logo{
+    font-size: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    
+}
