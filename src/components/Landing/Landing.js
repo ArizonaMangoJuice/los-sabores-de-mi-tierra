@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link, Switch } from 'react-router-dom';
+import {connect} from 'react-redux'
+import { fetchPages } from '../../actions';
 
-export default function Landing() {
+const mapStateToProps = state => {
+    return {
+        pages: state.landingPage.pages
+    }
+}
+
+function Landing(props) {
+    useEffect(()=> {
+        if (props.pages.length === 0)props.dispatch(fetchPages());
+    })
+
     return (
     <>
      <h1>
@@ -11,3 +23,5 @@ export default function Landing() {
 
     </>);
 }
+
+export default connect(mapStateToProps)(Landing)
