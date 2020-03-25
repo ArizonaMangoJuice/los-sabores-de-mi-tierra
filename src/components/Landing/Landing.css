@@ -13,6 +13,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .words-container{
@@ -22,4 +24,5 @@
     width: 100%;
     color: white;
     padding-left: 25px;
+    box-sizing: border-box;
 }
