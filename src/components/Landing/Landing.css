@@ -1,0 +1,25 @@
+.recent-posts{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+
+.card{
+  height: 50vh;  
+  background-color: bisque;
+  margin: 15px 7.5px;
+  background-image: url(https://s3.envato.com/files/255408675/MON1161054.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.words-container{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.76);
+    width: 100%;
+    color: white;
+    padding-left: 25px;
+}

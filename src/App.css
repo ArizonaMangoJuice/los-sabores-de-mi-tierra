@@ -12,6 +12,10 @@ h1{
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4); 
 }
 
+.relative{
+  position: relative;
+}
+
 /* web colors text */
 .tomato{
   color:#e6463c;
