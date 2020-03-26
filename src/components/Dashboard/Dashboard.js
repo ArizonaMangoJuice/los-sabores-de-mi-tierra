@@ -1,15 +1,21 @@
 import React from 'react'
 import Nav from '../Nav/Nav'
-import { Link, Switch } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import {connect} from 'react-redux'
 
-export default class Dashboard extends React.Component{
-    render(){
-        return (
-            <div className='dashboard'>
-                <Nav />
-
-                
-            </div>
-        )
+const mapStateToProps = state => {
+    return {
+        authToken: state.loginReducer.authToken
     }
 }
+
+function Dashboard (props){
+        return (
+            <div className='dashboard'>
+                {!props.authToken ? <Redirect to='/' /> : null}
+                <Nav />
+            </div>
+        )
+}
+
+export default connect(mapStateToProps)(Dashboard)
