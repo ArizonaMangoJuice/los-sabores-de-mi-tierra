@@ -4,6 +4,7 @@ import './Nav.css'
 import { isCompositeComponent } from 'react-dom/test-utils'
 import {connect} from 'react-redux'
 import { clearAuth } from '../../actions'
+import { clearToken } from '../../localStorage/localStorage'
 // this will be moved when i use redux
 let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd'];
 let text = ['Dashboard', 'Source', 'Forms', 'Pages'];
@@ -30,7 +31,7 @@ class Nav extends React.Component{
             <nav className='dashboard-nav'>
                 {NavButtons}
                 {/* <NavButton  iconName="fas fa-power-off" color='#2fa53e' name="logout" bottom='bottom' border={}/> */}
-                <button onClick={() => this.props.dispatch(clearAuth())} className='nav-button bottom' style={{borderLeft: '4px solid seagreen'}}>
+                <button onClick={() => {this.props.dispatch(clearAuth()); clearToken()}} className='nav-button bottom' style={{borderLeft: '4px solid seagreen'}}>
                     <div className='icon'>
                         <i className='seagreen fas fa-power-off'></i>
                     </div>
