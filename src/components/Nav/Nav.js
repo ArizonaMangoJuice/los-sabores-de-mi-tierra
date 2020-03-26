@@ -6,7 +6,7 @@ let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd', '#2fa53e'];
 let text = ['Dashboard', 'Source', 'Forms', 'Pages', 'Logout'];
 let icons = ['fa-home','fa-laptop-code','fa-wpforms','fa-file','fa-power-off'];
 let color = Math.floor(Math.random() * Math.floor(5));
-
+let to = ['home','source', 'forms', 'pages', '']
 
 const borderStyle = {
     borderLeft: `4px solid ${colors[color]}`
@@ -20,7 +20,8 @@ export default class Nav extends React.Component{
                 name={text[i]} 
                 color={e}
                 border={{borderLeft: `4px solid ${e}`}} 
-                bottom={text.length-1 === i  ? 'bottom' : ''} />
+                bottom={text.length-1 === i  ? 'bottom' : ''}
+                to={to[i]} />
         ));
 
         return (

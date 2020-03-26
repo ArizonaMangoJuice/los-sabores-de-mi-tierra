@@ -29,7 +29,7 @@ export default class NavButton extends React.Component{
         let iconColor = this.colorChecker(this.props.color);
         return (
             <>
-            <Link to='/dashboard/pages' className={this.props.bottom ? this.props.bottom: `` }>
+            <Link to={`/dashboard/${this.props.to}`} className={this.props.bottom ? this.props.bottom: `` }>
                 <button className={this.props.bottom ? `nav-button ${this.props.bottom}` : `nav-button` } style={this.props.border}>
                     <div className='icon'>
                         <i className={`${iconColor} ${this.props.iconName}`}></i>
