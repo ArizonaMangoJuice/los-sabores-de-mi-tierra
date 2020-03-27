@@ -30,3 +30,14 @@
     color: white;
     border-radius: 5px;
 }
+
+.page-success{
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 70px;
+    color: white;
+    border-radius: 5px;
+}

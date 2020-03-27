@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
     body: state.page.body,
     title: state.page.title,
     error: state.page.error,
+    success: state.page.success,
     authToken: state.loginReducer.authToken
 })
 
@@ -27,7 +28,12 @@ function Pages(props){
                     </div>
                     : null
                 }
-                
+                {props.success ? 
+                    <div className='success-background page-success card-hover' >
+                        <p className='success-msg'>{props.success}</p> 
+                    </div>
+                    : null
+                }
                 <PageTitleInput />
                 <div className='main-page '>
                     <PageBody />

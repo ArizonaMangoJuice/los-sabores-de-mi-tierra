@@ -5,6 +5,8 @@ import {saveToken} from '../localStorage/localStorage'
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
 export const PAGE_ERROR = 'PAGE_ERROR'
+export const PAGE_SUCCESS = 'PAGE_SUCCESS'
+export const CLEAR_PAGE_MSG = 'CLEAR_PAGE_MSG'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -31,9 +33,23 @@ export function pageError(error){
     }
 }
 
+export function pageSuccess(){
+    return {
+        type: PAGE_SUCCESS
+    }
+}
+
+export function clearPageMsg(){
+    return {
+        type: CLEAR_PAGE_MSG
+    }
+}
+
 export function submitPage(title, body, authToken) {
     let linkName = title;
     return (dispatch) => {
+        dispatch(clearPageMsg())
+
         Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
             title,
             body,
@@ -43,6 +59,7 @@ export function submitPage(title, body, authToken) {
         })
         .then(response => {
             console.log('response', response)
+            dispatch(pageSuccess())
         })
         .catch(error => {
             let title = error.response.data.message
