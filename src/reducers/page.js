@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE_MSG} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE} from "../actions"
 
 let initialState = {
     title: '',
@@ -32,11 +32,14 @@ const page = (state = initialState, action) => {
                 success: 'Blog has been saved successfully!'
             }
         }
-        case CLEAR_PAGE_MSG : {
+        case CLEAR_PAGE : {
             return {
                 ...state,
                 success: undefined,
-                error: undefined
+                error: undefined,
+                title: '',
+                body: '',
+                linkName: ''
             }
         }
         default: 

@@ -6,7 +6,7 @@ export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
 export const PAGE_ERROR = 'PAGE_ERROR'
 export const PAGE_SUCCESS = 'PAGE_SUCCESS'
-export const CLEAR_PAGE_MSG = 'CLEAR_PAGE_MSG'
+export const CLEAR_PAGE = 'CLEAR_PAGE'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -39,16 +39,16 @@ export function pageSuccess(){
     }
 }
 
-export function clearPageMsg(){
+export function clearPage(){
     return {
-        type: CLEAR_PAGE_MSG
+        type: CLEAR_PAGE
     }
 }
 
 export function submitPage(title, body, authToken) {
     let linkName = title;
     return (dispatch) => {
-        dispatch(clearPageMsg())
+        dispatch(clearPage())
 
         Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
             title,
