@@ -37,6 +37,10 @@ h1{
   color:#2fa53e;
 }
 
+.error-background{
+  background-color: #dc3444;
+}
+
 .main-color{
   background: #212121;
 }

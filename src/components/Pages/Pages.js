@@ -9,6 +9,7 @@ import { submitPage } from '../../actions';
 const mapStateToProps = state => ({
     body: state.page.body,
     title: state.page.title,
+    error: state.page.error,
     authToken: state.loginReducer.authToken
 })
 
@@ -19,6 +20,14 @@ function Pages(props){
         return (
             <div className='dashboard-container'>
                 <Banner title='Create A New Blog!' />
+                {
+                props.error ?
+                    <div className='error-background page-error card-hover' >
+                        <p className='error-msg'>{props.error}</p> 
+                    </div>
+                    : null
+                }
+                
                 <PageTitleInput />
                 <div className='main-page '>
                     <PageBody />

@@ -4,6 +4,7 @@ import {saveToken} from '../localStorage/localStorage'
 
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
+export const PAGE_ERROR = 'PAGE_ERROR'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -23,6 +24,13 @@ export function changeBody(body){
     }
 }
 
+export function pageError(error){
+    return {
+        type: PAGE_ERROR,
+        error
+    }
+}
+
 export function submitPage(title, body, authToken) {
     let linkName = title;
     return (dispatch) => {
@@ -36,7 +44,10 @@ export function submitPage(title, body, authToken) {
         .then(response => {
             console.log('response', response)
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            let title = error.response.data.message
+            return dispatch(pageError(title))
+        })
     }
 }
 

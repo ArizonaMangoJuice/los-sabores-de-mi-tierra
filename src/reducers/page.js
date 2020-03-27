@@ -1,9 +1,10 @@
-import { CHANGE_TITLE, CHANGE_BODY} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR} from "../actions"
 
 let initialState = {
     title: '',
     body: '',
-    linkName: ''
+    linkName: '',
+    errror: undefined
 }
 
 const page = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const page = (state = initialState, action) => {
                 ...state,
                 body: action.body
             }
+        case PAGE_ERROR: {
+            return {
+                ...state,
+                error: action.error
+            }
+        }
         default: 
             return state
     }
