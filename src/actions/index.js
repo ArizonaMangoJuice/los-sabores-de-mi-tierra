@@ -23,6 +23,23 @@ export function changeBody(body){
     }
 }
 
+export function submitPage(title, body, authToken) {
+    let linkName = title;
+    return (dispatch) => {
+        Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
+            title,
+            body,
+            linkName
+        },{
+            headers: { Authorization: `Bearer ${authToken}` }
+        })
+        .then(response => {
+            console.log('response', response)
+        })
+        .catch(error => console.log(error))
+    }
+}
+
 // **********************************************************
 export const FETCH_PAGES = 'FETCH_PAGES'
 export const ADD_PAGES = 'ADD_PAGES'

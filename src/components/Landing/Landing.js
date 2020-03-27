@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
 import { fetchPages, login } from '../../actions';
 import './Landing.css'

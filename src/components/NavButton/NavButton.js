@@ -10,7 +10,7 @@ let borderStyle;
 export default class NavButton extends React.Component{
     componentDidMount(){
        color =  Math.floor(Math.random() * Math.floor(5));
-        console.log('this is the color',color)
+        // console.log('this is the color',color)
        borderStyle = {
             borderLeft: `4px solid ${colors[color]}`
        }
@@ -25,7 +25,7 @@ export default class NavButton extends React.Component{
     }
 
     render(){
-        console.log('props for navbutton', this.route)
+        // console.log('props for navbutton', this.route)
         let iconColor = this.colorChecker(this.props.color);
         return (
             <>

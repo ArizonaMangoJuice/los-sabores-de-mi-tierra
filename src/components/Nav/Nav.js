@@ -1,7 +1,6 @@
 import React from 'react'
 import NavButton from '../NavButton/NavButton'
 import './Nav.css'
-import { isCompositeComponent } from 'react-dom/test-utils'
 import {connect} from 'react-redux'
 import { clearAuth } from '../../actions'
 import { clearToken } from '../../localStorage/localStorage'
@@ -9,12 +8,10 @@ import { clearToken } from '../../localStorage/localStorage'
 let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd'];
 let text = ['Dashboard', 'Source', 'Forms', 'Pages'];
 let icons = ['fa-home','fa-laptop-code','fa-wpforms','fa-file'];
-let color = Math.floor(Math.random() * Math.floor(5));
+// let color = Math.floor(Math.random() * Math.floor(5));
 let to = ['home','source', 'forms', 'pages']
 
-const borderStyle = {
-    borderLeft: `4px solid ${colors[color]}`
-}
+
 
 
 class Nav extends React.Component{
@@ -24,7 +21,8 @@ class Nav extends React.Component{
                 name={text[i]} 
                 color={e}
                 border={{borderLeft: `4px solid ${e}`}} 
-                to={to[i]} />
+                to={to[i]}
+                key={text[i]} />
         ));
 
         return (
