@@ -41,3 +41,11 @@
     color: white;
     border-radius: 5px;
 }
+
+.dashboard-button{
+    border-left: 4px solid seagreen;
+    color: seagreen;
+    font-size: 18px;
+    width: 180px;
+    font-weight: bold;
+}
