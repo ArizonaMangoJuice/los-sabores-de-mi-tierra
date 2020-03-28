@@ -5,6 +5,7 @@ import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
 import { submitPage } from '../../actions';
+import ImageUpload from '../ImageUpload/ImageUpload';
 
 const mapStateToProps = state => ({
     body: state.page.body,
@@ -41,6 +42,7 @@ function Pages(props){
                             <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, body, authToken))}>
                                 Create Page 
                             </button>
+                            <ImageUpload />
                     </div>
                 </div>
             </div>
