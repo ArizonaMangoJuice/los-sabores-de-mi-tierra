@@ -14,7 +14,6 @@ let firebaseConfig = {
     storageBucket: process.env.REACT_APP_STORAGE_BUCKET
   }
 
-  console.log('firebase config', firebaseConfig)
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
