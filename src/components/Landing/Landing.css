@@ -26,3 +26,22 @@
     padding-left: 25px;
     box-sizing: border-box;
 }
+
+.image-logo{
+  height: 200px;
+  width: 200px;
+  /* border: 2px solid #e6463c; */
+  border-radius: 50%;
+  margin: auto  ;
+}
+
+/* header css */
+
+.header-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  /* background-color: white; */
+}

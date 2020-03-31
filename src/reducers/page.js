@@ -1,4 +1,5 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH} from "../actions"
+import { getNodeText } from "@testing-library/react"
 
 let initialState = {
     title: '',
@@ -71,6 +72,30 @@ const page = (state = initialState, action) => {
                     array.push(state.stack[i])
                 }
             }
+            return {
+                ...state,
+                stack: array
+            }
+        }
+        case DELETE_PARAGRAPH: {
+            let {stackId} = action
+            let array = [];
+            let count = 0;
+
+            // tried the spread operator but it didnt work read on it so you can reduce the code 
+            for(let i = 0; i < state.stack.length; i++){
+                if(state.stack[i].stackId === stackId){
+                   continue
+                } else {
+                    let updatedId = {
+                        paragraph: state.stack[i].paragraph,
+                        stackId: count
+                    }
+                    array.push(updatedId)
+                    count++;
+                }
+            }
+            
             return {
                 ...state,
                 stack: array

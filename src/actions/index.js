@@ -9,6 +9,7 @@ export const PAGE_SUCCESS = 'PAGE_SUCCESS'
 export const CLEAR_PAGE = 'CLEAR_PAGE'
 export const NEW_PARAGRAPH = 'NEW_PARAGRAPH'
 export const CHANGE_PARAGRAPH = 'CHANGE_PARAGRAPH'
+export const DELETE_PARAGRAPH = 'DELETE_PARAGRAPH'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -46,6 +47,13 @@ export function changeParagraph(paragraph, stackId){
             paragraph,
             stackId
         }
+    }
+}
+
+export function deleteParagraph(stackId){
+    return {
+        type: DELETE_PARAGRAPH,
+        stackId
     }
 }
 

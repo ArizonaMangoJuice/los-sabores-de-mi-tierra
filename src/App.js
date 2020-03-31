@@ -6,6 +6,7 @@ import Landing from './components/Landing/Landing';
 import Pages from './components/Pages/Pages';
 import Login from './components/Login/Login';
 import { storage } from 'firebase';
+import BlogPage from './components/BlogPage/BlogPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/dashboard' component={Dashboard} />
       <Route exact path='/dashboard/pages' component={Pages} />
       <Route path='/login' component={Login}/>
+      <Route path='/blogPage' component={BlogPage}/>
     </div>
   );
 }

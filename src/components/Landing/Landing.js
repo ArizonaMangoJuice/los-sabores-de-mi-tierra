@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
 import { fetchPages, login } from '../../actions';
 import './Landing.css'
+import BlogPage from '../BlogPage/BlogPage';
 
 const mapStateToProps = state => {
     return {
@@ -28,7 +29,10 @@ function Landing(props) {
     ))
 
     return (
-    <>
+    <div className='full-page main-color'>
+        <header className='header-container'>
+                <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+        </header>
         <div className='recent-container'>
             <div className='recent-posts'>
                 {pages}
@@ -36,7 +40,8 @@ function Landing(props) {
         </div>
         <Link to='/dashboard'>Dashboard</Link>
         <Link to='/login'>Login</Link>
-    </>);
+        <Link to='/blogPage'>BlogPage</Link>
+    </div>);
 }
 
 export default connect(mapStateToProps)(Landing)
