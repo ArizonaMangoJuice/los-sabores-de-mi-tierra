@@ -57,15 +57,15 @@ const page = (state = initialState, action) => {
             }
         }
         case CHANGE_PARAGRAPH: {
-            let {stackId} = action.pData
+            let {stackId, paragraph} = action.pData
             let array = [];
 
             // tried the spread operator but it didnt work read on it so you can reduce the code 
             for(let i = 0; i < state.stack.length; i++){
                 if(state.stack[i].stackId === stackId){
                    array.push({
-                       paragraph: action.pData.paragraph,
-                       stackId: action.pData.stackId
+                       paragraph,
+                       stackId
                    }) 
                 } else {
                     array.push(state.stack[i])
