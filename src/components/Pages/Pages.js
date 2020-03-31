@@ -32,6 +32,7 @@ function Pages(props){
             <div className='dashboard-container'>
                 <Banner title='Create A New Blog!' />
                 {
+                    // refactor this into its own component
                 props.error ?
                     <div className='error-background page-error card-hover' >
                         <p className='error-msg'>{props.error}</p> 

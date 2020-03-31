@@ -20,6 +20,10 @@ h1{
   width: 50%;
 }
 
+.full-page{
+  min-height: 100vh;
+}
+
 /* web colors text */
 .tomato{
   color:#e6463c;

@@ -1,0 +1,39 @@
+.blog-settings{
+    color: white;
+    background-color: #6d6d6d;
+}
+
+.blog-width{
+    max-width: 900px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.blog-main-image{
+    margin-bottom: 15px;
+}
+
+.blog-main-image img{
+    width: 100%;
+}
+
+.blog-title{
+    text-align: center;
+}
+
+.blog-paragraph{
+    font-size: 18px;
+    line-height: 2;
+}
+
+.blog-sub-titles{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.blog-image{
+    width: 50%;
+    text-align: center;
+    margin: 15px auto;
+}
