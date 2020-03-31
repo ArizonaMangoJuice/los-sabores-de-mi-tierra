@@ -6,6 +6,7 @@ import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
 import { submitPage, changeParagraph, deleteParagraph } from '../../actions';
 import ImageUpload from '../ImageUpload/ImageUpload';
+import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 
 const mapStateToProps = state => ({
     body: state.page.body,
@@ -21,19 +22,11 @@ function Pages(props){
         // console.log('insisde the page props', title, authToken, body)
         // this will be a seperate component 
         let stackHistory = props.stack.map((element, i) => (
-            <div className='main-color'>
-                <div className='body-tools-nav'>
-                    <button
-                        className='body-tools-button main-color' 
-                        onClick={() => props.dispatch(deleteParagraph(i))}>DELETE</button>
-                </div>
-                <textarea
-                    key={'stack ' + i}
-                    value={element.paragraph}
-                    onChange={(e) => props.dispatch(changeParagraph(e.target.value, i ))}
-                    className='main-color history-paragraphs card-hover'
-                />
-            </div>
+            <ParagraphHistory
+                key={'stack ' + i}
+                stackId={i}
+                paragraph={element.paragraph}
+            />
         ))
         return (
             <div className='dashboard-container'>
