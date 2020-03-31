@@ -7,7 +7,6 @@ import Pages from './components/Pages/Pages';
 import Login from './components/Login/Login';
 import { storage } from 'firebase';
 
-console.log(storage)
 function App() {
   return (
     <div>

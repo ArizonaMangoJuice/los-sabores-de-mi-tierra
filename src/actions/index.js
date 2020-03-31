@@ -7,6 +7,8 @@ export const CHANGE_BODY = 'CHANGE_BODY'
 export const PAGE_ERROR = 'PAGE_ERROR'
 export const PAGE_SUCCESS = 'PAGE_SUCCESS'
 export const CLEAR_PAGE = 'CLEAR_PAGE'
+export const NEW_PARAGRAPH = 'NEW_PARAGRAPH'
+export const CHANGE_PARAGRAPH = 'CHANGE_PARAGRAPH'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -23,6 +25,27 @@ export function changeBody(body){
     return {
         type: CHANGE_BODY,
         body
+    }
+}
+
+export function newParagraph(paragraph, stackId){
+    console.log(stackId)
+   return {
+       type: NEW_PARAGRAPH,
+       pData: {
+        paragraph,
+        stackId
+    }   
+   } 
+}
+
+export function changeParagraph(paragraph, stackId){
+    return {
+        type: CHANGE_PARAGRAPH,
+        pData: {
+            paragraph,
+            stackId
+        }
     }
 }
 

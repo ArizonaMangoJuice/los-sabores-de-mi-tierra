@@ -4,7 +4,7 @@ import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { submitPage } from '../../actions';
+import { submitPage, changeParagraph } from '../../actions';
 import ImageUpload from '../ImageUpload/ImageUpload';
 
 const mapStateToProps = state => ({
@@ -12,13 +12,21 @@ const mapStateToProps = state => ({
     title: state.page.title,
     error: state.page.error,
     success: state.page.success,
-    authToken: state.loginReducer.authToken
+    authToken: state.loginReducer.authToken,
+    stack: state.page.stack,
 })
 
 function Pages(props){
         let {title, authToken, body} = props
         // console.log('insisde the page props', title, authToken, body)
-
+        // this will be a seperate component 
+        let stackHistory = props.stack.map((element, i) => (
+            <textarea
+                key={'stack ' + i}
+                value={element.paragraph}
+                onChange={(e) => props.dispatch(changeParagraph(e.target.value, i ))}
+            />
+        ))
         return (
             <div className='dashboard-container'>
                 <Banner title='Create A New Blog!' />
@@ -42,7 +50,11 @@ function Pages(props){
                             <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, body, authToken))}>
                                 Create Page 
                             </button>
-                            <ImageUpload />
+                            {/* <ImageUpload /> */}
+                    </div>
+                    <div className='page-body page-settings main-color'>
+                            {stackHistory}
+                            {/* <ImageUpload /> */}
                     </div>
                 </div>
             </div>
