@@ -25,6 +25,7 @@ function Pages(props){
                 key={'stack ' + i}
                 value={element.paragraph}
                 onChange={(e) => props.dispatch(changeParagraph(e.target.value, i ))}
+                className='main-color history-paragraphs card-hover'
             />
         ))
         return (
@@ -52,7 +53,7 @@ function Pages(props){
                             </button>
                             {/* <ImageUpload /> */}
                     </div>
-                    <div className='page-body page-settings main-color'>
+                    <div className='page-body page-settings '>
                             {stackHistory}
                             {/* <ImageUpload /> */}
                     </div>
