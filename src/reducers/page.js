@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE} from "../actions"
 
 let initialState = {
     title: '',
@@ -79,8 +79,8 @@ const page = (state = initialState, action) => {
         }
         case DELETE_PARAGRAPH: {
             let {stackId} = action
-            let array = [];
-            let count = 0;
+            let array = []
+            let count = 0
 
             // tried the spread operator but it didnt work read on it so you can reduce the code 
             for(let i = 0; i < state.stack.length; i++){
@@ -95,12 +95,40 @@ const page = (state = initialState, action) => {
                     count++;
                 }
             }
-            
             return {
                 ...state,
                 stack: array
             }
         }
+        case ADD_MAIN_IMAGE: 
+            let {image} = action 
+
+            let {name, lastModified, lastModifiedDate, webkitRelativePath, size, type} = image
+            let array = []
+            let count = 0
+            let imageObj = {
+                name,
+                lastModified,
+                lastModifiedDate,
+                webkitRelativePath,
+                size,
+                type,
+                stackId: count
+            }
+            
+            console.log(image)
+            array = [image, ...state.stack];
+            console.log('spreaded array', array.length)
+            count++
+
+            for( let i = 0; i < array.length; i++){
+                array[i].stackId = i
+            }
+            
+            return {
+                ...state,
+                stack: array
+            }
         default: 
             return state
     }

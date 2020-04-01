@@ -10,10 +10,18 @@ export const CLEAR_PAGE = 'CLEAR_PAGE'
 export const NEW_PARAGRAPH = 'NEW_PARAGRAPH'
 export const CHANGE_PARAGRAPH = 'CHANGE_PARAGRAPH'
 export const DELETE_PARAGRAPH = 'DELETE_PARAGRAPH'
+export const ADD_MAIN_IMAGE = 'ADD_MAIN_IMAGE'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+
+export function addMainImage(image){
+    return {
+        type: ADD_MAIN_IMAGE,
+        image
+    }
+}
 
 export function changeTitle(title){
     return {
