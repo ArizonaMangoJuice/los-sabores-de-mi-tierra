@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        let {title, authToken, body} = props
+        let {title, authToken, body, stack} = props
         // console.log('insisde the page props', title, authToken, body)
         // this will be a seperate component 
         let stackHistory = props.stack.map((element, i) => (
@@ -49,7 +49,7 @@ function Pages(props){
                 <div className='main-page '>
                     <PageBody />
                     <div className='page-body page-settings main-color'>
-                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, body, authToken))}>
+                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken))}>
                                 Create Page 
                             </button>
                             {/* <ImageUpload /> */}

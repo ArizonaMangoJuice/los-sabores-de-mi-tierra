@@ -41,7 +41,8 @@ const page = (state = initialState, action) => {
                 error: undefined,
                 title: '',
                 body: '',
-                linkName: ''
+                linkName: '',
+                stack: []
             }
         }
         case NEW_PARAGRAPH: {
