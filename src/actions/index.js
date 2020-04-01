@@ -80,7 +80,7 @@ export function submitPage(title, body, authToken) {
     let linkName = title;
     return (dispatch) => {
         dispatch(clearPage())
-
+        title = title.trim()
         Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
             title,
             body,
@@ -135,7 +135,7 @@ export function fetchPage(title){
                 dispatch(addBlogTitle(response.data[0].title))
                 dispatch(fetchCompleted())
                 dispatch(addBlog(response.data[0]))
-                // console.log(response)
+                console.log(response)
                 return
             })
             .catch(error => {
