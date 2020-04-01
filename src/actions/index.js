@@ -102,6 +102,12 @@ export function submitPage(title, body, authToken) {
 // **********************************************************
 export const FETCH_PAGES = 'FETCH_PAGES'
 export const ADD_PAGES = 'ADD_PAGES'
+export const FETCH_PAGE = 'FETCH_PAGE'
+export const FETCH_LOADING = 'FETCH_LOADING'
+export const FETCH_COMPLETED = 'FETCH_COMPLETED'
+export const ADD_BLOG = 'ADD_BLOG'
+export const ADD_BLOG_TITLE = 'ADD_BLOG_TITLE'
+export const CLEAR_BLOG_PAGE = 'CLEAR_BLOG_PAGE'
 
 // thunk action for getting the pages in the front page
 
@@ -118,6 +124,50 @@ export function fetchPages(){
                 console.log(error)
                 return
             })
+    }
+}
+
+export function fetchPage(title){
+    return (dispatch) => {
+        dispatch(fetchLoading())
+        Axios.get(`${REACT_APP_SERVER_URL}/api/page/${title}`)
+            .then(response => {
+                dispatch(addBlogTitle(response.data[0].title))
+                dispatch(fetchCompleted())
+                dispatch(addBlog(response.data[0]))
+                // console.log(response)
+                return
+            })
+            .catch(error => {
+                console.log(error)
+                return 
+            })
+    }
+}
+
+export function fetchLoading(){
+    return {
+        type: FETCH_LOADING
+    }
+}
+
+export function addBlog(data){
+    return {
+        type: ADD_BLOG,
+        data
+    }
+}
+
+export function addBlogTitle(title){
+    return {
+        type: ADD_BLOG_TITLE,
+        title
+    }
+}
+
+export function fetchCompleted(){
+    return {
+        type: FETCH_COMPLETED
     }
 }
 

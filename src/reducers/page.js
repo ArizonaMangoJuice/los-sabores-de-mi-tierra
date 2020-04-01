@@ -1,5 +1,4 @@
 import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH} from "../actions"
-import { getNodeText } from "@testing-library/react"
 
 let initialState = {
     title: '',

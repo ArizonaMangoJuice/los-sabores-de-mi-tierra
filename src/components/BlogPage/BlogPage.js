@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
 import './BlogPage.css'
 import BlogPageParagraph from '../BlogPageParagraph/BlogPageParagraph'
@@ -6,8 +6,22 @@ import BlogPageSubTitles from '../BlogPageSubTitles/BlogPageSubTitles'
 import BlogPageTitle from '../BlogPageTitle/BlogPageTitle'
 import BlogPageImage from '../BlogPageImage/BlogPageImage'
 import BlogPageMainImage from '../BlogPageMainImage/BlogPageMainImage'
+import { useParams } from 'react-router-dom'
+import { fetchPage } from '../../actions'
+
+const mapStateToProps = state => ({
+    title: state.blogPage.title,
+    loading: state.blogPage.loading,
+    completed: state.blogPage.completed,
+    blog: state.blogPage.blog
+})
 
 function BlogPage(props){
+    let {title} = useParams();
+    useEffect(() => {
+        if(!props.title) props.dispatch(fetchPage(title))
+    })
+    console.log('blog props',props)
     return (
         <div className='full-page blog-settings'>
             <div className='blog-width main-color card-hover'> 
@@ -51,4 +65,4 @@ function BlogPage(props){
     )
 }
 
-export default connect()(BlogPage)
+export default connect(mapStateToProps)(BlogPage)

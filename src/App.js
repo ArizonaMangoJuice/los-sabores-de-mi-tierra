@@ -15,7 +15,7 @@ function App() {
       <Route path='/dashboard' component={Dashboard} />
       <Route exact path='/dashboard/pages' component={Pages} />
       <Route path='/login' component={Login}/>
-      <Route path='/blogPages/:blogname' children={<BlogPage/>}/>
+      <Route path='/blogPages/:title' children={<BlogPage/>}/>
     </div>
   );
 }
