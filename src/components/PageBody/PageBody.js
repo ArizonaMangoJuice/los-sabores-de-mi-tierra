@@ -18,7 +18,7 @@ function PageBody(props){
                     New Paragraph
                 </button>
                 <button className='body-tools-button main-color'>
-                    button
+                    Add Main Image
                 </button>
                 <button className='body-tools-button main-color'>
                     button
