@@ -17,11 +17,23 @@ const mapStateToProps = state => ({
 })
 
 function BlogPage(props){
-    let {title} = useParams();
+    let {title} = useParams()
+    let {blog} = props
+    let blogPage
+
     useEffect(() => {
         if(!props.title) props.dispatch(fetchPage(title))
+        if(title !== props.title) props.dispatch(fetchPage(title))
+
     })
-    console.log('blog props',props)
+    
+    if(blog.body !== undefined){
+        blogPage = blog.body.map(e => (
+           <BlogPageParagraph key={e.stackId} paragraph={e.paragraph} />
+        ))
+    }
+
+
     return (
         <div className='full-page blog-settings'>
             <div className='blog-width main-color card-hover'> 
@@ -31,9 +43,11 @@ function BlogPage(props){
                 
                 <BlogPageMainImage src='https://arizonamangojuice.github.io/portfolio/img/lolImprover.png' />
 
-                <BlogPageTitle title='Improve your gaming skills' />
+                {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 
-                <BlogPageParagraph paragraph='Lol Improver  is an app that lets you take notes on champions. Allowing you to see which champions you struggle against. Lol Improver lets you find player statistics. This app user React, MongoDB, Express, and mocha, chai, enzyme and, jest. You can find the repo here.' />
+                {blogPage}
+
+                {/* <BlogPageParagraph paragraph='Lol Improver  is an app that lets you take notes on champions. Allowing you to see which champions you struggle against. Lol Improver lets you find player statistics. This app user React, MongoDB, Express, and mocha, chai, enzyme and, jest. You can find the repo here.' />
 
                 <BlogPageSubTitles title='CHALLENGES' />
 
@@ -59,7 +73,7 @@ function BlogPage(props){
 
                 <BlogPageSubTitles title='RESULTS' />
 
-                <BlogPageParagraph paragraph='The end result is a good foundation to build on. I will constantly be working on this project, this page will change and evolve with it.' />
+                <BlogPageParagraph paragraph='The end result is a good foundation to build on. I will constantly be working on this project, this page will change and evolve with it.' /> */}
             </div>
         </div>
     )
