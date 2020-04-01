@@ -20,12 +20,12 @@ function Landing(props) {
     })
 
     let pages = props.pages.map(e => (
-        <div className='card border-dev relative' key={e._id}>
+        <Link to={`/blogPages/${e.title}`}  className='card border-dev relative' key={e._id}>
             <div className='words-container'>
                 <p className='landing-page-title'>{e.title}</p>
                 <p className='body-snippet'>{e.body[0].paragraph}</p>
             </div>
-        </div>
+        </Link>
     ))
 
     return (
