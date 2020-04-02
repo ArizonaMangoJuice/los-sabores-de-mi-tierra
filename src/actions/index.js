@@ -11,6 +11,7 @@ export const NEW_PARAGRAPH = 'NEW_PARAGRAPH'
 export const CHANGE_PARAGRAPH = 'CHANGE_PARAGRAPH'
 export const DELETE_PARAGRAPH = 'DELETE_PARAGRAPH'
 export const ADD_MAIN_IMAGE = 'ADD_MAIN_IMAGE'
+export const ADD_MAIN_IMAGE_PREVIEW = 'ADD_MAIN_IMAGE_PREVIEW'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -20,6 +21,13 @@ export function addMainImage(image){
     return {
         type: ADD_MAIN_IMAGE,
         image
+    }
+}
+
+export function addMainImagePreview(preview){
+    return {
+        type: ADD_MAIN_IMAGE_PREVIEW,
+        preview
     }
 }
 

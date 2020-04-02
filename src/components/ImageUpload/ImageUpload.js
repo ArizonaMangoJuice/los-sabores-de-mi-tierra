@@ -1,61 +1,43 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {storage} from '../../firebase'
+import './ImageUpload.css'
+import {connect} from 'react-redux'
+import { addMainImagePreview, addMainImage } from '../../actions'
 
-export default class ImageUpload extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            image: null,
-            url: '',
-            progress: 0
+const mapStateToProps = state => ({
+    // imagePreview: state.page.imagePreview
+})
+
+export const ImageUpload = (props) => {
+    // create a preview as a side effect, whenever selected file is changed
+    useEffect(() => {
+        // free memory when ever this component is unmounted
+        return () => URL.revokeObjectURL(props.imagePreview)
+    })
+
+    const onSelectFile = e => {
+        if (!e.target.files || e.target.files.length === 0) {
+            return
         }
-        // this.handleChange = this.handleChange.bind(this)
+
+        // I've kept this example simple by using the first image instead of multiple
+        props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
+        props.dispatch(addMainImage(e.target.files[0]))
     }
 
-    handleChange(e){
-        console.log(e.target)
-        if(e.target.files[0]){
-            const image = e.target.files[0]
-            this.setState({
-               image
-            })
-        }
-    }
-
-    handleUpload(){
-        const {image} = this.state
-
-        const uploadTask = storage.ref(`images/${image.name}`).put(image)
-        uploadTask.on('state_changed', (snapshot) => {
-            // progress function 
-            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
-            this.setState({
-                progress
-            })
-        }, (error) => {
-            // error function
-           console.log(error) 
-        }, (complete => {
-            // complete function
-            storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                console.log(url)
-                this.setState({
-                    url
-                })
-            })
-        }))
-    }
-
-    render(){
-        return(
-            <div>
-                <progress value={this.state.progress} max='100'></progress>
-                <input type='file' onChange={(e) => this.handleChange(e)}/>
-                <button className='dashboard-button nav-button' onClick={() => this.handleUpload()}>
-                    Upload
-                </button>
-                {this.state.url ? <img src={this.state.url} alt='Uploaded images'></img> : null}
-            </div>
-        )
-    }
+    return (
+        <>
+            <label onChange={onSelectFile}  className=" body-tools-button custom-file-upload">
+                    <input type='file' />
+                    <i className="fas fa-upload icon-margin"></i> Add Main Image
+            </label>
+            {/* <label>
+             <input type='file' onChange={onSelectFile} />
+                <spa>hello</spa>
+            </label> */}
+            {/* {props.imagePreview ? <img className='main-image-preview' src={props.imagePreview} /> : null} */}
+        </>
+    )
 }
+
+export default connect(mapStateToProps)(ImageUpload)

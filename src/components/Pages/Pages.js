@@ -15,19 +15,38 @@ const mapStateToProps = state => ({
     success: state.page.success,
     authToken: state.loginReducer.authToken,
     stack: state.page.stack,
+    imagePreview: state.page.imagePreview
 })
 
 function Pages(props){
         let {title, authToken, body, stack} = props
         // console.log('insisde the page props', title, authToken, body)
         // this will be a seperate component 
-        let stackHistory = props.stack.map((element, i) => (
-            <ParagraphHistory
-                key={'stack ' + i}
-                stackId={i}
-                paragraph={element.paragraph}
-            />
-        ))
+        let stackHistory = props.stack.map((element, i) => {
+            
+            if(props.imagePreview && element.name){
+                return (<div key={'stack ' + i} className='image-history main-color card-hover'>
+                    <img
+                        className='stack-history-image'
+                        src={props.imagePreview}
+                        alt={element.name}/>
+                </div>)
+                
+            } else if(element.paragraph){
+                return (    
+                    <ParagraphHistory
+                        key={'stack ' + i}
+                        stackId={i}
+                        paragraph={element.paragraph}/>)
+            }else {
+                return (<div key={'stack ' + i} className='image-history'>
+                    <img
+                        // src={}
+                        alt={element.name}/>
+                </div>)
+            }
+            
+        })
         return (
             <div className='dashboard-container'>
                 <Banner title='Create A New Blog!' />
@@ -52,7 +71,7 @@ function Pages(props){
                             <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken))}>
                                 Create Page 
                             </button>
-                            {/* <ImageUpload /> */}
+                            
                     </div>
                     <div className='page-body page-settings '>
                             {stackHistory}

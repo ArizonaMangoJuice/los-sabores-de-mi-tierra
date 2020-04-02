@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE, ADD_MAIN_IMAGE_PREVIEW} from "../actions"
 
 let initialState = {
     title: '',
@@ -6,7 +6,8 @@ let initialState = {
     linkName: '',
     errror: undefined,
     success: undefined,
-    stack: []
+    stack: [],
+    imagePreview: ''
 }
 
 const page = (state = initialState, action) => {
@@ -129,6 +130,12 @@ const page = (state = initialState, action) => {
                 ...state,
                 stack: array
             }
+        case ADD_MAIN_IMAGE_PREVIEW: 
+            return {
+                ...state,
+                imagePreview: action.preview
+            }
+
         default: 
             return state
     }

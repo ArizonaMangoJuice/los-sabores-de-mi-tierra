@@ -2,6 +2,7 @@ import React from 'react'
 import './PageBody.css'
 import { connect } from 'react-redux'
 import {changeBody, newParagraph, addMainImage} from '../../actions'
+import ImageUpload from '../ImageUpload/ImageUpload'
 
 const mapStateToProps = state => {
     return {
@@ -17,14 +18,15 @@ function PageBody(props){
                 <button onClick={() => props.dispatch(newParagraph(props.body, props.stackCount))} className='body-tools-button main-color'>
                     New Paragraph
                 </button>
-                <label onChange={(e) => e.target.files[0] 
+                {/* <label onChange={(e) => e.target.files[0] 
                                         ? props.dispatch(addMainImage(e.target.files[0])) 
                                         : null
                                 } 
                         className=" body-tools-button custom-file-upload">
                     <input type="file"/>
                     <i className="fas fa-upload icon-margin"></i> Add Main Image
-                </label>
+                </label> */}
+                <ImageUpload />
                 {/* <button className='body-tools-button main-color'>
                     
                 </button> */}
