@@ -103,27 +103,24 @@ const page = (state = initialState, action) => {
         }
         case ADD_MAIN_IMAGE: 
             let {image} = action 
-
-            let {name, lastModified, lastModifiedDate, webkitRelativePath, size, type} = image
             let array = []
-            let count = 0
-            let imageObj = {
-                name,
-                lastModified,
-                lastModifiedDate,
-                webkitRelativePath,
-                size,
-                type,
-                stackId: count
-            }
-            
-            console.log(image)
-            array = [image, ...state.stack];
-            console.log('spreaded array', array.length)
-            count++
 
-            for( let i = 0; i < array.length; i++){
-                array[i].stackId = i
+            for( let i = 0; i < 1 ; i++){
+                if(i === 0) {
+                    array.push(image)
+                    array[i].mainImage = true
+                    array[i].stackId = i
+                    console.log('inside the first if === 0',array)
+                }
+            }
+
+            for(let i = 0; i < state.stack.length; i++){
+                if(state.stack[i] && state.stack[i].mainImage){
+                } else {
+                    array.push(state.stack[i])
+                    array[i].stackId = i
+                }
+                
             }
             
             return {
