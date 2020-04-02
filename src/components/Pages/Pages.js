@@ -32,7 +32,7 @@ function Pages(props){
                         alt={element.name}/>
                 </div>)
                 
-            } else if(element.paragraph){
+            } else if(element.paragraph || element.paragraph === ''){
                 return (    
                     <ParagraphHistory
                         key={'stack ' + i}
