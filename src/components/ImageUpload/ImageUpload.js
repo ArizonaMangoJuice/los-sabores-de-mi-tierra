@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {storage} from '../../firebase'
 import './ImageUpload.css'
 import {connect} from 'react-redux'
-import { addMainImagePreview, addMainImage } from '../../actions'
+import { addMainImagePreview, addMainImage, addImage } from '../../actions'
 
 const mapStateToProps = state => ({
     // imagePreview: state.page.imagePreview
@@ -21,15 +21,22 @@ export const ImageUpload = (props) => {
         }
 
         // I've kept this example simple by using the first image instead of multiple
-        props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
-        props.dispatch(addMainImage(e.target.files[0]))
+        if(props && props.mainImage){
+            props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
+            props.dispatch(addMainImage(e.target.files[0]))
+        } else {
+            let file = e.target.files[0];
+            let link = URL.createObjectURL(file)
+            
+            props.dispatch(addImage(file, link))
+        }
     }
 
     return (
         <>
             <label onChange={onSelectFile}  className=" body-tools-button custom-file-upload">
                     <input type='file' />
-                    <i className="fas fa-upload icon-margin"></i> Add Main Image
+                    <i className="fas fa-upload icon-margin"></i> {props.name ? props.name : 'Add Main Image'}
             </label>
             {/* <label>
              <input type='file' onChange={onSelectFile} />

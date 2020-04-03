@@ -24,7 +24,7 @@ function Pages(props){
         // this will be a seperate component 
         let stackHistory = props.stack.map((element, i) => {
             
-            if(props.imagePreview && element.name){
+            if(props.imagePreview && element.name && element.stackId === 0){
                 return (<div key={'stack ' + i} className='image-history main-color card-hover'>
                     <img
                         className='stack-history-image'
@@ -41,7 +41,7 @@ function Pages(props){
             }else {
                 return (<div key={'stack ' + i} className='image-history'>
                     <img
-                        // src={}
+                        src={element.link}
                         alt={element.name}/>
                 </div>)
             }

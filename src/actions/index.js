@@ -14,10 +14,30 @@ export const CHANGE_PARAGRAPH = 'CHANGE_PARAGRAPH'
 export const DELETE_PARAGRAPH = 'DELETE_PARAGRAPH'
 export const ADD_MAIN_IMAGE = 'ADD_MAIN_IMAGE'
 export const ADD_MAIN_IMAGE_PREVIEW = 'ADD_MAIN_IMAGE_PREVIEW'
+export const ADD_IMAGE = 'ADD_IMAGE'
+export const ADD_IMAGE_PREVIEW = 'ADD_IMAGE_PREVIEW'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+
+export function addImage(image, link){
+    return {
+        type: ADD_IMAGE,
+        data: 
+        {
+            image,
+            link
+        }
+    }
+}
+
+export function addImagePreview(preview){
+    return {
+        type: ADD_IMAGE_PREVIEW,
+        preview
+    }
+}
 
 export function addMainImage(image){
     return {

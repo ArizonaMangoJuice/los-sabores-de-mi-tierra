@@ -1,4 +1,4 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE, ADD_MAIN_IMAGE_PREVIEW} from "../actions"
+import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE, ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage} from "../actions"
 
 let initialState = {
     title: '',
@@ -7,6 +7,7 @@ let initialState = {
     errror: undefined,
     success: undefined,
     stack: [],
+    imagePreviews: [],
     imagePreview: ''
 }
 
@@ -132,7 +133,23 @@ const page = (state = initialState, action) => {
                 ...state,
                 imagePreview: action.preview
             }
+        case ADD_IMAGE: 
+            let addedImage = action.data.image
+            addedImage.link = action.data.link
+            state.stack = [...state.stack, addedImage]
+            let imageArr = []
 
+            for(let i = 0; i < state.stack.length; i++){
+                let newId = state.stack[i]
+                newId.stackId = i
+                imageArr.push(newId) 
+            }
+
+            
+            return{
+                ...state,
+                stack: imageArr
+            }
         default: 
             return state
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './PageBody.css'
 import { connect } from 'react-redux'
-import {changeBody, newParagraph, addMainImage} from '../../actions'
+import {changeBody, newParagraph, addMainImage, addImage} from '../../actions'
 import ImageUpload from '../ImageUpload/ImageUpload'
 
 const mapStateToProps = state => {
@@ -26,13 +26,11 @@ function PageBody(props){
                     <input type="file"/>
                     <i className="fas fa-upload icon-margin"></i> Add Main Image
                 </label> */}
-                <ImageUpload />
+                <ImageUpload mainImage={true}/>
                 {/* <button className='body-tools-button main-color'>
                     
                 </button> */}
-                <button className='body-tools-button main-color'>
-                    button
-                </button>
+                <ImageUpload mainImage={false} name={'Add Image'} />
             </nav>
             <textarea 
                 onChange={(e) => props.dispatch(changeBody(e.target.value))} 
