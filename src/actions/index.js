@@ -93,7 +93,7 @@ export function clearPage(){
         type: CLEAR_PAGE
     }
 }
-
+// have to make this be able to upload multiple images and return array of links in order
     function uploadImage(image) {
         return new Promise ((resolve, reject) => {
             let err
@@ -134,13 +134,15 @@ export function submitPage(title, body, authToken, stack) {
         // console.log('imageLinks', imageLinks)
         uploadImage(images[0])
         .then(result => {
+            let pictures = [result];
             console.log('image', result)
             dispatch(clearPage())
             title = title.trim()
             Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
                 title,
                 body,
-                linkName
+                linkName,
+                pictures
             },{
                 headers: { Authorization: `Bearer ${authToken}` }
             })
