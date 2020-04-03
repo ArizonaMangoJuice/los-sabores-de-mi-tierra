@@ -19,7 +19,7 @@ function Landing(props) {
         }
     })
     let pages = props.pages.map(e => (
-        <Link to={`/blogPages/${e.title}`}  className='card border-dev relative' style={e.pictures.length !== 0 ? {backgroundImage: `url(${e.pictures})`} : {backgroundImage: `url(https://s3.envato.com/files/255408675/MON1161054.jpg)`}} key={e._id}>
+        <Link to={`/blogPages/${e.title}`}  className='card border-dev relative' style={e.pictures.length !== 0 ? {backgroundImage: `url(${e.pictures})`} : {backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media)`}} key={e._id}>
             <div className='words-container'>
                 <p className='landing-page-title'>{e.title}</p>
                 <p className='body-snippet'>{e.body[0].paragraph}</p>
