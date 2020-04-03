@@ -12,10 +12,18 @@
 
 .blog-main-image{
     margin-bottom: 15px;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .blog-main-image img{
-    width: 100%;
+    /* width: 100%; */
+    height: 250px;
+
 }
 
 .blog-title{

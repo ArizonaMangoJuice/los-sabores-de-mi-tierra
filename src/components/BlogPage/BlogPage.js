@@ -41,7 +41,7 @@ function BlogPage(props){
                         <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
                 </header>
                 
-                <BlogPageMainImage src='https://arizonamangojuice.github.io/portfolio/img/lolImprover.png' />
+                {blog && blog.pictures ? <BlogPageMainImage src={blog.pictures[0]} /> : null}
 
                 {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 
