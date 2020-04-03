@@ -13,16 +13,16 @@ let initialState = {
 
 const page = (state = initialState, action) => {
     switch(action.type){
-        case CHANGE_TITLE:
+        case CHANGE_TITLE:{
             return {
                 ...state,
                 title: action.title
-            }
-        case CHANGE_BODY:
+            }}
+        case CHANGE_BODY:{
             return {
                 ...state,
                 body: action.body
-            }
+            }}
         case PAGE_ERROR: {
             return {
                 ...state,
@@ -102,38 +102,26 @@ const page = (state = initialState, action) => {
                 stack: array
             }
         }
-        case ADD_MAIN_IMAGE: 
-            let {image} = action 
-            let array = []
-
-            for( let i = 0; i < 1 ; i++){
-                if(i === 0) {
-                    array.push(image)
-                    array[i].mainImage = true
-                    array[i].stackId = i
-                    console.log('inside the first if === 0',array)
-                }
-            }
-
-            for(let i = 0; i < state.stack.length; i++){
-                if(state.stack[i] && state.stack[i].mainImage){
-                } else {
-                    array.push(state.stack[i])
-                    array[i].stackId = i
-                }
-                
-            }
+        case ADD_MAIN_IMAGE: {
+            let image = action.image
             
+            let mainImageArray = [image, ...state.stack]
+
+            let imageResult = mainImageArray.map((e, i) => {
+                e.stackId = i;
+                return e
+            })
+
             return {
                 ...state,
-                stack: array
-            }
-        case ADD_MAIN_IMAGE_PREVIEW: 
+                stack: imageResult
+            }}
+        case ADD_MAIN_IMAGE_PREVIEW: {
             return {
                 ...state,
                 imagePreview: action.preview
-            }
-        case ADD_IMAGE: 
+            }}
+        case ADD_IMAGE:{ 
             let addedImage = action.data.image
             addedImage.link = action.data.link
             state.stack = [...state.stack, addedImage]
@@ -149,7 +137,7 @@ const page = (state = initialState, action) => {
             return{
                 ...state,
                 stack: imageArr
-            }
+            }}
         default: 
             return state
     }

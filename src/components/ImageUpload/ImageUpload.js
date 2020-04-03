@@ -22,12 +22,12 @@ export const ImageUpload = (props) => {
 
         // I've kept this example simple by using the first image instead of multiple
         if(props && props.mainImage){
-            props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
             props.dispatch(addMainImage(e.target.files[0]))
+            props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
         } else {
             let file = e.target.files[0];
             let link = URL.createObjectURL(file)
-            
+
             props.dispatch(addImage(file, link))
         }
     }
