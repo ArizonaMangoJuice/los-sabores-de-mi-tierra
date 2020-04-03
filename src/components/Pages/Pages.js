@@ -68,7 +68,7 @@ function Pages(props){
                 <div className='main-page '>
                     <PageBody />
                     <div className='page-body page-settings main-color'>
-                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken))}>
+                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken, props.stack))}>
                                 Create Page 
                             </button>
                             

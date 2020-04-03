@@ -1,6 +1,8 @@
 import Axios from "axios"
 import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
+import {storage} from '../firebase'
+import { ImageUpload } from "../components/ImageUpload/ImageUpload"
 
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
@@ -92,26 +94,67 @@ export function clearPage(){
     }
 }
 
-export function submitPage(title, body, authToken) {
+    function uploadImage(image) {
+        return new Promise ((resolve, reject) => {
+            let err
+            let uploadTask = storage.ref(`images/${image.name}`).put(image)
+                uploadTask.on('state_changed', (snapshot) => {
+                    // progress function 
+                    console.log(Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100))
+                    
+                }, (error) => {
+                    // error function
+                    console.log(error) 
+                    err = error
+                }, (complete) => {
+                    // complete function
+                    storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                        // console.log(url.split('&').shift())
+                        let imageStub = url.split('&').shift()
+                        if(err){
+                            reject()
+                        } else {
+                            resolve(imageStub)
+                            // return imageStub
+                        }
+                    })
+                })
+        })
+    }
+
+
+export function submitPage(title, body, authToken, stack) {
     let linkName = title;
+    let images = []
+
+    stack.forEach(e => e && e.name ? images.push(e) : null)
+
     return (dispatch) => {
-        dispatch(clearPage())
-        title = title.trim()
-        Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
-            title,
-            body,
-            linkName
-        },{
-            headers: { Authorization: `Bearer ${authToken}` }
+        
+        // console.log('imageLinks', imageLinks)
+        uploadImage(images[0])
+        .then(result => {
+            console.log('image', result)
+            dispatch(clearPage())
+            title = title.trim()
+            Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
+                title,
+                body,
+                linkName
+            },{
+                headers: { Authorization: `Bearer ${authToken}` }
+            })
+            .then(response => {
+                console.log('response', response)
+                dispatch(pageSuccess())
+            })
+            .catch(error => {
+                let title = error.response.data.message
+                return dispatch(pageError(title))
+            })
         })
-        .then(response => {
-            console.log('response', response)
-            dispatch(pageSuccess())
-        })
-        .catch(error => {
-            let title = error.response.data.message
-            return dispatch(pageError(title))
-        })
+        .catch(e => console.log(e))
+        
     }
 }
 
