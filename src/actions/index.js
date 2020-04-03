@@ -191,7 +191,7 @@ export function fetchPages(){
 export function fetchPage(title){
     return (dispatch) => {
         dispatch(fetchLoading())
-        Axios.get(`${REACT_APP_SERVER_URL}/api/page/${title}`)
+        return Axios.get(`${REACT_APP_SERVER_URL}/api/page/${title}`)
             .then(response => {
                 dispatch(addBlogTitle(response.data[0].title))
                 dispatch(fetchCompleted())

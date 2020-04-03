@@ -30,7 +30,9 @@ function Landing(props) {
     return (
     <div className='full-page main-color'>
         <header className='header-container'>
-                <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+                <Link to='/'>
+                    <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+                </Link>
         </header>
         <div className='recent-container'>
             <div className='recent-posts'>
