@@ -142,18 +142,28 @@ export function clearPage(){
         })
     }
 
+// returns an array of the promises it completed
+function processArray(arr, fn) {
+        return arr.reduce(
+            (p, v) => p.then((a) => fn(v).then(r => a.concat([r]))),
+            Promise.resolve([])
+        );
+}
 
 export function submitPage(title, body, authToken, stack) {
     let linkName = title;
     let images = []
 
     stack.forEach(e => e && e.name ? images.push(e) : null)
+    // console.log('///////////')
+    // processArray(images, uploadImage).then(console.log)
 
     return (dispatch) => {
         
         // console.log('imageLinks', imageLinks)
-        uploadImage(images[0])
+        processArray(images, uploadImage)
         .then(result => {
+            console.log('test', result)
             let pictures = [result];
             console.log('image', result)
             dispatch(clearPage())
