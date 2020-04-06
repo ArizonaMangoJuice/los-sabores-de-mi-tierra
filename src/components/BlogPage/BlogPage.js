@@ -45,7 +45,7 @@ function BlogPage(props){
     
     if(blog.body !== undefined){
         blogPage = blog.body.map((stack, i) => (
-           stack.link ? <BlogPageImage src={stack.link} /> :<BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
+           stack.link && stack.stackId !== 0 ? <BlogPageImage src={stack.link} /> :<BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
         ))
     }
 
