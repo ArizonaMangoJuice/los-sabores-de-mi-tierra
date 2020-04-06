@@ -31,7 +31,7 @@
 .blog-image img{
     height: 390px;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .blog-title{
