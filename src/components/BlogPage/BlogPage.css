@@ -28,6 +28,12 @@
 
 }
 
+.blog-image img{
+    height: 390px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .blog-title{
     text-align: center;
 }
@@ -43,7 +49,7 @@
 }
 
 .blog-image{
-    width: 50%;
+    width: 80%;
     text-align: center;
     margin: 15px auto;
 }

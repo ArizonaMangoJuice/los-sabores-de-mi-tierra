@@ -27,15 +27,28 @@ function BlogPage(props){
         if(count)count++
     }, [])
 
+    if(blog && blog.body && (blog.body.length !== 0)){
+        for(let i = 0; i < blog.body.length; i++){
+
+            let blogBodyId = blog.body[i].stackId
+            
+            for(let k = 0; k < blog.pictures[0].length; k++){
+
+                if(blogBodyId == blog.pictures[0][k].stackId){
+                    blog.body[i].link = blog.pictures[0][k].link
+                }
+            }
+        }
+        console.log(blog.body)
+    }
+    
     
     if(blog.body !== undefined){
-        blogPage = blog.body.map((e, i) => (
-           <BlogPageParagraph key={'paragraph ' + i} paragraph={e.paragraph} />
+        blogPage = blog.body.map((stack, i) => (
+           stack.link ? <BlogPageImage src={stack.link} /> :<BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
         ))
     }
 
-
-    // console.log('this is the count', count)
     return (
         <div className='full-page blog-settings'>
             <div className='blog-width main-color card-hover'> 
