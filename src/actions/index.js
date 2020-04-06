@@ -153,8 +153,10 @@ function processArray(arr, fn) {
 export function submitPage(title, body, authToken, stack) {
     let linkName = title;
     let images = []
+    let imageIndex = []
 
     stack.forEach(e => e && e.name ? images.push(e) : null)
+    stack.forEach(e => e && e.name ? imageIndex.push(e.stackId) : null)
     // console.log('///////////')
     // processArray(images, uploadImage).then(console.log)
 
@@ -164,8 +166,9 @@ export function submitPage(title, body, authToken, stack) {
         processArray(images, uploadImage)
         .then(result => {
             console.log('test', result)
-            let pictures = [result];
-            console.log('image', result)
+            let finalArray = result.map((e, i) => ({link: e, stackId: imageIndex[i]}))
+            let pictures = [finalArray];
+            console.log('image', pictures)
             dispatch(clearPage())
             title = title.trim()
             Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {

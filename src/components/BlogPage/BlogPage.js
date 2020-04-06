@@ -14,7 +14,6 @@ const mapStateToProps = state => ({
     loading: state.blogPage.loading,
     completed: state.blogPage.completed,
     blog: state.blogPage.blog,
-    mainImage: state.blogPage.pictures
 })
 
 function BlogPage(props){
@@ -36,7 +35,7 @@ function BlogPage(props){
     }
 
 
-    console.log('this is the count', count)
+    // console.log('this is the count', count)
     return (
         <div className='full-page blog-settings'>
             <div className='blog-width main-color card-hover'> 
@@ -46,7 +45,7 @@ function BlogPage(props){
                     </Link>
                 </header>
                 
-                {blog && (blog.pictures && blog.pictures[0])  ? <BlogPageMainImage src={blog.pictures[0][0]} /> : null}
+                {blog.pictures && (typeof blog.pictures[0][0].link === "string")  ? <BlogPageMainImage src={blog.pictures[0][0].link} /> : null}
 
                 {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 
