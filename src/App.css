@@ -24,6 +24,10 @@ h1{
   min-height: 100vh;
 }
 
+.center-image-position{
+  background-position: center;
+}
+
 /* web colors text */
 .tomato{
   color:#e6463c;

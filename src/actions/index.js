@@ -68,7 +68,7 @@ export function changeBody(body){
 }
 
 export function newParagraph(paragraph, stackId){
-    console.log(stackId)
+    // console.log(stackId)
    return {
        type: NEW_PARAGRAPH,
        pData: {
@@ -165,10 +165,10 @@ export function submitPage(title, body, authToken, stack) {
         // console.log('imageLinks', imageLinks)
         processArray(images, uploadImage)
         .then(result => {
-            console.log('test', result)
+            // console.log('test', result)
             let finalArray = result.map((e, i) => ({link: e, stackId: imageIndex[i]}))
             let pictures = [finalArray];
-            console.log('image', pictures)
+            // console.log('image', pictures)
             dispatch(clearPage())
             title = title.trim()
             Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
@@ -211,7 +211,7 @@ export function fetchPages(){
         Axios.get(`${REACT_APP_SERVER_URL}/api/page`)
             .then(response => {
                 dispatch(addPages(response.data))
-                console.log(response.data)
+                // console.log(response.data)
                 return
             })
             .catch(error => {
@@ -229,7 +229,7 @@ export function fetchPage(title){
                 dispatch(addBlogTitle(response.data[0].title))
                 dispatch(fetchCompleted())
                 dispatch(addBlog(response.data[0]))
-                console.log(response)
+                // console.log(response)
                 return
             })
             .catch(error => {
@@ -320,7 +320,7 @@ export const login = (username, password) => dispatch => {
         })
         .then(response => {
             let authToken = response.data.authToken;
-            console.log('this is the response',response);
+            // console.log('this is the response',response);
             storeAuthInfo(authToken, dispatch)
             return
         })
@@ -333,7 +333,7 @@ export const login = (username, password) => dispatch => {
             // }else{
             //     message = 'Unable to login, please try again later';
             // }
-            console.log('this is the erro',err)
+            // console.log('this is the erro',err)
             return 
         })
     )

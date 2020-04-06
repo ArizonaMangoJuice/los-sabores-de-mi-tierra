@@ -11,23 +11,25 @@ const mapStateToProps = state => {
     }
 }
 
+// make a conditional checking if their is an auth token so it can login
+
 function Landing(props) {
     useEffect(()=> {
         if (props.pages.length === 0) {
             props.dispatch(fetchPages())
-            props.dispatch(login())
+            // props.dispatch(login())
         }
     })
 
-    let pages = props.pages.map(page => (
+    let pages = props.pages.map((page, i) => (
         <Link to={`/blogPages/${page.title}`} 
-          className='card border-dev relative' 
+          className={i === 0 ? 'newest-card center-image-position relative' :'card relative'} 
           style={typeof page.pictures[0][0].link === "string"
           ? {backgroundImage: `url(${page.pictures[0][0].link})`} 
           : {backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media)`}} key={page._id}>
-            <div className='words-container'>
-                <p className='landing-page-title'>{page.title}</p>
-                <p className='body-snippet'>{page.body[0].paragraph}</p>
+            <div className={i === 0 ? 'newest-page-container card-hover' : 'words-container card-hover'}>
+                <p className={i === 0 ? 'newest-landing-page-title' :'landing-page-title'}>{page.title}</p>
+                <p className={i === 0 ? 'newest-body-snippet' :'body-snippet'}>{page.body[1].paragraph}</p>
             </div>
         </Link>
     ))
