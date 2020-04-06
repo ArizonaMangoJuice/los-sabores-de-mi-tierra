@@ -46,7 +46,7 @@ function BlogPage(props){
                     </Link>
                 </header>
                 
-                {blog && (blog.pictures && blog.pictures[0])  ? <BlogPageMainImage src={blog.pictures[0]} /> : null}
+                {blog && (blog.pictures && blog.pictures[0])  ? <BlogPageMainImage src={blog.pictures[0][0]} /> : null}
 
                 {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 
