@@ -4,7 +4,7 @@ import {changeParagraph, deleteParagraph} from '../../actions'
 
 function ParagraphHistory(props){
     return (
-        <div className='main-color' >
+        <div className='main-color paragraph-history card-hover' >
             <div className='body-tools-nav'>
                 <button
                     className='body-tools-button main-color' 

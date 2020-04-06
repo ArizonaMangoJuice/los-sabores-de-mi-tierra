@@ -39,8 +39,9 @@ function Pages(props){
                         stackId={i}
                         paragraph={element.paragraph}/>)
             }else {
-                return (<div key={'stack ' + i} className='image-history'>
+                return (<div key={'stack ' + i} className='image-history main-color'>
                     <img
+                        className='stack-history-image '
                         src={element.link}
                         alt={element.name}/>
                 </div>)
