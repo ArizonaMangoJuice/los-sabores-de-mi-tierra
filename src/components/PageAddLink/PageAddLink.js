@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
 import './PageAddLink.css'
 import {connect} from 'react-redux'
-import { addLinkName, addLink, addLinkStack, clearLink, clearLinkName } from '../../actions'
+import { addLinkName, addLink, addLinkStack, clearLink, clearLinkName, addLinkNameToBody } from '../../actions'
 
 const mapStateToProps = state => ({
     body: state.page.body,
     linkName: state.page.linkName,
-    hyperLink: state.page.hyperLink
+    hyperLink: state.page.hyperLink,
+    stack: state.page.stack
 })
 
 function PageAddLink(props){
     const [linkClicked, setLinkClicked] = useState(false)
-    
+    let paragraphCount = props.stack.length
+
     return (
         <div className='link-container relative'>
             <button onClick={() => setLinkClicked(!linkClicked)} className='body-tools-button main-color'>
@@ -29,8 +31,12 @@ function PageAddLink(props){
                 </label>
 
                 <button onClick={() => props.linkName !== '' && props.hyperLink !== '' 
-                                        ? props.dispatch(addLinkStack(props.linkName, props.hyperLink)) && props.dispatch(clearLink()) && props.dispatch(clearLinkName())
-                                        : null}  
+                                ? props.dispatch(addLinkStack(props.linkName, props.hyperLink, paragraphCount)) && 
+                                    props.dispatch(clearLink()) && 
+                                    props.dispatch(clearLinkName()) && 
+                                    props.dispatch(addLinkNameToBody(props.linkName)) &&                                     
+                                    setLinkClicked(!linkClicked)
+                                : null}  
                         className='body-tools-button main-color add-link-button'>
                     Add
                 </button>

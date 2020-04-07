@@ -7,7 +7,7 @@ import { CHANGE_TITLE,
         CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK } from "../actions"
+        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK, ADD_LINK_NAME_TO_BODY } from "../actions"
 
 let initialState = {
     title: '',
@@ -182,6 +182,12 @@ const page = (state = initialState, action) => {
             return {
                 ...state,
                 linkName: ''
+            }
+        }
+        case ADD_LINK_NAME_TO_BODY: {
+            return {
+                ...state,
+                body: state.body += ' [' + action.name  +'] '
             }
         }
         default: 

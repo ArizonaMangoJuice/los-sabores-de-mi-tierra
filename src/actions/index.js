@@ -21,10 +21,18 @@ export const ADD_LINK = 'ADD_LINK'
 export const ADD_LINK_STACK = 'ADD_LINK_STACK'
 export const CLEAR_LINKNAME = 'CLEAR_LINKNAME'
 export const CLEAR_LINK = 'CLEAR_LINK'
+export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+export function addLinkNameToBody(name){
+    return {
+        type: ADD_LINK_NAME_TO_BODY,
+        name
+    }
+}
+
 export function clearLink(){
     return {
         type: CLEAR_LINK
@@ -37,12 +45,13 @@ export function clearLinkName(){
     }
 }
 
-export function addLinkStack(name,link){
+export function addLinkStack(name,link,count){
     return {
         type: ADD_LINK_STACK,
         data: {
             name, 
-            link
+            link,
+            count
         }
     }
 }
