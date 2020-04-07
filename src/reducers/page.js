@@ -187,7 +187,7 @@ const page = (state = initialState, action) => {
         case ADD_LINK_NAME_TO_BODY: {
             return {
                 ...state,
-                body: state.body += ' [' + action.name  +'] '
+                body: state.body += ' [' + action.data.name  +', ' + action.data.paragraphNumber + '] '
             }
         }
         default: 

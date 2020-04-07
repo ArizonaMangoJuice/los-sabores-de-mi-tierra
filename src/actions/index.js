@@ -26,10 +26,13 @@ export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
-export function addLinkNameToBody(name){
+export function addLinkNameToBody(name, paragraphNumber){
     return {
         type: ADD_LINK_NAME_TO_BODY,
-        name
+        data: {
+            name,
+            paragraphNumber
+        }
     }
 }
 

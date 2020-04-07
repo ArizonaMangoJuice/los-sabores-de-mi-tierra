@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 function PageAddLink(props){
     const [linkClicked, setLinkClicked] = useState(false)
     let paragraphCount = props.stack.length
+    console.log(paragraphCount)
 
     return (
         <div className='link-container relative'>
@@ -34,7 +35,7 @@ function PageAddLink(props){
                                 ? props.dispatch(addLinkStack(props.linkName, props.hyperLink, paragraphCount)) && 
                                     props.dispatch(clearLink()) && 
                                     props.dispatch(clearLinkName()) && 
-                                    props.dispatch(addLinkNameToBody(props.linkName)) &&                                     
+                                    props.dispatch(addLinkNameToBody(props.linkName, paragraphCount)) &&                                     
                                     setLinkClicked(!linkClicked)
                                 : null}  
                         className='body-tools-button main-color add-link-button'>
