@@ -19,10 +19,24 @@ export const ADD_IMAGE_PREVIEW = 'ADD_IMAGE_PREVIEW'
 export const ADD_LINK_NAME = 'ADD_LINK_NAME'
 export const ADD_LINK = 'ADD_LINK'
 export const ADD_LINK_STACK = 'ADD_LINK_STACK'
+export const CLEAR_LINKNAME = 'CLEAR_LINKNAME'
+export const CLEAR_LINK = 'CLEAR_LINK'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+export function clearLink(){
+    return {
+        type: CLEAR_LINK
+    }
+}
+
+export function clearLinkName(){
+    return {
+        type: CLEAR_LINKNAME
+    }
+}
+
 export function addLinkStack(name,link){
     return {
         type: ADD_LINK_STACK,

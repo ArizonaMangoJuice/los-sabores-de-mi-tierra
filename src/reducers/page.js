@@ -7,7 +7,7 @@ import { CHANGE_TITLE,
         CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK } from "../actions"
+        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK } from "../actions"
 
 let initialState = {
     title: '',
@@ -170,6 +170,18 @@ const page = (state = initialState, action) => {
                     ...state.linkStack,
                         action.data
                 ]
+            }
+        }
+        case CLEAR_LINKNAME: {
+            return {
+                ...state,
+                hyperLink: ''
+            }
+        }
+        case CLEAR_LINK: {
+            return {
+                ...state,
+                linkName: ''
             }
         }
         default: 

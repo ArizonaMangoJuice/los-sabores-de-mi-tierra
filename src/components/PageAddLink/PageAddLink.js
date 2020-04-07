@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './PageAddLink.css'
 import {connect} from 'react-redux'
-import { addLinkName, addLink, addLinkStack } from '../../actions'
+import { addLinkName, addLink, addLinkStack, clearLink, clearLinkName } from '../../actions'
 
 const mapStateToProps = state => ({
     body: state.page.body,
@@ -28,7 +28,10 @@ function PageAddLink(props){
                     <input onChange={(e) => props.dispatch(addLink(e.target.value))} value={props.hyperLink} type='text' />
                 </label>
 
-                <button onClick={() => props.linkName !== '' && props.hyperLink !== '' ? props.dispatch(addLinkStack(props.linkName, props.hyperLink)) : null}  className='body-tools-button main-color add-link-button'>
+                <button onClick={() => props.linkName !== '' && props.hyperLink !== '' 
+                                        ? props.dispatch(addLinkStack(props.linkName, props.hyperLink)) && props.dispatch(clearLink()) && props.dispatch(clearLinkName())
+                                        : null}  
+                        className='body-tools-button main-color add-link-button'>
                     Add
                 </button>
             </div>
