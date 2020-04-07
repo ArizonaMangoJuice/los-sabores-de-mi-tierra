@@ -1,4 +1,13 @@
-import { CHANGE_TITLE, CHANGE_BODY, PAGE_ERROR, PAGE_SUCCESS, CLEAR_PAGE, NEW_PARAGRAPH, CHANGE_PARAGRAPH, DELETE_PARAGRAPH, ADD_MAIN_IMAGE, ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage} from "../actions"
+import { CHANGE_TITLE, 
+        CHANGE_BODY, 
+        PAGE_ERROR, 
+        PAGE_SUCCESS, 
+        CLEAR_PAGE, 
+        NEW_PARAGRAPH,
+        CHANGE_PARAGRAPH, 
+        DELETE_PARAGRAPH, 
+        ADD_MAIN_IMAGE, 
+        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME } from "../actions"
 
 let initialState = {
     title: '',
@@ -8,7 +17,10 @@ let initialState = {
     success: undefined,
     stack: [],
     imagePreviews: [],
-    imagePreview: ''
+    imagePreview: '',
+    linkStack: [],
+    linkName: '',
+    hyperLink: ''
 }
 
 const page = (state = initialState, action) => {
@@ -116,11 +128,13 @@ const page = (state = initialState, action) => {
                 ...state,
                 stack: imageResult
             }}
+
         case ADD_MAIN_IMAGE_PREVIEW: {
             return {
                 ...state,
                 imagePreview: action.preview
             }}
+
         case ADD_IMAGE:{ 
             let addedImage = action.data.image
             addedImage.link = action.data.link
@@ -132,12 +146,23 @@ const page = (state = initialState, action) => {
                 newId.stackId = i
                 imageArr.push(newId) 
             }
-
-            
             return{
                 ...state,
                 stack: imageArr
             }}
+
+        case ADD_LINK_NAME: {
+            return {
+                ...state,
+                linkName: action.name
+            }
+        }
+        case ADD_LINK: {
+            return {
+                ...state,
+                hyperLink: action.name
+            }
+        }
         default: 
             return state
     }

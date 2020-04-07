@@ -1,0 +1,40 @@
+.link-container{
+    display: flex;    
+}
+
+.link-clicked{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    position: absolute;
+    bottom: -260px;
+    width: 350px;
+    left: 0;
+    box-shadow: 0 0 5px 1px rgba(109, 109, 109, 0.4); 
+    background-color: #6d6d6d;
+    border-radius: 5px;
+}
+
+.link-clicked-input{
+
+}
+
+.link-clicked-p{
+    color: white;
+    margin: 10px auto 15px auto;
+}
+
+.link-clicked-input input{
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    outline: #6d6d6d;
+    border-radius: 5px;
+}
+
+.add-link-button{
+    margin-top: 10px;
+    padding: 10px 25px;
+}

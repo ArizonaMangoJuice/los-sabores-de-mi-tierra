@@ -16,10 +16,27 @@ export const ADD_MAIN_IMAGE = 'ADD_MAIN_IMAGE'
 export const ADD_MAIN_IMAGE_PREVIEW = 'ADD_MAIN_IMAGE_PREVIEW'
 export const ADD_IMAGE = 'ADD_IMAGE'
 export const ADD_IMAGE_PREVIEW = 'ADD_IMAGE_PREVIEW'
+export const ADD_LINK_NAME = 'ADD_LINK_NAME'
+export const ADD_LINK = 'ADD_LINK'
+
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+export function addLink(name){
+    return {
+        type: ADD_LINK,
+        name
+    }
+}
+
+
+export function addLinkName(name){
+    return {
+        type: ADD_LINK_NAME,
+        name
+    }
+}
 
 export function addImage(image, link){
     return {
