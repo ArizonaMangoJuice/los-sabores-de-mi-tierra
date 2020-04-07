@@ -35,13 +35,13 @@ function Landing(props) {
     ))
 
     return (
-    <div className='full-page main-color'>
+    <div className='landing-page'>
         <header className='header-container'>
                 <Link to='/'>
-                    <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+                    <img className='image-logo card-hover' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
                 </Link>
         </header>
-        <div className='recent-container'>
+        <div className='recent-container '>
             <div className='recent-posts'>
                 {pages}
             </div> 

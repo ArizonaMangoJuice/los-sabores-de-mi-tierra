@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+.landing-page{
+      background: #6d6d6d;
+}
+
 .card{
   height: 350px;
   background-color: bisque;
@@ -35,7 +39,7 @@
   width: 200px;
   /* border: 2px solid #e6463c; */
   border-radius: 50%;
-  margin: auto  ;
+  margin: 0 auto 25px 0;
 }
 
 /* header css */
