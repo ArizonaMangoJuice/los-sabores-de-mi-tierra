@@ -3,6 +3,7 @@ import './PageBody.css'
 import { connect } from 'react-redux'
 import {changeBody, newParagraph, addMainImage, addImage} from '../../actions'
 import ImageUpload from '../ImageUpload/ImageUpload'
+import PageAddLink from '../PageAddLink/PageAddLink'
 
 const mapStateToProps = state => {
     return {
@@ -12,30 +13,14 @@ const mapStateToProps = state => {
 }
 
 function PageBody(props){
-    const [linkClicked, setLinkClicked] = useState(false)
-
     return (
         <div className='page-body card-hover main-color'>
             <nav className='body-tools-nav main-color relative'>
                 <button onClick={() => props.dispatch(newParagraph(props.body, props.stackCount))} className='body-tools-button main-color'>
                     New Paragraph
                 </button>
-                <div className='link-container relative'>
-                    <button onClick={() => setLinkClicked(!linkClicked)} className='body-tools-button main-color'>
-                        Add Link
-                    </button>
-                    <div className={linkClicked ? 'link-clicked' : 'hidden'}>
-                       <label className='link-clicked-input'>
-                            <p className='link-clicked-p'>Link Name</p>
-                            <input type='text' />
-                       </label>
-                       
-                       <label className='link-clicked-input'>
-                            <p className='link-clicked-p'>href</p>
-                            <input type='text' />
-                       </label>
-                    </div>
-                </div>
+                
+                <PageAddLink />
 
                 <ImageUpload mainImage={true}/>
                     

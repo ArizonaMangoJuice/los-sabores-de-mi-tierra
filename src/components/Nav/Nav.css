@@ -7,6 +7,7 @@
     flex-direction: column;
     background-color: #212121;
     overflow: hidden;
+    z-index: 99;
 }
 
 .dashboard-nav a {
