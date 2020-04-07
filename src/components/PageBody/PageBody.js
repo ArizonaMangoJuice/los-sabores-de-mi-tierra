@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './PageBody.css'
 import { connect } from 'react-redux'
 import {changeBody, newParagraph, addMainImage, addImage} from '../../actions'
@@ -12,24 +12,33 @@ const mapStateToProps = state => {
 }
 
 function PageBody(props){
+    const [linkClicked, setLinkClicked] = useState(false)
+
     return (
         <div className='page-body card-hover main-color'>
-            <nav className='body-tools-nav main-color'>
+            <nav className='body-tools-nav main-color relative'>
                 <button onClick={() => props.dispatch(newParagraph(props.body, props.stackCount))} className='body-tools-button main-color'>
                     New Paragraph
                 </button>
-                {/* <label onChange={(e) => e.target.files[0] 
-                                        ? props.dispatch(addMainImage(e.target.files[0])) 
-                                        : null
-                                } 
-                        className=" body-tools-button custom-file-upload">
-                    <input type="file"/>
-                    <i className="fas fa-upload icon-margin"></i> Add Main Image
-                </label> */}
+                <div className='link-container relative'>
+                    <button onClick={() => setLinkClicked(!linkClicked)} className='body-tools-button main-color'>
+                        Add Link
+                    </button>
+                    <div className={linkClicked ? 'link-clicked' : 'hidden'}>
+                       <label className='link-clicked-input'>
+                            <p className='link-clicked-p'>Link Name</p>
+                            <input type='text' />
+                       </label>
+                       
+                       <label className='link-clicked-input'>
+                            <p className='link-clicked-p'>href</p>
+                            <input type='text' />
+                       </label>
+                    </div>
+                </div>
+
                 <ImageUpload mainImage={true}/>
-                {/* <button className='body-tools-button main-color'>
                     
-                </button> */}
                 <ImageUpload mainImage={false} name={'Add Image'} />
             </nav>
             <textarea 
