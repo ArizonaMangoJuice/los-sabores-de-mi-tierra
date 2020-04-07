@@ -46,9 +46,9 @@ function Landing(props) {
                 {pages}
             </div> 
         </div>
-        <Link to='/dashboard'>Dashboard</Link>
-        <Link to='/login'>Login</Link>
-        <Link to='/blogPage'>BlogPage</Link>
+        {/* <Link to='/dashboard'>Dashboard</Link> */}
+        {/* <Link to='/login'>Login</Link> */}
+        {/* <Link to='/blogPage'>BlogPage</Link> */}
     </div>);
 }
 

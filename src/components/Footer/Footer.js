@@ -1,9 +1,13 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 export default function Footer(props){
     return (
         <footer className='main-color'>
-            <img src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
+            <Link to='/login'>
+                <img src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
+            </Link>
+            
             <div className='social-bar'>
                 
                 <a href='https://github.com/ArizonaMangoJuice'><i className="fab fa-github-square"></i></a>
