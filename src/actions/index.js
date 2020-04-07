@@ -18,11 +18,21 @@ export const ADD_IMAGE = 'ADD_IMAGE'
 export const ADD_IMAGE_PREVIEW = 'ADD_IMAGE_PREVIEW'
 export const ADD_LINK_NAME = 'ADD_LINK_NAME'
 export const ADD_LINK = 'ADD_LINK'
-
+export const ADD_LINK_STACK = 'ADD_LINK_STACK'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+export function addLinkStack(name,link){
+    return {
+        type: ADD_LINK_STACK,
+        data: {
+            name, 
+            link
+        }
+    }
+}
+
 export function addLink(name){
     return {
         type: ADD_LINK,

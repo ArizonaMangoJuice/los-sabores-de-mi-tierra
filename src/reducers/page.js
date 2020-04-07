@@ -7,7 +7,7 @@ import { CHANGE_TITLE,
         CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME } from "../actions"
+        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK } from "../actions"
 
 let initialState = {
     title: '',
@@ -161,6 +161,15 @@ const page = (state = initialState, action) => {
             return {
                 ...state,
                 hyperLink: action.name
+            }
+        }
+        case ADD_LINK_STACK: {
+            return {
+                ...state,
+                linkStack: [
+                    ...state.linkStack,
+                        action.data
+                ]
             }
         }
         default: 
