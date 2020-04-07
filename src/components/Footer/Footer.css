@@ -1,0 +1,48 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+footer p{
+    margin: 0;
+}
+
+.footer-logo{
+    height: 90px;
+    border-radius: 50%;
+}
+
+.social-bar{
+    display: flex;
+    flex-direction: row;
+}
+
+.social-bar a{
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    display: block;
+    margin: 0 5px 0 5px;
+}
+
+.social-bar a:hover:nth-child(2){
+    color:#0077b5;
+}
+
+.social-bar a:hover:nth-child(3){
+    color:#1da1f2;
+}
+
+.footer-p{
+    margin-top: 15px;
+    color: white;
+}
+
+.footer-p a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -7,6 +7,7 @@ import Pages from './components/Pages/Pages';
 import Login from './components/Login/Login';
 import { storage } from 'firebase';
 import BlogPage from './components/BlogPage/BlogPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path='/dashboard/pages' component={Pages} />
       <Route path='/login' component={Login}/>
       <Route path='/blogPages/:title' children={<BlogPage/>}/>
+      <Footer />
     </div>
   );
 }
