@@ -4,6 +4,7 @@ footer{
     justify-content: center;
     align-items: center;
     height: 40vh;
+    background-color: #212121;
 }
 
 footer p{
