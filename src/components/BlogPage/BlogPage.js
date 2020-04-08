@@ -26,8 +26,8 @@ function BlogPage(props){
         if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
         if(count)count++
     }, [])
-
-    if(blog && blog.body && (blog.body.length !== 0)){
+    // checks to see if there is a pictures arraty and checks to see if theyre is a body array
+    if((blog && blog.pictures && blog.pictures.length !== 0) && (blog && blog.body && blog.body.length !== 0)){
         for(let i = 0; i < blog.body.length; i++){
 
             let blogBodyId = blog.body[i].stackId
@@ -58,7 +58,7 @@ function BlogPage(props){
                     </Link>
                 </header>
                 
-                {blog.pictures && (typeof blog.pictures[0][0].link === "string")  ? <BlogPageMainImage src={blog.pictures[0][0].link} /> : null}
+                {blog.pictures && blog.pictures[0] && blog.pictures[0][0] && (typeof blog.pictures[0][0].link === "string")  ? <BlogPageMainImage src={blog.pictures[0][0].link} /> : null}
 
                 {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 

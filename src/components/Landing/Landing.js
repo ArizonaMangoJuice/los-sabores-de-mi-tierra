@@ -24,7 +24,7 @@ function Landing(props) {
     let pages = props.pages.map((page, i) => (
         <Link to={`/blogPages/${page.title}`} 
           className={i === 0 ? 'newest-card center-image-position card-hover relative' :'card card-hover relative'} 
-          style={typeof page.pictures[0][0].link === "string"
+          style={page.pictures && page.pictures[0] && page.pictures[0][0] && typeof page.pictures[0][0].link === "string"
           ? {backgroundImage: `url(${page.pictures[0][0].link})`} 
           : {backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media)`}} key={page._id}>
             <div className={i === 0 ? 'newest-page-container card-hover' : 'words-container card-hover'}>

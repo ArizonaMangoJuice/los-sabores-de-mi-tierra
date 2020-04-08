@@ -13,7 +13,6 @@ const mapStateToProps = state => ({
 function PageAddLink(props){
     const [linkClicked, setLinkClicked] = useState(false)
     let paragraphCount = props.stack.length
-    console.log(paragraphCount)
 
     return (
         <div className='link-container relative'>

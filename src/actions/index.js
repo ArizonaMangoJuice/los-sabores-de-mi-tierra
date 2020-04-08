@@ -3,6 +3,7 @@ import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
 import {storage} from '../firebase'
 import { ImageUpload } from "../components/ImageUpload/ImageUpload"
+import { isCompositeComponent } from "react-dom/test-utils"
 
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
@@ -203,32 +204,29 @@ function processArray(arr, fn) {
         );
 }
 
-export function submitPage(title, body, authToken, stack) {
+export function submitPage(title, body, authToken, stack, linkStack) {
     let linkName = title;
     let images = []
     let imageIndex = []
 
     stack.forEach(e => e && e.name ? images.push(e) : null)
     stack.forEach(e => e && e.name ? imageIndex.push(e.stackId) : null)
-    // console.log('///////////')
-    // processArray(images, uploadImage).then(console.log)
 
+    
     return (dispatch) => {
         
-        // console.log('imageLinks', imageLinks)
         processArray(images, uploadImage)
         .then(result => {
-            // console.log('test', result)
             let finalArray = result.map((e, i) => ({link: e, stackId: imageIndex[i]}))
             let pictures = [finalArray];
-            // console.log('image', pictures)
             dispatch(clearPage())
             title = title.trim()
             Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
                 title,
                 body,
                 linkName,
-                pictures
+                pictures,
+                linkStack
             },{
                 headers: { Authorization: `Bearer ${authToken}` }
             })

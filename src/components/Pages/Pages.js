@@ -15,7 +15,8 @@ const mapStateToProps = state => ({
     success: state.page.success,
     authToken: state.loginReducer.authToken,
     stack: state.page.stack,
-    imagePreview: state.page.imagePreview
+    imagePreview: state.page.imagePreview,
+    linkStack: state.page.linkStack
 })
 
 function Pages(props){
@@ -69,7 +70,7 @@ function Pages(props){
                 <div className='main-page '>
                     <PageBody />
                     <div className='page-body page-settings main-color'>
-                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken, props.stack))}>
+                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken, props.stack, props.linkStack))}>
                                 Create Page 
                             </button>
                             
