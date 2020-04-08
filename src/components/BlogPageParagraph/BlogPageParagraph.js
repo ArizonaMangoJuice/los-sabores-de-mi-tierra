@@ -1,11 +1,8 @@
 import React from 'react'
 
 function BlogPageParagraph(props){
-    // if(props.linkStack) console.log(props)
     let test = []
     let final = []
-    let paragraphs = []
-
 
     if(props && props.paragraph){    
         let {linkStack} = props
@@ -25,7 +22,7 @@ function BlogPageParagraph(props){
         
 
         for(let i = 0; i < paragraphArray.length; i++){
-            
+
             for(let k = 0; k < final.length; k++){
                 if(paragraphArray[i] ===  final[k].key){
                         paragraphArray[i] = <a key={linkStack[k].name + ', ' + linkStack[k].count} href={linkStack[k].link}>{linkStack[k].name}</a>
