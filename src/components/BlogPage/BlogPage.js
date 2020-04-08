@@ -26,6 +26,7 @@ function BlogPage(props){
         if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
         if(count)count++
     }, [])
+
     // checks to see if there is a pictures arraty and checks to see if theyre is a body array
     if((blog && blog.pictures && blog.pictures.length !== 0) && (blog && blog.body && blog.body.length !== 0)){
         for(let i = 0; i < blog.body.length; i++){
@@ -43,9 +44,22 @@ function BlogPage(props){
     }
     
     
+    // if(blog.body !== undefined){
+    //     blogPage = blog.body.map((stack, i) => (
+    //        stack.link && stack.stackId !== 0 
+    //        ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
+    //        : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
+    //     ))
+    // }
+
+
     if(blog.body !== undefined){
         blogPage = blog.body.map((stack, i) => (
-           stack.link && stack.stackId !== 0 ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> :<BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
+           stack.link && stack.stackId !== 0 
+           ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
+           : blog.linkStack 
+            ? <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} linkStack={blog.linkStack}/> 
+            : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
         ))
     }
 
