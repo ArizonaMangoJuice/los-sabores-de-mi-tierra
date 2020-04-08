@@ -25,7 +25,7 @@ function BlogPageParagraph(props){
 
             for(let k = 0; k < final.length; k++){
                 if(paragraphArray[i] ===  final[k].key){
-                        paragraphArray[i] = <a key={linkStack[k].name + ', ' + linkStack[k].count} href={linkStack[k].link}>{linkStack[k].name}</a>
+                        paragraphArray[i] = <a className='paragraph-link' key={linkStack[k].name + ', ' + linkStack[k].count} href={linkStack[k].link}>{linkStack[k].name}</a>
                         
                     } 
             }
