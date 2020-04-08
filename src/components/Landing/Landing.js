@@ -29,7 +29,7 @@ function Landing(props) {
           : {backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media)`}} key={page._id}>
             <div className={i === 0 ? 'newest-page-container card-hover' : 'words-container card-hover'}>
                 <p className={i === 0 ? 'newest-landing-page-title' :'landing-page-title'}>{page.title}</p>
-                <p className={i === 0 ? 'newest-body-snippet' :'body-snippet'}>{page.body[1].paragraph}</p>
+                {page.body && page.body[1] && page.body[1].paragraph ? <p className={i === 0 ? 'newest-body-snippet' :'body-snippet'}>{page.body[1].paragraph}</p> : null}
             </div>
         </Link>
     ))
