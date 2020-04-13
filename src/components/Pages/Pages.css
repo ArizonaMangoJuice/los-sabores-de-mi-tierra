@@ -58,6 +58,15 @@
     border-radius: 5px;
 }
 
+.list-history{
+    margin: 15px 0 15px 0;
+    padding: 25px;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    min-height: 100px;
+}
+
 .history-paragraphs{
     box-sizing: border-box;
     outline: none;

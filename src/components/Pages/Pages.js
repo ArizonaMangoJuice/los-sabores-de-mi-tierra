@@ -21,7 +21,6 @@ const mapStateToProps = state => ({
 
 function Pages(props){
         let {title, authToken, body, stack} = props
-        // console.log('insisde the page props', title, authToken, body)
         // this will be a seperate component 
         let stackHistory = props.stack.map((element, i) => {
             
@@ -41,19 +40,23 @@ function Pages(props){
                         paragraph={element.paragraph}/>)
             } else if(element.isOrdered){
                 return (
-                    <ol>
-                        {element.listArray.map(e => (
-                            <li>{e}</li>
-                        ))}
-                    </ol>
+                    <div className='main-color list-history card-hover'>
+                        <ol>
+                            {element.listArray.map(e => (
+                                <li>{e}</li>
+                            ))}
+                        </ol>
+                    </div>
                 )
             } else if(!element.isOrdered){
                 return (
-                    <ul>
-                        {element.listArray.map(e => (
-                            <li>{e}</li>
-                        ))}
-                    </ul>
+                    <div className='main-color list-history card-hover'>
+                        <ul>
+                            {element.listArray.map(e => (
+                                <li>{e}</li>
+                            ))}
+                        </ul>
+                    </div>
                 )
             } else {
                 return (<div key={'stack ' + i} className='image-history main-color'>
