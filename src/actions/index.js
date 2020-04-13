@@ -2,8 +2,7 @@ import Axios from "axios"
 import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
 import {storage} from '../firebase'
-import { ImageUpload } from "../components/ImageUpload/ImageUpload"
-import { isCompositeComponent } from "react-dom/test-utils"
+
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
