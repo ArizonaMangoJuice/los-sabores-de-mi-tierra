@@ -3,7 +3,7 @@ import React from 'react'
 function BlogPageImage(props){
     return (
         <div className='blog-image '>
-            <img src={props.src}/> 
+            <img alt='blog-reference' src={props.src}/> 
         </div>
     )
 }
