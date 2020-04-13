@@ -7,7 +7,7 @@ import { CHANGE_TITLE,
         CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK, ADD_LINK_NAME_TO_BODY } from "../actions"
+        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_IMAGE_PREVIEW, addImage, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK, ADD_LINK_NAME_TO_BODY, ADD_LIST } from "../actions"
 
 let initialState = {
     title: '',
@@ -20,7 +20,8 @@ let initialState = {
     imagePreview: '',
     linkStack: [],
     linkName: '',
-    hyperLink: ''
+    hyperLink: '',
+    list: []
 }
 
 const page = (state = initialState, action) => {
@@ -188,6 +189,12 @@ const page = (state = initialState, action) => {
             return {
                 ...state,
                 body: state.body += ' [' + action.data.name  +', ' + action.data.paragraphNumber + '] '
+            }
+        }
+        case ADD_LIST: {
+            return {
+                ...state,
+                list: [...state.list, action.list]
             }
         }
         default: 

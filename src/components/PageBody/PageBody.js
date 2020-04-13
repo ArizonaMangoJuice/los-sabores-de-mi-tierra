@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {changeBody, newParagraph, addMainImage, addImage} from '../../actions'
 import ImageUpload from '../ImageUpload/ImageUpload'
 import PageAddLink from '../PageAddLink/PageAddLink'
+import PageList from '../PageList/PageList'
 
 const mapStateToProps = state => {
     return {
@@ -25,6 +26,8 @@ function PageBody(props){
                 <ImageUpload mainImage={true}/>
                     
                 <ImageUpload mainImage={false} name={'Add Image'} />
+
+                <PageList />
             </nav>
             <textarea 
                 onChange={(e) => props.dispatch(changeBody(e.target.value))} 

@@ -4,6 +4,8 @@ import {saveToken} from '../localStorage/localStorage'
 import {storage} from '../firebase'
 import { ImageUpload } from "../components/ImageUpload/ImageUpload"
 import { isCompositeComponent } from "react-dom/test-utils"
+let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
+
 
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
@@ -23,10 +25,17 @@ export const ADD_LINK_STACK = 'ADD_LINK_STACK'
 export const CLEAR_LINKNAME = 'CLEAR_LINKNAME'
 export const CLEAR_LINK = 'CLEAR_LINK'
 export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
+export const ADD_LIST = 'ADD_LIST'
 
-let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // action creators 
+export function addList(list){
+    return {
+        type: ADD_LIST,
+        list
+    }
+}
+
 export function addLinkNameToBody(name, paragraphNumber){
     return {
         type: ADD_LINK_NAME_TO_BODY,
