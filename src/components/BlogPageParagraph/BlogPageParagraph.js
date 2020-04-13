@@ -6,12 +6,12 @@ function BlogPageParagraph(props){
 
     if(props && props.paragraph){    
         let {linkStack} = props
-        let paragraphArray = props.paragraph.split(/[\[\]]+/)
+        let paragraphArray = props.paragraph.split(/[[\]]+/)
 
         for(let i = 0; i < paragraphArray.length; i++){
             for(let k = 0; k < linkStack.length; k++){
                 let linkStackName = linkStack[k].name + ', ' + linkStack[k].count
-                if(linkStackName == paragraphArray[i]) {
+                if(linkStackName ===  paragraphArray[i]) {
                     final.push(
                     <a key={linkStack[k].name + ', ' + linkStack[k].count} href={'https://google.com'}>{linkStack[k].name}</a>
                     )
