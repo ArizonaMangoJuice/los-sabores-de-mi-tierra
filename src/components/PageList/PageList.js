@@ -10,6 +10,13 @@ const mapStateToProps = state => ({
  function PageList(props){
     const [listClicked, setListClicked] = useState(true)
     const [isOrdered, setOrdered] = useState(true)
+    const [listArray, addToList] = useState([])
+    const [list, addList] = useState('')
+
+    let addListButton = () => {
+        addList('')
+        addToList([...listArray,list])
+    }
 
     let ordered = isOrdered 
                        ? <>
@@ -22,43 +29,39 @@ const mapStateToProps = state => ({
                                 Unordered
                             </button>
                         </>
-                        
+    
+    let finalList
 
+    let listLi = listArray.map(e => (
+    <li className='page-list'>{e}</li>
+    )) 
+      
+    isOrdered ? finalList = <ol>{listLi}</ol> : finalList = <ul>{listLi}</ul>
 
     return (
         <div className='list-container relative'>
             <button onClick={() => setListClicked(!listClicked)} className='body-tools-button main-color'>
-                Add Link
+                Add List
             </button>
+            
             <div className={listClicked ? 'list-clicked' : 'hidden'}>
                 <nav className='list-buttons main-color'>
-                    <button className='body-tools-button main-color'>
-                        Add List
-                    </button>
                     <label className='link-clicked-input' >
                         {ordered}
                     </label>
                 </nav>
-                <label className='link-clicked-input'>
-                    <p className='link-clicked-p'>List Name</p>
-                    {/* <input onChange={(e) => props.dispatch(addLinkName(e.target.value))} value={props.linkName} type='text' /> */}
-                </label>
-                        
-                <label className='link-clicked-input'>
-                    <p className='link-clicked-p'>href</p>
-                    {/* <input onChange={(e) => props.dispatch(addLink(e.target.value))} value={props.hyperLink} type='text' /> */}
-                </label>
 
-                {/* <button onClick={() => props.linkName !== '' && props.hyperLink !== '' 
-                                ? props.dispatch(addLinkStack(props.linkName, props.hyperLink, paragraphCount)) && 
-                                    props.dispatch(clearLink()) && 
-                                    props.dispatch(clearLinkName()) && 
-                                    props.dispatch(addLinkNameToBody(props.linkName, paragraphCount)) &&                                     
-                                    setLinkClicked(!linkClicked)
-                                : null}  
-                        className='body-tools-button main-color add-link-button'>
-                    Add
-                </button> */}
+                <div className='list-add-container'>
+                    <input value={list} onChange={e => addList(e.target.value)} type='text' placeholder='add the list name here'/>
+                    
+                    <button onClick={() => list.length === 0 ? null : addListButton()} className='body-tools-button main-color'>
+                        Add List
+                    </button>
+                </div>
+                        
+                <div className='list-output'>
+                    {finalList}
+                </div>
             </div>
         </div>
     )
