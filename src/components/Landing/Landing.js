@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
-import { fetchPages, login } from '../../actions';
+import { fetchPages } from '../../actions';
 import './Landing.css'
-import BlogPage from '../BlogPage/BlogPage';
 
 const mapStateToProps = state => {
     return {
@@ -38,7 +37,7 @@ function Landing(props) {
     <div className='landing-page'>
         <header className='header-container'>
                 <Link to='/'>
-                    <img className='image-logo card-hover' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+                    <img alt='isael-blogs-logo' className='image-logo card-hover' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
                 </Link>
         </header>
         <div className='recent-container '>
