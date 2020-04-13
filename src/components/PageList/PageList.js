@@ -23,6 +23,7 @@ const mapStateToProps = state => ({
         addList('')
         addToList([])
         setOrdered(true)
+        setListClicked(false)
     }
 
     let addListButton = () => {
@@ -61,7 +62,7 @@ const mapStateToProps = state => ({
                     <label className='link-clicked-input' >
                         {ordered}
                     </label>
-                    <button onClick={() => addToState()} className='body-tools-button success-background'>
+                    <button onClick={() => listArray.length === 0 ? null : addToState()} className='body-tools-button success-background'>
                         finish
                     </button>
                 </nav>
