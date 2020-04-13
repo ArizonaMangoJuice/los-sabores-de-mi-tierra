@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
  function PageList(props){
-    const [listClicked, setListClicked] = useState(true)
+    const [listClicked, setListClicked] = useState(false)
     const [isOrdered, setOrdered] = useState(true)
     const [listArray, addToList] = useState([])
     const [list, addList] = useState('')
