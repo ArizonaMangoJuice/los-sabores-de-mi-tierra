@@ -48,7 +48,7 @@ function Pages(props){
                         </ol>
                     </div>
                 )
-            } else if(!element.isOrdered){
+            } else if(!element.isOrdered && element.listArray){
                 return (
                     <div className='main-color list-history card-hover'>
                         <ul>

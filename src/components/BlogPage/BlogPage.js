@@ -20,11 +20,9 @@ function BlogPage(props){
     let {title} = useParams()
     let {blog} = props
     let blogPage
-    let count = 0
 
     useEffect(() => {
         if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
-        if(count)count++
     }, [])
 
     // checks to see if there is a pictures arraty and checks to see if theyre is a body array
@@ -40,26 +38,17 @@ function BlogPage(props){
                 }
             }
         }
-        // console.log(blog.body)
     }
-    
-    
-    // if(blog.body !== undefined){
-    //     blogPage = blog.body.map((stack, i) => (
-    //        stack.link && stack.stackId !== 0 
-    //        ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
-    //        : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
-    //     ))
-    // }
-
-
+ 
     if(blog.body !== undefined){
         blogPage = blog.body.map((stack, i) => (
            stack.link && stack.stackId !== 0 
            ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
-           : blog.linkStack 
-            ? <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} linkStack={blog.linkStack}/> 
-            : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
+           : stack.listArray 
+        ?  stack.isOrdered ? <ol>{stack.listArray.map(e => (<li className=''>{e}</li>))}</ol> : <ul>{stack.listArray.map(e => (<li className=''>{e}</li>))}</ul> 
+                : blog.linkStack 
+                    ? <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} linkStack={blog.linkStack}/> 
+                    : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
         ))
     }
 
@@ -72,8 +61,9 @@ function BlogPage(props){
                     </Link>
                 </header>
                 
+                {/* if their is a main image add it */}
                 {blog.pictures && blog.pictures[0] && blog.pictures[0][0] && (typeof blog.pictures[0][0].link === "string")  ? <BlogPageMainImage src={blog.pictures[0][0].link} /> : null}
-
+                {/* if their is a title  add it or say that its loading */}
                 {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
 
                 {blogPage}
