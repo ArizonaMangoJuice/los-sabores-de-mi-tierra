@@ -39,7 +39,23 @@ function Pages(props){
                         key={'stack ' + i}
                         stackId={i}
                         paragraph={element.paragraph}/>)
-            }else {
+            } else if(element.isOrdered){
+                return (
+                    <ol>
+                        {element.listArray.map(e => (
+                            <li>{e}</li>
+                        ))}
+                    </ol>
+                )
+            } else if(!element.isOrdered){
+                return (
+                    <ul>
+                        {element.listArray.map(e => (
+                            <li>{e}</li>
+                        ))}
+                    </ul>
+                )
+            } else {
                 return (<div key={'stack ' + i} className='image-history main-color'>
                     <img
                         className='stack-history-image '
