@@ -1,8 +1,7 @@
-import React, { useEffect, useMountEffect } from 'react'
+import React, { useEffect } from 'react'
 import {connect} from 'react-redux'
 import './BlogPage.css'
 import BlogPageParagraph from '../BlogPageParagraph/BlogPageParagraph'
-import BlogPageSubTitles from '../BlogPageSubTitles/BlogPageSubTitles'
 import BlogPageTitle from '../BlogPageTitle/BlogPageTitle'
 import BlogPageImage from '../BlogPageImage/BlogPageImage'
 import BlogPageMainImage from '../BlogPageMainImage/BlogPageMainImage'
@@ -23,7 +22,11 @@ function BlogPage(props){
 
     useEffect(() => {
         if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
-    }, [])
+    })
+
+    // useEffect(() => {
+    //     if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
+    // }, [])
 
     // checks to see if there is a pictures arraty and checks to see if theyre is a body array
     if((blog && blog.pictures && blog.pictures.length !== 0) && (blog && blog.body && blog.body.length !== 0)){
@@ -33,7 +36,7 @@ function BlogPage(props){
             
             for(let k = 0; k < blog.pictures[0].length; k++){
 
-                if(blogBodyId == blog.pictures[0][k].stackId){
+                if(blogBodyId === blog.pictures[0][k].stackId){
                     blog.body[i].link = blog.pictures[0][k].link
                 }
             }
@@ -57,7 +60,7 @@ function BlogPage(props){
             <div className='blog-width main-color card-hover'> 
                 <header className='header-container'>
                     <Link to='/'>
-                        <img className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
+                        <img alt='isaels blog logo' className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
                     </Link>
                 </header>
                 
