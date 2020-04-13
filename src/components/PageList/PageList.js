@@ -74,7 +74,7 @@ const mapStateToProps = state => ({
                     </button>
                 </div>
                         
-                <div className='list-output'>
+                <div className={listArray.length !== 0 ? 'list-output' : null}>
                     {finalList}
                 </div>
             </div>
