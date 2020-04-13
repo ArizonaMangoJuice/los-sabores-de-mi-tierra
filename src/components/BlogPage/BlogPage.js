@@ -45,7 +45,7 @@ function BlogPage(props){
            stack.link && stack.stackId !== 0 
            ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
            : stack.listArray 
-        ?  stack.isOrdered ? <ol>{stack.listArray.map(e => (<li className=''>{e}</li>))}</ol> : <ul>{stack.listArray.map(e => (<li className=''>{e}</li>))}</ul> 
+        ?  stack.isOrdered ? <ol>{stack.listArray.map(e => (<li className='' key={e + '' + e.stackId}>{e}</li>))}</ol> : <ul>{stack.listArray.map(e => (<li className='' key={e + '' + e.stackId}>{e}</li>))}</ul> 
                 : blog.linkStack 
                     ? <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} linkStack={blog.linkStack}/> 
                     : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />
