@@ -5,7 +5,7 @@ export default function Footer(props){
     return (
         <footer className='main-color'>
             <Link to='/login'>
-                <img src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
+                <img alt='isael-blog-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
             </Link>
             
             <div className='social-bar'>
@@ -16,7 +16,7 @@ export default function Footer(props){
                 
                 <a href='https://twitter.com/ArizonaMJuice'><i className="fab fa-twitter-square"></i></a>
             </div>
-            <p className='footer-p'>© 2020. Isael Lizama. All rights reserved. Website Design by <a href='#'>AMJ</a></p>
+            <p className='footer-p'>© 2020. Isael Lizama. All rights reserved. Website Design by <a href='google.com'>AMJ</a></p>
         </footer>
     )
 }

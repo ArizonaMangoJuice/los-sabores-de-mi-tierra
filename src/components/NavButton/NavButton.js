@@ -4,7 +4,6 @@ import { Link} from 'react-router-dom';
 
 let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd', '#2fa53e'];
 let color;
-let borderStyle;
 
 
 export default class NavButton extends React.Component{

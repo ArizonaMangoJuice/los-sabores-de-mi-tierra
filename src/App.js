@@ -5,7 +5,6 @@ import {Route} from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import Pages from './components/Pages/Pages';
 import Login from './components/Login/Login';
-import { storage } from 'firebase';
 import BlogPage from './components/BlogPage/BlogPage';
 import Footer from './components/Footer/Footer';
 
