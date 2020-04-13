@@ -25,7 +25,7 @@ function Login(props){
             <div className='login-page-container'>
                 <div className='login-container card-hover relative'>
                     <div className='logo half'>
-                      <i class="far fa-user"></i>
+                      <i className="far fa-user"></i>
                     </div>
                     <div className='login-form-container half'>
                         <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
