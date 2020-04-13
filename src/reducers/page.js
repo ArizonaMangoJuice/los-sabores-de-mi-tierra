@@ -194,6 +194,7 @@ const page = (state = initialState, action) => {
         case ADD_LIST: {
             return {
                 ...state,
+                stack: [...state.stack, action.list],
                 list: [...state.list, action.list]
             }
         }

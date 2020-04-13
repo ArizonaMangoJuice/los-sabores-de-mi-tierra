@@ -29,7 +29,7 @@ export const ADD_LIST = 'ADD_LIST'
 
 
 // action creators 
-export function addList(list){
+export function addListToState(list){
     return {
         type: ADD_LIST,
         list

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import {connect} from 'react-redux'
-
+import {addListToState} from '../../actions/index'
 import './PageList.css'
 
 const mapStateToProps = state => ({
-    
+    stack: state.page.stack
 })
 
  function PageList(props){
@@ -12,6 +12,18 @@ const mapStateToProps = state => ({
     const [isOrdered, setOrdered] = useState(true)
     const [listArray, addToList] = useState([])
     const [list, addList] = useState('')
+
+    let addToState = () => {
+        let stackId = props.stack.length
+        props.dispatch(addListToState({
+                                        listArray,
+                                        stackId,
+                                        isOrdered
+                                    }))
+        addList('')
+        addToList([])
+        setOrdered(true)
+    }
 
     let addListButton = () => {
         addList('')
@@ -43,14 +55,17 @@ const mapStateToProps = state => ({
             <button onClick={() => setListClicked(!listClicked)} className='body-tools-button main-color'>
                 Add List
             </button>
-            
+
             <div className={listClicked ? 'list-clicked' : 'hidden'}>
                 <nav className='list-buttons main-color'>
                     <label className='link-clicked-input' >
                         {ordered}
                     </label>
+                    <button onClick={() => addToState()} className='body-tools-button success-background'>
+                        finish
+                    </button>
                 </nav>
-
+                
                 <div className='list-add-container'>
                     <input value={list} onChange={e => addList(e.target.value)} type='text' placeholder='add the list name here'/>
                     
