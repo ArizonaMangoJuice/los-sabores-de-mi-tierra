@@ -4,8 +4,7 @@ import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { submitPage, changeParagraph, deleteParagraph } from '../../actions';
-import ImageUpload from '../ImageUpload/ImageUpload';
+import { submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 
 const mapStateToProps = state => ({
@@ -20,7 +19,7 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        let {title, authToken, body, stack} = props
+        let {title, authToken, stack} = props
         // this will be a seperate component 
         let stackHistory = props.stack.map((element, i) => {
             
