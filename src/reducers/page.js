@@ -19,7 +19,6 @@ let initialState = {
     imagePreviews: [],
     imagePreview: '',
     linkStack: [],
-    linkName: '',
     hyperLink: '',
     list: []
 }

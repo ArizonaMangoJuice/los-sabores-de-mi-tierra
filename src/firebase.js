@@ -11,7 +11,6 @@ let firebaseConfig = {
     messagingSenderId: process.env.MESSAGING_SENDER_ID,
     appId: process.env.REACT_APP_APP_ID,
     measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET
   }
 
   // Initialize Firebase
