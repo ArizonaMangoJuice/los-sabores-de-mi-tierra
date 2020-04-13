@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import {storage} from '../../firebase'
+import React, {useEffect} from 'react'
 import './ImageUpload.css'
 import {connect} from 'react-redux'
 import { addMainImagePreview, addMainImage, addImage } from '../../actions'
