@@ -1,5 +1,14 @@
 
 /* common */
+.blur{
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  min-height: 100%;
+	width: 100%;
+}
+
 .hidden{
   display: none !important;
 }
@@ -26,6 +35,12 @@ h1{
 
 .full-page{
   min-height: 100vh;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Fbackground-test-2.jpg?alt=media);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 88%;
+  position: relative;
 }
 
 .center-image-position{

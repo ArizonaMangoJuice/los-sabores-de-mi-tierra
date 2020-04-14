@@ -56,8 +56,9 @@ function BlogPage(props){
     }
 
     return (
-        <div className='full-page blog-settings'>
-            <div className='blog-width main-color card-hover'> 
+        <div className='full-page blog-settings relative'>
+            <div className='blur'></div>
+            <div className='blog-width main-color card-hover relative'> 
                 <header className='header-container'>
                     <Link to='/'>
                         <img alt='isaels blog logo' className='image-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' />
