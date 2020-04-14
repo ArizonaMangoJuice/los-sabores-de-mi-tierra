@@ -1,7 +1,7 @@
 import React from 'react'
 
 function BlogPageParagraph(props){
-    let test = []
+    let result = []
     let final = []
 
     if(props && props.paragraph){    
@@ -13,24 +13,20 @@ function BlogPageParagraph(props){
                 let linkStackName = linkStack[k].name + ', ' + linkStack[k].count
                 if(linkStackName ===  paragraphArray[i]) {
                     final.push(
-                    <a key={linkStack[k].name + ', ' + linkStack[k].count} href={'https://google.com'}>{linkStack[k].name}</a>
+                         <a className='paragraph-link' key={linkStack[k].name + ', ' + linkStack[k].count} href={linkStack[k].link}>{linkStack[k].name}</a>
                     )
                 }
         } 
-        
         }
         
-
         for(let i = 0; i < paragraphArray.length; i++){
 
             for(let k = 0; k < final.length; k++){
                 if(paragraphArray[i] ===  final[k].key){
-                        paragraphArray[i] = <a className='paragraph-link' key={linkStack[k].name + ', ' + linkStack[k].count} href={linkStack[k].link}>{linkStack[k].name}</a>
-                        
+                        paragraphArray[i] = final[k]
                     } 
             }
-            test.push(paragraphArray[i])
-
+            result.push(paragraphArray[i])
         }
     }    
     
@@ -40,7 +36,7 @@ function BlogPageParagraph(props){
     
     return (
         <div className='blog-paragraph'>
-            <p>{test.length !== 0 ? test : props.paragraph}</p>
+            <p>{result.length !== 0 ? result : props.paragraph}</p>
         </div>
     )
 }
