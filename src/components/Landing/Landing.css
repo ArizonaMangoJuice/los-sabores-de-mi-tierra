@@ -106,3 +106,39 @@
   font-weight: bold;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px){
+  .card{
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .newest-card{
+    height: 350px;
+    /* width: 100%; */
+    width: 80%;
+    margin: 20px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+  }
+
+  .newest-page-container{
+    position: absolute;
+    display: flex;
+    bottom: 0 ;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    /* height: 175px; */
+    width: 100%;
+    padding-left: 25px;
+    padding: 10px 0 25px 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
