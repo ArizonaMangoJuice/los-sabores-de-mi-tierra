@@ -42,7 +42,7 @@ function Landing(props) {
         </header>
         <div className='recent-container '>
             <div className='recent-posts'>
-                {pages}
+                {pages ? pages : <h1>Loading</h1>}
             </div> 
         </div>
         {/* <Link to='/dashboard'>Dashboard</Link> */}
