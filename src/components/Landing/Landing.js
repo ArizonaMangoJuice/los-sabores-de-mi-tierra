@@ -16,10 +16,7 @@ const mapStateToProps = state => {
 function Landing(props) {
     useEffect(()=> {
         if (props.pages.length === 0) {
-            setTimeout(() => {
-             props.dispatch(fetchPages())
-            }, 2000);
-            // props.dispatch(login())
+            props.dispatch(fetchPages())
         }
     })
 
