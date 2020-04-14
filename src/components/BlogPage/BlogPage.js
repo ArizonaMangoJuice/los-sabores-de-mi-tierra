@@ -7,6 +7,7 @@ import BlogPageImage from '../BlogPageImage/BlogPageImage'
 import BlogPageMainImage from '../BlogPageMainImage/BlogPageMainImage'
 import { useParams, Link } from 'react-router-dom'
 import { fetchPage } from '../../actions'
+import SquareLoader from '../SquareLoader/SquareLoader'
 
 const mapStateToProps = state => ({
     title: state.blogPage.title,
@@ -68,7 +69,7 @@ function BlogPage(props){
                 {/* if their is a main image add it */}
                 {blog.pictures && blog.pictures[0] && blog.pictures[0][0] && (typeof blog.pictures[0][0].link === "string")  ? <BlogPageMainImage src={blog.pictures[0][0].link} /> : null}
                 {/* if their is a title  add it or say that its loading */}
-                {props.title ? <BlogPageTitle title={props.title} /> : <h1>loading</h1>}
+                {props.title ? <BlogPageTitle title={props.title} /> : <SquareLoader />}
 
                 {blogPage}
             </div>
