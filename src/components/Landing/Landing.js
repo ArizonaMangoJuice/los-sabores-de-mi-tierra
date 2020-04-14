@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
 import { fetchPages } from '../../actions';
 import './Landing.css'
+import SquareLoader from '../SquareLoader/SquareLoader';
 
 const mapStateToProps = state => {
     return {
@@ -15,10 +16,21 @@ const mapStateToProps = state => {
 function Landing(props) {
     useEffect(()=> {
         if (props.pages.length === 0) {
-            props.dispatch(fetchPages())
+            setTimeout(() => {
+             props.dispatch(fetchPages())
+            }, 2000);
             // props.dispatch(login())
         }
     })
+
+    let loadingDefault = []
+
+    for(let i = 0; i < 9; i++){
+        i === 0 
+            ? loadingDefault.push(<div className='newest-card center-image-position card-hover relative main-color'><SquareLoader /></div>)
+            : loadingDefault.push(<div className='card card-hover relative main-color'><SquareLoader /></div>)
+        
+    }
 
     let pages = props.pages.map((page, i) => (
         <Link to={`/blogPages/${page.title}`} 
@@ -45,12 +57,10 @@ function Landing(props) {
         </header>
         <div className='recent-container relative'>
             <div className='recent-posts'>
-                {pages ? pages : <h1>Loading</h1>}
+                {pages.length !== 0 ? pages : loadingDefault}
             </div> 
         </div>
-        {/* <Link to='/dashboard'>Dashboard</Link> */}
-        {/* <Link to='/login'>Login</Link> */}
-        {/* <Link to='/blogPage'>BlogPage</Link> */}
+
     </div>);
 }
 
