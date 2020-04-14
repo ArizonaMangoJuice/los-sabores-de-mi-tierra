@@ -25,9 +25,6 @@ function BlogPage(props){
         if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
     })
 
-    // useEffect(() => {
-    //     if(!props.title || title !== props.title) props.dispatch(fetchPage(title))
-    // }, [])
 
     // checks to see if there is a pictures arraty and checks to see if theyre is a body array
     if((blog && blog.pictures && blog.pictures.length !== 0) && (blog && blog.body && blog.body.length !== 0)){
@@ -49,7 +46,7 @@ function BlogPage(props){
            stack.link && stack.stackId !== 0 
            ? <BlogPageImage className='blog-image' key={'image ' + i} src={stack.link} /> 
            : stack.listArray 
-        ?  stack.isOrdered ? <ol>{stack.listArray.map(e => (<li className='' key={e + '' + e.stackId}>{e}</li>))}</ol> : <ul>{stack.listArray.map(e => (<li className='' key={e + '' + e.stackId}>{e}</li>))}</ul> 
+                ?  stack.isOrdered ? <ol>{stack.listArray.map(e => (<li className='' key={e + ' ' + e.stackId}>{e}</li>))}</ol> : <ul>{stack.listArray.map(e => (<li className='' key={e + ' ' + e.stackId}>{e}</li>))}</ul> 
                 : blog.linkStack 
                     ? <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} linkStack={blog.linkStack}/> 
                     : <BlogPageParagraph key={'paragraph ' + i} paragraph={stack.paragraph} />

@@ -24,8 +24,8 @@ function Landing(props) {
 
     for(let i = 0; i < 9; i++){
         i === 0 
-            ? loadingDefault.push(<div className='newest-card center-image-position card-hover relative main-color'><SquareLoader /></div>)
-            : loadingDefault.push(<div className='card card-hover relative main-color'><SquareLoader /></div>)
+            ? loadingDefault.push(<div key={`loader ${i}`} className='newest-card center-image-position card-hover relative main-color'><SquareLoader /></div>)
+            : loadingDefault.push(<div key={`loader ${i}`} className='card card-hover relative main-color'><SquareLoader /></div>)
         
     }
 
