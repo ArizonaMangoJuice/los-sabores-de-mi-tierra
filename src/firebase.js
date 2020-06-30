@@ -3,14 +3,14 @@ import 'firebase/storage';
 import 'firebase/auth'
 
 let firebaseConfig = {
-    apiKey: process.env.REACT_APP_APIKEY,
-    authDomain: process.env.REACT_APP_AUTHDOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
-    measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+    apiKey: "AIzaSyDZv56n-yj4ARpLo7TmoI3tVIqPqpwmvpA",
+    authDomain: "los-sabores.firebaseapp.com",
+    databaseURL: "https://los-sabores.firebaseio.com",
+    projectId: "los-sabores",
+    storageBucket: "los-sabores.appspot.com",
+    messagingSenderId: "931234811552",
+    appId: "1:931234811552:web:d80dcf7ee97d2a6b85c3c5",
+    measurementId: "G-QHPFB034FR"
   }
 
   // Initialize Firebase
