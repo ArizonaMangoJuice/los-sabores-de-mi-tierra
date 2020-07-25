@@ -10,8 +10,8 @@ export default function Header(){
                     <li className='nav-list-font'><a className='link-style' href=''>Features</a></li>
                     <li className='nav-list-font'><a className='link-style' href=''>Recipes</a></li>
                     <li className='nav-list-font'><a className='link-style' href=''>Memberships</a></li>
-                    <li className='sign-in nav-list-user-button'>Sign In</li>
-                    <li className='sign-up nav-list-user-button'>Sign Up</li>
+                    <li className='sign-in nav-list-user-button sign-in'>Sign In</li>
+                    <li className='sign-up nav-list-user-button sign-up'>Sign Up</li>
                 </ul>
             </nav>
         </header>

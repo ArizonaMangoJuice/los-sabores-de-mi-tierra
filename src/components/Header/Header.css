@@ -55,9 +55,22 @@
 }
 
 .nav-list-user-button{
-    
+    display: inline-block;
+    margin: 5px 10px;
+    text-decoration: none;
+    padding: 5px 9px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
+.sign-up{
+    background-color: #2821FC;
+    color: white;
+}
+
+.sign-in{
+    background-color: #cccccc;
+}
 
 /* LINK STYLE MOVE TO MAIN CSS */
 .link-style{
