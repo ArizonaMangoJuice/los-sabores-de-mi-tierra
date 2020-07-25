@@ -1,0 +1,81 @@
+.header{
+    height: 70px;
+    box-sizing: border-box;
+    position: relative;;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 25%;
+    top: 10px;
+}
+
+.header-nav{
+    position: absolute;
+    right: 25%;
+    top: 0;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* width: 500px; */
+    padding: 0;
+}
+
+.nav-list-font{
+    display: inline-block;
+    margin: 5px 10px;
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+}
+
+.nav-list-font:after{
+    content: '';
+    opacity: 0;
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    height: 5px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    transition: all .3s;
+}
+
+.nav-list-font:hover:after{
+    opacity: 1;
+    transition: all .3s;
+}
+
+.nav-list-user-button{
+    display: inline-block;
+    margin: 5px 10px;
+    text-decoration: none;
+    padding: 5px 9px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sign-up{
+    background-color: #2821FC;
+    color: white;
+}
+
+.sign-in{
+    background-color: #cccccc;
+}
+
+/* LINK STYLE MOVE TO MAIN CSS */
+.link-style{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
