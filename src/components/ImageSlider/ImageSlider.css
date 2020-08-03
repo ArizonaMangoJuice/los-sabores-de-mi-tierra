@@ -1,0 +1,33 @@
+.featured{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 50px;
+    justify-content: center;
+}
+
+.featured-container{
+    width: 100%;
+    position: relative;
+
+}
+
+.image-container{
+    width: 40%;
+    margin: 15px;
+}
+
+.featured-image{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.text-container{
+    border: 1px solid red;
+    width: 40%;
+    padding: 0 0 75px 50px;
+}
+
+.featured-text{
+    background-color: red;
+}
