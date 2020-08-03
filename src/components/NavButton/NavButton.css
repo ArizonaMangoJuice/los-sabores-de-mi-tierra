@@ -1,0 +1,39 @@
+.nav-button{
+    border: none;
+    background-color: #212121;
+    color: #999999;
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    width: 290px;
+    padding: 9px 10px;
+    cursor: pointer;
+}
+
+.bottom{
+    margin-top: auto;
+}
+
+.nav-button:hover{
+    background-color: #5fa2db;
+    color: white;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.dashboard-nav-words{
+    width: 140px;
+    height: 20px;
+    margin: 2px 15px ;
+    font-size: 20px;
+    text-align: left;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    
+}

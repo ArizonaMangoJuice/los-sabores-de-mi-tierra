@@ -1,0 +1,25 @@
+
+.title-card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 468px;
+    min-height: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* 48 character limit */
+.page-input-title{
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.page-title-input{
+    width: 98.9%;
+    border: 1px solid white;
+    font-size: 24px;
+    border-radius: 3px;
+    color: white;
+}

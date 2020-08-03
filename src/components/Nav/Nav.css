@@ -1,0 +1,22 @@
+.dashboard-nav{
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.dashboard-nav a {
+    text-decoration: none;
+}
+
+
+
+.dashboard-nav:hover{
+    transition: 0.05s linear;
+    width: 250px;
+}

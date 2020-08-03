@@ -1,0 +1,151 @@
+.recent-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.landing-page{
+      z-index: 99;
+}
+
+.card{
+  height: 350px;
+  margin: 25px 0 0 0 ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 31.4%;
+}
+
+.body-snippet{
+  height: 25px;
+  overflow: hidden;
+}
+
+.words-container{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.76);
+    width: 100%;
+    color: white;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+.image-logo{
+  height: 200px;
+  width: 200px;
+  /* border: 2px solid #e6463c; */
+  border-radius: 50%;
+  margin: 0 auto 25px 0;
+}
+
+/* header css */
+
+.header-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 2;
+  /* background-color: white; */
+}
+
+.recent-container{
+  max-width: 900px;
+  margin: auto;
+  z-index: 2;
+}
+
+.recent-posts{
+  padding: 0 0 45px 0 ;
+
+}
+
+/* newest card */
+
+.newest-card{
+  height: 350px;
+  width: 100%;
+}
+
+.newest-page-container{
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+  width: 40%;
+  color: white;
+  padding-left: 25px;
+  box-sizing: border-box;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newest-body-snippet{
+  max-width: 90%;
+  margin: 5px auto;
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.newest-landing-page-title{
+  width: 90%;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px){
+  .card{
+    width: 80% !important;
+    margin: 20px auto !important;
+  }
+
+  .newest-card{
+    height: 350px !important;
+    /* width: 100% !important; */
+    width: 80% !important;
+    margin: 20px auto !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 350px !important;
+  }
+
+  .newest-page-container{
+    position: absolute !important;
+    display: flex !important;
+    bottom: 0  !important;
+    right: 0 !important;
+    background-color: rgba(0, 0, 0, 0.76) !important;
+    color: white !important;
+    /* height: 175px !important; */
+    width: 100% !important;
+    padding-left: 25px !important;
+    padding: 10px 0 25px 10px !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+}
+
+@media only screen and (max-width: 769px){
+  .card{
+    width: 48%;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  .newest-card{
+    margin: auto;
+    width: 98%;
+  }
+
+
+}
+
+

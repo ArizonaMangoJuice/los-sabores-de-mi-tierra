@@ -1,0 +1,56 @@
+.page-body{
+    width: 47%;
+    margin-left: 1%;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.pages-text-area{
+    box-sizing: border-box;
+    outline:none;
+    resize: none;
+    overflow:auto;
+    width: 100%;
+    height: 500px;
+    font-size: 18px;
+    padding: 15px 25px;
+    border: none;
+    color: white;
+}
+
+.body-tools-nav{
+    padding: 15px 15px 0 15px;
+    display: flex;
+}
+
+.body-tools-button{
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 5px 0 5px;
+    padding: 5px;
+}
+
+.body-tools-button:hover{
+    transition: .2s linear;
+    background-color: white;
+    color: #212121;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    /* border: 1px solid #ccc; */
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
+    box-sizing: border-box;
+}
+
+.icon-margin{
+    margin-right: 2px;
+    margin-bottom: 2px;
+}

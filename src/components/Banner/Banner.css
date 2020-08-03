@@ -1,0 +1,19 @@
+.banner-top-padding{
+    padding-top: 20px;
+}
+
+.banner{
+    /* this color will be a prop to change the css */
+    /* background-color: #6cb4dd; */
+    /* color: #f3f3f4; */
+    color: white;
+    width: 400px;
+    margin: 0 auto 0 auto;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.banner-title{
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
