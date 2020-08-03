@@ -7,16 +7,14 @@ import Pages from './components/Pages/Pages';
 import Login from './components/Login/Login';
 import BlogPage from './components/BlogPage/BlogPage';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import ImageSlider from './components/ImageSlider/ImageSlider';
 
 function App() {
   return (
     <div>
-      <Route exact path='/' component={Landing} />
-      <Route path='/dashboard' component={Dashboard} />
-      <Route exact path='/dashboard/pages' component={Pages} />
-      <Route path='/login' component={Login}/>
-      <Route path='/blogPages/:title' children={<BlogPage/>}/>
-      <Footer />
+      <Header />
+      <ImageSlider />
     </div>
   );
 }
