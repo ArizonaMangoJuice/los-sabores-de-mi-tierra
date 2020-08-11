@@ -25,6 +25,11 @@ function ImageSlider(props){
                         </p>
                     </div>
                 </div>
+                <div className='next-container'>
+                    <div className='next'>
+                        <i className='arrow right'></i>
+                    </div>
+                </div>
             </div>
         </div>
     )
