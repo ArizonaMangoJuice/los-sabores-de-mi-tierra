@@ -10,18 +10,20 @@ function ImageSlider(props){
                 <div className='image-container'>
                     <img className='featured-image' src='https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=8b1938d0d4ef26e336db84568708980a' />
                 </div>
-                <div className='text-container'>
-                    <div className='featured-text'>
-                    <FontAwesomeIcon style={{color: 'white'}} icon={faStar} /> 
-                    <FontAwesomeIcon icon={['fas', 'code']} />Featured
+                <div className='text-outer-container'>
+                    <div className='text-container'>
+                        <div className='featured-text'>
+                            <FontAwesomeIcon style={{color: 'white', marginRight: '5px'}} icon={faStar} /> 
+                            <FontAwesomeIcon icon={['fas', 'code']} />FEATURED
+                        </div>
+                        <p className='featured-title'>
+                            I'm passionate about food, the tradition of it, cooking it, sharing it
+                        </p>
+                        <p className='slide-author'>
+                            By <span className='normal-bold'>Norma Vizcaino</span> 
+                            <span className='featured-date'> 3 years ago</span>
+                        </p>
                     </div>
-                    <p className='featured-title'>
-                        I'm passionate about food, the tradition of it, cooking it, sharing it
-                    </p>
-                    <p>
-                        By Norma Vizcaino 
-                        <span className='featured-date'> 3 years ago</span>
-                    </p>
                 </div>
             </div>
         </div>

@@ -9,7 +9,6 @@
 .featured-container{
     width: 100%;
     position: relative;
-
 }
 
 .image-container{
@@ -19,15 +18,53 @@
 
 .featured-image{
     width: 100%;
-    border-radius: 15px;
+    border-radius: 8px;
+}
+
+.text-outer-container{
+    /* border: 1px solid red; */
+    width: 40%;
+    padding: 0 0 75px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-container{
-    border: 1px solid red;
-    width: 40%;
-    padding: 0 0 75px 50px;
+    color: #161B3D;
 }
 
 .featured-text{
-    background-color: red;
+    background-color: #161B3D;
+    text-align: center;
+    padding: 2px;
+    border-radius: 20px;
+    width: 100px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
+
+.featured-title{
+    margin-top: 15px;
+    font-size: 30px;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.slide-author{
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* move to app css */
+.normal-bold{
+    font-weight: bold;
+}
+
+/*  */
