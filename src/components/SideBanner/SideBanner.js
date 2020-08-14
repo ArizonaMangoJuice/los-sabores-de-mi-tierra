@@ -14,7 +14,7 @@ export default class extends Component{
                 autoPlay={true} 
                 className='test' 
                 showThumbs={false} 
-                
+                showStatus={false}
                 stopOnHover={true}
                 emulateTouch={true}
                 swipeable={true}
@@ -49,11 +49,11 @@ function BannerItem(props){
                             </p>
                         </div>
                     </div>
-                    <div className='next-container'>
+                    {/* <div className='next-container'>
                         <div className='next'>
                             <i className='arrow right'></i>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
     )
 }
