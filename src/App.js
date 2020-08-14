@@ -9,13 +9,15 @@ import BlogPage from './components/BlogPage/BlogPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import ImageSlider from './components/ImageSlider/ImageSlider';
+import SideBanner from './components/SideBanner';
 
 function App() {
   return (
-    <div>
+    <>
+      <SideBanner />
       <Header />
       <ImageSlider />
-    </div>
+    </>
   );
 }
 
