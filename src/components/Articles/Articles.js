@@ -19,10 +19,10 @@ function SmallArticle(props){
             <h4 className='sm-article-title'>The future of architecture is culture</h4>
             <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
             <section className='tag-ad-container'>
-                <button className='tag'>
-
+                <button className='tag article-button'>
+                    Recipe
                 </button>
-                <button className='non-removal-ads'>
+                <button className='non-removal-ads article-button'>
                     Non Removal Ads
                 </button>
             </section>
