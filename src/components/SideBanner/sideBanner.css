@@ -1,0 +1,9 @@
+.test{
+    height: 500px;
+    background-color: white;
+}
+
+.dot{
+    height: 20px;
+    width: 20px;
+}

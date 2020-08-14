@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './ImageSlider.css'
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function ImageSlider(props){
+    let [finished, setFinished] = useState(false)
+    let [imageCounter, setCounter] = useState(0)
     return (
         <div className='featured-container'>
             <div className='featured'>
@@ -36,6 +38,9 @@ function ImageSlider(props){
 } 
 
 export default ImageSlider
+
+
+
 
 let staticData = [
     {
