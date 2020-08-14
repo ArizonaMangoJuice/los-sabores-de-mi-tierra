@@ -1,0 +1,31 @@
+import React from 'react'
+import './articles.css'
+
+export default function Articles(props){
+    return (
+        <div>
+            <div className='article-container'>
+                <SmallArticle />
+            </div>
+        </div>
+    )
+}
+
+// move to seperate components
+
+function SmallArticle(props){
+    return (
+        <section className='sm-section'>
+            <h4 className='sm-article-title'>The future of architecture is culture</h4>
+            <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
+            <section className='tag-ad-container'>
+                <button className='tag'>
+
+                </button>
+                <button className='non-removal-ads'>
+                    Non Removal Ads
+                </button>
+            </section>
+        </section>
+    )
+}

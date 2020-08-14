@@ -1,0 +1,33 @@
+.sm-section{
+    height: 325px;
+    width: 30%;
+    border-radius: 8px;
+    background: #D7482A;
+    background: -webkit-linear-gradient(top left, #D7482A, #872BCA);
+    background: -moz-linear-gradient(top left, #D7482A, #872BCA);
+    background: linear-gradient(to bottom right, #D7482A, #872BCA);
+    color: white;
+}
+
+.sm-article-title{
+    font-size: 32px;
+    font-weight: 400;
+    margin-left: 15%;
+    text-align: left;
+    width: 60%;
+    padding-right: 15%;
+}
+
+.author{
+    
+}
+
+.article-container{
+    max-width: 66%;
+    border: 1px solid blue;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+
+}
