@@ -1,5 +1,5 @@
 .hover {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
     transition: .2s;
 }
 
