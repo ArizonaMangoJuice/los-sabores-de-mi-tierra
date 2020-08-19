@@ -11,6 +11,19 @@
     margin: 2% 2% 0% 2%;
 }
 
+.lg-section{
+    height: 325px;
+    width: 60%;
+    border-radius: 8px;
+    background: #D7482A;
+    background: -webkit-linear-gradient(top left, #D7482A, #872BCA);
+    background: -moz-linear-gradient(top left, #D7482A, #872BCA);
+    background: linear-gradient(to bottom right, #D7482A, #872BCA);
+    color: white;
+    position: relative;
+    margin: 2% 2% 0% 2%;
+}
+
 .sm-article-title{
     /* font-size: 32px; */
     font-size: 1.5vw;
@@ -25,7 +38,15 @@
 }
 
 .lg-article-title{
-    
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin-left: 15%;
+    text-align: left;
+    width: 60%;
+    padding-right: 15%;
+    margin-bottom: 0;
+    overflow: hidden;
+    height: 130px;
 }
 
 .author{
