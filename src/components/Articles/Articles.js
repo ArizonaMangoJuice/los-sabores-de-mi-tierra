@@ -17,6 +17,8 @@ export default function Articles(props){
 function SmallArticle(props){
     return (
         <section className='sm-section'>
+            <div className='background'></div>
+
             <h4 className='sm-article-title'>The future of architecture is culture </h4>
             <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
             <section className='tag-ad-container'>
@@ -34,6 +36,8 @@ function SmallArticle(props){
 function LargeArticle(props) {
     return (
         <div className='lg-section'>
+            <div className='filter'></div>
+            <div className='background'></div>
             <h4 className='lg-article-title'>The future of architecture is culture </h4>
             <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
             <section className='tag-ad-container'>
