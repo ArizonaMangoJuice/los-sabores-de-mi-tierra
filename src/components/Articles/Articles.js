@@ -2,12 +2,10 @@ import React, { useState } from 'react'
 import './articles.css'
 
 export default function Articles(props){
-    let [hovered, setHovered] = useState(false);
-
     return (
         <div>
             <div className='article-container'>
-                <SmallArticle onClick={() => console.log('hello')} />
+                <SmallArticle />
                 <LargeArticle />
                 <MediumArticle />
                 <MediumArticle />
@@ -16,12 +14,19 @@ export default function Articles(props){
     )
 }
 
+
 // move to seperate components
 
 function SmallArticle(props){
+    const [hovered, setHovered] = useState(false);
     return (
-        <section className='sm-section'>
-            <div className='background'></div>
+        <section 
+            className={`sm-section ${hovered ? 'hover' : ''} `} 
+            onMouseEnter={() => setHovered(true)} 
+            onMouseLeave={() => setHovered(false)}
+        >
+            {/* this will be enabled for adding images if there is one for the post */}
+            {/* <div className='background'></div> */}
 
             <h4 className='sm-article-title'>The future of architecture is culture </h4>
             <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
@@ -38,8 +43,14 @@ function SmallArticle(props){
 }
 
 function LargeArticle(props) {
+    const [hovered, setHovered] = useState(false);
+
     return (
-        <div className='lg-section'>
+        <div 
+            className={`lg-section ${hovered ? 'hover' : ''} `} 
+            onMouseEnter={() => setHovered(true)} 
+            onMouseLeave={() => setHovered(false)}
+        >
             <div className='filter'></div>
             <div className='background'></div>
             <h4 className='lg-article-title'>The future of architecture is culture </h4>
@@ -57,8 +68,14 @@ function LargeArticle(props) {
 }
 
 function MediumArticle(props){
+    const [hovered, setHovered] = useState(false);
+
     return (
-        <div className='md-section'>
+        <div 
+            className={`md-section ${hovered ? 'hover' : ''} `} 
+            onMouseEnter={() => setHovered(true)} 
+            onMouseLeave={() => setHovered(false)}
+        >
             <div className='filter'></div>
             <div className='background'></div>
             <h4 className='md-article-title'>The future of architecture is culture </h4>

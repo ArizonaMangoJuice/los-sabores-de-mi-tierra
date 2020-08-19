@@ -1,3 +1,8 @@
+.hover {
+    transform: translateY(-15px);
+    transition: .2s;
+}
+
 .sm-section{
     height: 325px;
     width: 30%;
