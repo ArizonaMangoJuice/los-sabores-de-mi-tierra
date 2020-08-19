@@ -19,10 +19,15 @@
     background: -webkit-linear-gradient(top left, #D7482A, #872BCA);
     background: -moz-linear-gradient(top left, #D7482A, #872BCA);
     background: linear-gradient(to bottom right, #D7482A, #872BCA);
+    background-image: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-repeat:no-repeat;
+    background-position: center center;
     color: white;
     position: relative;
     margin: 2% 2% 0% 2%;
 }
+
+
 
 .sm-article-title{
     /* font-size: 32px; */
