@@ -12,10 +12,22 @@
     position: relative;
 }
 
+.md-section{
+    position: relative;
+    height: 325px;
+    width: 46%;
+    border-radius: 8px;
+    background-repeat:no-repeat;
+    background-position: center center;
+    color: white;
+    position: relative;
+    margin: 2% 2% 0% 2%;
+}
+
 .lg-section{
     position: relative;
     height: 325px;
-    width: 60%;
+    width: 62%;
     border-radius: 8px;
     background-repeat:no-repeat;
     background-position: center center;
@@ -88,6 +100,7 @@
     display: flex;
     flex-direction: row;
     padding: 25px;
+    flex-wrap: wrap;
 }
 
 .tag-ad-container{

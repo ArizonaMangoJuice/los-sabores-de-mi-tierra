@@ -37,7 +37,7 @@ function BannerItem(props){
                         <div className='text-container'>
                             <div className='featured-text'>
                                 <FontAwesomeIcon style={{color: 'white', marginRight: '5px'}} icon={faStar} /> 
-                                <FontAwesomeIcon icon={['fas', 'code']} />FEATURED
+                                <FontAwesomeIcon /> FEATURED
                             </div>
                             <p className='featured-title'>
                                 I'm passionate about food, the tradition of it, cooking it, sharing it
