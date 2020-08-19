@@ -6,6 +6,7 @@ export default function Articles(props){
         <div>
             <div className='article-container'>
                 <SmallArticle />
+                <LargeArticle />
             </div>
         </div>
     )
@@ -16,7 +17,7 @@ export default function Articles(props){
 function SmallArticle(props){
     return (
         <section className='sm-section'>
-            <h4 className='sm-article-title'>The future of architecture is culture</h4>
+            <h4 className='sm-article-title'>The future of architecture is culture </h4>
             <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
             <section className='tag-ad-container'>
                 <button className='tag article-button'>
@@ -27,5 +28,22 @@ function SmallArticle(props){
                 </button>
             </section>
         </section>
+    )
+}
+
+function LargeArticle(props) {
+    return (
+        <div className='lg-section'>
+            <h4 className='lg-article-title'>The future of architecture is culture </h4>
+            <h5 className='author'>by Patricia Jenkins 2 years ago</h5>
+            <section className='tag-ad-container'>
+                <button className='tag article-button'>
+                    Recipe
+                </button>
+                <button className='non-removal-ads article-button'>
+                    Non Removal Ads
+                </button>
+            </section>
+        </div>
     )
 }
