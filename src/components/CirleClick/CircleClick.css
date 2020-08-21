@@ -1,0 +1,123 @@
+.circle-container{
+    width: 41px;
+    border: 1px solid ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 41px;
+    margin: auto;
+    position: relative;
+}
+
+.outer-circle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 8px solid #E2E5ED;
+}
+
+/* .outer-circle:hover{
+    transition: .7s;
+    border: none;
+    animation-name: test;
+    animation-duration: 1.7s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    margin: auto;
+} */
+
+@keyframes test {
+    0%{
+        height: 25px;
+        width: 25px;
+        margin: auto;
+        border: 8px solid #E2E5ED;
+    }
+    20%{
+        height: 25px;
+        width: 25px;
+        margin: auto; 
+        border: 8px solid #E2E5ED;
+    }
+    40% {
+        width: 39px;
+        height: 39px;
+        margin: auto;
+        border: none;
+    }
+    60%{
+        height: 38px;
+        width: 38px;
+        margin: auto;
+        background-color: #2821FC;
+    }
+    80%{
+        height: 37px;
+        width: 37px;
+        margin: auto;
+        background-color: #2821FC;
+    }
+    100%{
+        height: 36px;
+        width: 36px;
+        margin: auto;
+        background-color: #2821FC;
+    }
+}
+
+.circle-regrow{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    animation-name: regrow;
+    animation-duration: 2.3s;
+
+}
+
+@keyframes regrow {
+    0% {
+        height: 41px;
+        width: 41px;
+        margin: auto;
+        background-color: #2821FC;
+
+        
+    }
+    80% {
+        /* height: 25px;
+        width: 25px; */
+        border-radius: 50%;
+        background-color: #2821FC;
+    }
+    100%{
+        transform: scale(.8);
+        background-color: #2821FC;
+    }
+}
+
+.inner-cirlce{
+    height: 41px;
+    width: 41px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+}
+
+.shrink{
+    /* transition: 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+    /* scale: (.8); */
+    animation-name: regrow;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    /* background-color: blue !important; */
+    /* height: 41px;
+    width: 41px; */
+
+}
+
+.hidden{
+    display: none;
+}

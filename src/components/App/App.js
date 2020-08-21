@@ -5,6 +5,7 @@ import ImageSlider from '../ImageSlider';
 import SideBanner from '../SideBanner';
 import Articles from '../Articles';
 import Footer from '../Footer/Footer';
+import CircleClick from '../CirleClick';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <ImageSlider />
         <Articles />    
+        <CircleClick />
         <Footer />    
     </div>
   );
