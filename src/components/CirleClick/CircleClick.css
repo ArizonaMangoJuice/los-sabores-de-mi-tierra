@@ -16,52 +16,86 @@
     border: 8px solid #E2E5ED;
 }
 
-/* .outer-circle:hover{
-    transition: .7s;
-    border: none;
-    animation-name: test;
-    animation-duration: 1.7s;
-    animation-timing-function: ease-out;
+.outer-circle-disappear{
+    height: 25px;
+    width: 25px;
+    animation-name: disappear;
+    animation-duration: .3s;
     animation-fill-mode: forwards;
-    margin: auto;
-} */
+    /* border: none; */
+}
 
-@keyframes test {
-    0%{
+@keyframes disappear {
+    0% {
         height: 25px;
         width: 25px;
-        margin: auto;
+        border-radius: 50%;
         border: 8px solid #E2E5ED;
+        margin: auto;
+
     }
-    20%{
+    12.5%{
         height: 25px;
         width: 25px;
-        margin: auto; 
-        border: 8px solid #E2E5ED;
-    }
-    40% {
-        width: 39px;
-        height: 39px;
+        border-radius: 50%;
+        border: 7px solid #E2E5ED;
         margin: auto;
-        border: none;
     }
-    60%{
-        height: 38px;
-        width: 38px;
+    25%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 6px solid #E2E5ED;
         margin: auto;
-        background-color: #2821FC;
     }
-    80%{
-        height: 37px;
-        width: 37px;
+    27.5%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 5px solid #E2E5ED;
         margin: auto;
-        background-color: #2821FC;
+    }
+    40%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 4px solid #E2E5ED;
+        margin: auto;
+    }
+    52.5%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 3px solid #E2E5ED;
+        margin: auto;
+    }
+    65%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 2px solid #E2E5ED;
+        margin: auto;
+    }
+    77.5%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid #E2E5ED;
+        margin: auto;
+    }
+    90%{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 0px solid #E2E5ED;
+        margin: auto;
     }
     100%{
-        height: 36px;
-        width: 36px;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: none;
         margin: auto;
-        background-color: #2821FC;
     }
 }
 
@@ -111,7 +145,8 @@
         border-radius: 50%;
     }
 
-    100%{position: absolute;
+    100%{
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;

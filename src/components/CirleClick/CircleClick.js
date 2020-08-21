@@ -10,12 +10,10 @@ const CircleClick = React.memo( props => {
                 <div 
                     onMouseEnter={() => setHovered(true)} 
                     onMouseLeave={() => setHovered(false)}
-                    // className={`${hovered ? 'outer-circle' : 'circle-regrow'}`}
-                    className='outer-circle'
+                    className={`${hovered ? 'outer-circle outer-circle-disappear' : 'outer-circle'}`}
                 >
                     <div 
                         className={`${hovered ? 'inner-circle shrink' : 'inner-cirlce hidden'}`}
-                        // className='inner-circle'
                     >
 
                     </div>        
