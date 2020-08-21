@@ -1,6 +1,8 @@
 import React from 'react'
 import './Footer.css'
 // import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {fab, faTwitterSquare, faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
 
 
 export default function Footer(props){
@@ -9,16 +11,35 @@ export default function Footer(props){
             {/* <Link to='/login'>
                 <img alt='isael-blog-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
             </Link> */}
-            
-            <div className='social-bar'>
-                
-                <a href='https://github.com/ArizonaMangoJuice'><i className="fab fa-github-square"></i></a>
-                
-                <a href='https://www.linkedin.com/in/isael-lizama-9a128b130/'><i className="fab fa-linkedin"></i></a>
-                
-                <a href='https://twitter.com/ArizonaMJuice'><i className="fab fa-twitter-square"></i></a>
+            <div className='footer-main-container'>
+                <img className='footer-logo'  src={require('../../images/LSDMTLogo.png')}/>
+                <ul className='footer-links-container'>
+                    <li className='footer-li-links'>
+                        <a className='footer-links'>Features</a>
+                    </li>
+                    <li className='footer-li-links'>
+                        <a className='footer-links'>Recipes</a>
+                    </li>
+                    <li className='footer-li-links'>
+                        <a className='footer-links'>Membership</a>
+                    </li>
+                    <li className='footer-li-links'>
+                        <a className='footer-links'>Contact</a>
+                    </li>
+                </ul>
+                <div className='social-bar-container'>
+                    <div className='social-bar'>
+                        <a href='https://github.com/ArizonaMangoJuice'><FontAwesomeIcon icon={faGithub} /></a>
+                        
+                        <a href='https://www.linkedin.com/in/isael-lizama-9a128b130/'><FontAwesomeIcon icon={faLinkedin} /></a>
+                        
+                        <a href='https://twitter.com/ArizonaMJuice'><FontAwesomeIcon icon={faTwitterSquare} /></a>
+                    </div>
+                </div>
             </div>
-            <p className='footer-p'>© 2020. Isael Lizama. All rights reserved. Website Design by <a href='google.com'>AMJ</a></p>
+            
+            
+            <p className='footer-p'>© 2020. Los Sabores De Mi Tierra. All rights reserved. Website Developed by <a href='google.com'>AMJ</a></p>
         </footer>
     )
 }
