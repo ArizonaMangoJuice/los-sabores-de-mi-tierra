@@ -1,5 +1,6 @@
 /* make the min height calc(100vh - 160px - 85px); */
 /* make the width for the  */
+
 .featured{
     display: flex;
     flex-direction: row;

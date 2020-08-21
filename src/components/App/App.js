@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import ImageSlider from '../ImageSlider';
 import SideBanner from '../SideBanner';
 import Articles from '../Articles';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <SideBanner />
         <Header />
         <ImageSlider />
-        <Articles />        
+        <Articles />    
+        <Footer />    
     </div>
   );
 }

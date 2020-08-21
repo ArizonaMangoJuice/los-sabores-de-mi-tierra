@@ -1,12 +1,14 @@
 import React from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+
+
 export default function Footer(props){
     return (
         <footer className='main-color'>
-            <Link to='/login'>
+            {/* <Link to='/login'>
                 <img alt='isael-blog-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
-            </Link>
+            </Link> */}
             
             <div className='social-bar'>
                 
