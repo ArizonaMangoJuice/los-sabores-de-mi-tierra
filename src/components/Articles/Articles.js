@@ -7,14 +7,14 @@ import './articles.css'
 
 export default function Articles(props){
     return (
-        <div>
+        // <div>
             <div className='article-container'>
                 <SmallArticle />
                 <LargeArticle />
                 <MediumArticle />
                 <MediumArticle />
             </div>
-        </div>
+        // </div>
     )
 }
 

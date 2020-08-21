@@ -1,3 +1,5 @@
+/* make the min height calc(100vh - 160px - 85px); */
+/* make the width for the  */
 .featured{
     display: flex;
     flex-direction: row;
@@ -6,6 +8,7 @@
     justify-content: center;
     width: 100%;
     background-color: white;
+    /* min-height: calc(100vh - 160px - 85px) !important; */
 }
 
 .featured-container{
@@ -14,13 +17,18 @@
 }
 
 .image-container{
-    width: 40%;
+    /* width: 40%; */
+    overflow: hidden;
+    width: calc(50% - 130px);
     margin: 15px;
+    min-height: calc(100vh - 160px - 85px) !important
 }
 
 .featured-image{
     width: 100%;
     border-radius: 8px;
+    min-height: calc(100vh - 160px - 85px) !important;
+    background-position: center center;
 }
 
 .text-outer-container{
@@ -155,6 +163,10 @@
     border-width: 0 6px 6px 0 !important;
     display: inline-block !important;
     padding: 12px !important;
+}
+
+.slide {
+    /* min-height: calc(100vh - 160px - 85px) !important; */
 }
 /*
 .carousel .control-prev.control-arrow, .carousel .control-prev.control-arrow:hover {

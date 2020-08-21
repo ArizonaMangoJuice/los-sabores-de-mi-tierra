@@ -27,6 +27,8 @@ export default class ImageSlider extends Component{
     }
 }
 
+// change functionality of banner item
+// make image position absolute so you only show half
 function BannerItem(props){
     return (
         <div className='featured'>
