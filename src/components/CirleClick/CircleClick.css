@@ -1,6 +1,5 @@
 .circle-container{
     width: 41px;
-    border: 1px solid ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,6 +13,7 @@
     width: 25px;
     border-radius: 50%;
     border: 8px solid #E2E5ED;
+    cursor: pointer;
 }
 
 .outer-circle-disappear{
@@ -22,7 +22,6 @@
     animation-name: disappear;
     animation-duration: .3s;
     animation-fill-mode: forwards;
-    /* border: none; */
 }
 
 @keyframes disappear {
