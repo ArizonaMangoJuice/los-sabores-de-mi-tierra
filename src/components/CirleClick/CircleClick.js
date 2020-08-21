@@ -14,7 +14,7 @@ const CircleClick = React.memo( props => {
                     className='outer-circle'
                 >
                     <div 
-                        className={`${hovered ? ' inner-circle shrink' : 'inner-cirlce hidden'}`}
+                        className={`${hovered ? 'inner-circle shrink' : 'inner-cirlce hidden'}`}
                         // className='inner-circle'
                     >
 
