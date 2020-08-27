@@ -119,8 +119,10 @@
     padding: 50px;
 }
 
-.carousel{
-    /* width: 900px !important; */
+.carousel .slide img{
+    object-fit: cover;
+    background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .carousel.carousel-slider {
