@@ -4,7 +4,6 @@ import  './CircleClick.css';
 
 const CircleClick = React.memo( props => {
     const [hovered, setHovered] = useState(false)
-    console.log(hovered)
     return (
             <div className='circle-container'>
                 <div 
