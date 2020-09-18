@@ -1,23 +1,18 @@
-import React from 'react';
-import './App.css';
-import Header from '../Header/Header';
-import ImageSlider from '../ImageSlider';
-import SideBanner from '../SideBanner';
-import Articles from '../Articles';
-import Footer from '../Footer/Footer';
-import CircleClick from '../CirleClick';
+import React from 'react'
+import './App.css'
+import Landing from '../Landing/Landing'
+import {Route} from 'react-router-dom'
+import Header from '../Header/Header'
+import BlogPage from '../BlogPage/BlogPage'
 
 function App() {
   return (
     <div className="App">
-        <SideBanner />
-        <Header />
-        <ImageSlider />
-        <Articles />    
-        <CircleClick />
-        <Footer />    
+        <Route path='/' component={Header} />
+        <Route exact path='/' component={Landing} />
+        <Route path='/' component={BlogPage} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
