@@ -3,5 +3,28 @@
     margin: auto;
 }
 .blog-banner-container{
-    border: 1px solid red;
+    position: relative;
+    min-height: calc(100vh - 160px - 85px) !important;
+}
+.blog-banner-image{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 10px;
+}
+.blog-banner-desc{
+    box-sizing: border-box;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    padding-left: 75px;
+    padding-top: calc((100vh - 160px - 85px) / 2) !important;
+    padding-bottom: calc((100vh - 160px - 85px) / 2) !important;
 }
