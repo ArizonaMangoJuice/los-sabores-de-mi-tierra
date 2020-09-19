@@ -16,6 +16,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-radius: 10px;
+    z-index: -1;
 }
 .blog-banner-desc{
     box-sizing: border-box;
@@ -27,4 +28,21 @@
     padding-left: 75px;
     padding-top: calc((100vh - 160px - 85px) / 2) !important;
     padding-bottom: calc((100vh - 160px - 85px) / 2) !important;
+}
+.blog-page-text-container{
+    width: 88%;
+    border-radius: 20px;
+    margin: auto;
+    box-sizing: border-box;
+    margin-top: -60px;
+    background-color: white;
+    padding: 45px 80px ;
+}   
+
+.blog-page-paragraph{
+    font-size: 19px;
+    line-height: 1.65;
+    text-align: left;
+    width: 70%;
+    margin: 25px auto;
 }
