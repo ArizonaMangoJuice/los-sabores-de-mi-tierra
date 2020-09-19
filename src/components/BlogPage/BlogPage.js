@@ -2,6 +2,7 @@ import React from 'react'
 import BlogPageBanner from '../BlogPageImage/BlogPageImage'
 import BlogPageParagraph from '../BlogPageParagraph/BlogPageParagraph'
 import './BlogPage.css'
+import BlogPageAuthorContainer from '../BlogPageAuthorContainer/BlogPageAuthorContainer'
 
 // mock data 
 let staticParagraph = [
@@ -24,6 +25,7 @@ export default function BlogPage(props){
                 <div className='blog-page-text-container'>
                     {staticParagraphs}
                 </div>
+                <BlogPageAuthorContainer />
             </div>
         </>       
     )
