@@ -1,16 +1,18 @@
 import React from 'react'
 import './App.css'
 import Landing from '../Landing/Landing'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Header from '../Header/Header'
 import BlogPage from '../BlogPage/BlogPage'
-
+// will probably remove the switch doesnt seem like much help
 function App() {
   return (
     <div className="App">
-        <Route path='/' component={Header} />
-        <Route exact path='/' component={Landing} />
-        <Route path='/' component={BlogPage} />
+          <Route path='/' component={Header} />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route path='/blogpost/:id' component={BlogPage} />
+        </Switch>
     </div>
   )
 }
