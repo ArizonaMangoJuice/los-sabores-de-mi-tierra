@@ -4,9 +4,12 @@ import './Login.css'
 import {connect} from 'react-redux'
 import {login} from '../../actions'
 
+console.log('inside the login');
+
 const mapStateToProps = state => {
     return {
-        authToken: state.loginReducer.authToken
+        // state,  
+        authToken: state.loginReducer.authToken ? state.loginReducer.authToken : '' 
     }
 }
 
@@ -18,10 +21,20 @@ function Login(props){
         e.preventDefault();
         props.dispatch(login(username,password))
     }
-
     return (
-        <div className='page-container'>
-            {props.authToken ? <Redirect to='/dashboard' /> : null}
+        <div className='login-container'>
+            <div className='login-image'></div>
+            <div className='login-login-container'>
+                <h1>Welcome Back</h1>
+                <div className='login-form-container half'>
+                    <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
+                        <input onChange={(e) => setUsername(e.target.value)} className='main-color card-hover' type='text' placeholder='Username' value={username}/>
+                        <input onChange={(e) => setPassword(e.target.value)} className='main-color card-hover' type='password' placeholder='Password' value={password}/>
+                        <button className='login-button card-hover'>Login</button>
+                    </form>
+                </div>
+            </div>
+            {/* {props.authToken ? <Redirect to='/dashboard' /> : null}
             <div className='login-page-container'>
                 <div className='login-container card-hover relative'>
                     <div className='logo half'>
@@ -35,7 +48,7 @@ function Login(props){
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -7,6 +7,6 @@ import blogPage from './blogPage'
 export default combineReducers({
     // page,
     landingPage,
-    // loginReducer,
+    loginReducer,
     // blogPage
 })

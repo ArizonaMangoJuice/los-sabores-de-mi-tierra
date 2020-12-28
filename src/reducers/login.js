@@ -1,7 +1,7 @@
 import { SET_AUTH_TOKEN, CLEAR_AUTH, AUTH_SUCCESS, AUTH_ERROR } from "../actions"
 
 const initialState = {
-    authToken: null,
+    authToken: '',
     currentUser: null,
     error: null
 }
