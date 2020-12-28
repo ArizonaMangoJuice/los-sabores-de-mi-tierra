@@ -4,6 +4,7 @@ import CircleClick from '../CirleClick';
 import Footer from '../Footer';
 import Header from '../Header/Header';
 import ImageSlider from '../ImageSlider';
+import NewImageUpload from '../NewImageUpload';
 import SideBanner from '../SideBanner';
 
 export default function Landing(props){
@@ -14,6 +15,7 @@ export default function Landing(props){
             <Articles />
             <CircleClick />
             <Footer />
+            <NewImageUpload />
         </>
     )
 }

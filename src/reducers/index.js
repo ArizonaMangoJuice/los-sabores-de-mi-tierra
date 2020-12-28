@@ -5,8 +5,8 @@ import loginReducer from './login'
 import blogPage from './blogPage'
 
 export default combineReducers({
-    page,
+    // page,
     landingPage,
-    loginReducer,
-    blogPage
+    // loginReducer,
+    // blogPage
 })

@@ -1,7 +1,7 @@
 import Axios from "axios"
 import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
-import {storage} from '../firebase'
+import {storage} from '../storage.rules'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
