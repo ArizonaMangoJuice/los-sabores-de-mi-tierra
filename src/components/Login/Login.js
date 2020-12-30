@@ -35,7 +35,7 @@ function Login(props){
                     <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
                         <input onChange={(e) => setUsername(e.target.value)} className='login-input-text' type='text' placeholder='Username' value={username}/>
                         <input onChange={(e) => setPassword(e.target.value)} className='login-input-text' type='password' placeholder='Password' value={password}/>
-                        <button className='login-button card-hover'>Login</button>
+                        <button className='login-button'>Login</button>
                     </form>
                     {/* this will be random quotes soon tm */}
                     <div className='sign-in-quotes'>
