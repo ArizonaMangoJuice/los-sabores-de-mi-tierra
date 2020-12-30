@@ -88,8 +88,34 @@
     background-size: cover;
 }
 .login-login-container{
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     width: 60%;
     height: 100%;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+.login-input-text{
+    text-align: center;
+    border: none;
+    border-bottom: 5px solid #e2e5ed;
+    color: #e2e5ed;
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding: 5px;
+}
+.login-input-text::placeholder{
+    color: #e2e5ed;
+}
+.login-input-text:focus{
+    transition: .4s;
+    border-color: indigo;
+    color: black;
+    outline: none;
 }
