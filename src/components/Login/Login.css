@@ -115,7 +115,7 @@
 }
 .login-input-text:focus{
     transition: .4s;
-    border-color: indigo;
+    border-color: #2821FC;
     color: black;
     outline: none;
 }
