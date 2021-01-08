@@ -19,14 +19,16 @@ function Login(props){
     let [error, setError] = useState('');
 
     console.log('username: ', username, 'password: ', password)
-
+    console.log(props.authToken);
     const handleSubmit = (e) => {
         e.preventDefault();
         if(username.length === 0 || password.length === 0){
             setError('One of the inputs is empty');
-        }
-        console.log('you hit the login button')
-        //props.dispatch(login(username,password))
+        } else {
+            setError('');
+            console.log('you hit the login button')
+            props.dispatch(login(username,password))
+        } 
     }
     let errorhtml = error.length != 0  
         ? <div className='form-error'>
@@ -46,7 +48,7 @@ function Login(props){
                         <h4>Back to Homepage</h4>
                     </div>
                     <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
-                        {error}
+                        {errorhtml}
                         <input onChange={(e) => setUsername(e.target.value)} className='login-input-text' type='text' placeholder='Username' value={username}/>
                         <input onChange={(e) => setPassword(e.target.value)} className='login-input-text' type='password' placeholder='Password' value={password}/>
                         <button className='login-button'>Login</button>

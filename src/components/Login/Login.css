@@ -139,3 +139,10 @@
     color: white;
     outline:none;
 }
+/* move to form css file  */
+.form-error{    
+    background-color: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    border-radius: 4px;
+    margin: 10px;
+}
