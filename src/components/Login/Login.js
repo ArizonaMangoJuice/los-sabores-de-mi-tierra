@@ -16,11 +16,24 @@ const mapStateToProps = state => {
 function Login(props){
     let [username, setUsername] = useState('')
     let [password, setPassword] = useState('')
+    let [error, setError] = useState('');
+
+    console.log('username: ', username, 'password: ', password)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.dispatch(login(username,password))
+        if(username.length === 0 || password.length === 0){
+            setError('One of the inputs is empty');
+        }
+        console.log('you hit the login button')
+        //props.dispatch(login(username,password))
     }
+    let errorhtml = error.length != 0  
+        ? <div className='form-error'>
+            <p className='error-text'>{error}</p>
+          </div> 
+        : null;
+    
     return (
         <div className='login-container'>
             <div className='login-image'></div>
@@ -33,6 +46,7 @@ function Login(props){
                         <h4>Back to Homepage</h4>
                     </div>
                     <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
+                        {error}
                         <input onChange={(e) => setUsername(e.target.value)} className='login-input-text' type='text' placeholder='Username' value={username}/>
                         <input onChange={(e) => setPassword(e.target.value)} className='login-input-text' type='password' placeholder='Password' value={password}/>
                         <button className='login-button'>Login</button>
