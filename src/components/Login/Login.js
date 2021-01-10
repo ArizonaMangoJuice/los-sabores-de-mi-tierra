@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 }
 
 function Login(props){
+    
     let [username, setUsername] = useState('')
     let [password, setPassword] = useState('')
     let [error, setError] = useState('');
@@ -38,6 +39,11 @@ function Login(props){
     
     return (
         <div className='login-container'>
+            {
+                props.authToken 
+                    ? <Redirect to='/blogpost/loggedin' />
+                    : null
+            }
             <div className='login-image'></div>
             <div className='login-login-container'>
                 <h1>Welcome Back</h1>
