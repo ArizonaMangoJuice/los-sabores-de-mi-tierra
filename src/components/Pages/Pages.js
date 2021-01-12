@@ -106,6 +106,12 @@ function Pages(props){
 function ParagraphForm(props){
     return (
         <div className='new-paragraph'>
+            <nav className='paragraph-nav'>
+                <ul className='paragraph-list'>
+                    <li>Move</li>
+                    <li>X</li>
+                </ul>
+            </nav>
             <textarea 
                 className='paragraph-input'
             />
