@@ -123,3 +123,15 @@
     width: 100%;
     background-color: gray;
 }
+
+.paragraph-list{
+    display: inline-block;
+    margin: 0;
+}
+
+.paragraph-list li{
+    border: 1px solid red;
+    display: inline-block;
+    font-size: 18px;
+    padding: 3px 10px;
+}
