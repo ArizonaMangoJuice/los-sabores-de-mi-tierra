@@ -108,8 +108,16 @@ function ParagraphForm(props){
         <div className='new-paragraph'>
             <nav className='paragraph-nav'>
                 <ul className='paragraph-list'>
-                    <li>Move</li>
-                    <li>X</li>
+                    <li>
+                        <button>
+                            Move
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            X
+                        </button>
+                    </li>
                 </ul>
             </nav>
             <textarea 
