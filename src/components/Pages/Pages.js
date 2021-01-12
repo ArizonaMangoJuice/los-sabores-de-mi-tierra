@@ -69,10 +69,8 @@ function Pages(props){
         })
         return (
             <div className='dashboard-container'>
-                <div>
-                    hello
-                </div>
                 <Banner title='Create A New Blog!' />
+                <ParagraphForm />
                 {
                     // refactor this into its own component
                 props.error ?
@@ -103,6 +101,16 @@ function Pages(props){
                 </div>
             </div>
         )
+}
+
+function ParagraphForm(props){
+    return (
+        <div className='new-paragraph'>
+            <textarea 
+                className='paragraph-input'
+            />
+        </div>
+    )
 }
 
 export default connect(mapStateToProps)(Pages)

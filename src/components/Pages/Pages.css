@@ -100,3 +100,15 @@
     background-size: cover;
     max-width: 100%;
 }
+
+.new-paragraph{
+    width: 50%;
+    height: 500px;
+    border: 1px solid red;
+}
+
+.paragraph-input{
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+}
