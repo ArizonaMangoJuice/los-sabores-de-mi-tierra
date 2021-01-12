@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom'
 import Header from '../Header/Header'
 import BlogPage from '../BlogPage/BlogPage'
 import Login from '../Login/Login'
+import Pages from '../Pages/Pages'
 import Dashboard from '../Dashboard/Dashboard'
 // will probably remove the switch doesnt seem like much help
 function App() {

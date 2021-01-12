@@ -60,7 +60,7 @@ function Pages(props){
             } else {
                 return (<div key={'stack ' + i} className='image-history main-color'>
                     <img
-                        className='stack-history-image '
+                        className='stack-history-image'
                         src={element.link}
                         alt={element.name}/>
                 </div>)
@@ -69,6 +69,9 @@ function Pages(props){
         })
         return (
             <div className='dashboard-container'>
+                <div>
+                    hello
+                </div>
                 <Banner title='Create A New Blog!' />
                 {
                     // refactor this into its own component
