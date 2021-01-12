@@ -41,7 +41,7 @@ function Login(props){
         <div className='login-container'>
             {
                 props.authToken 
-                    ? <Redirect to='/blogpost/loggedin' />
+                    ? <Redirect to='/admin' />
                     : null
             }
             <div className='login-image'></div>

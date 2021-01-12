@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom'
 import Header from '../Header/Header'
 import BlogPage from '../BlogPage/BlogPage'
 import Login from '../Login/Login'
+import Dashboard from '../Dashboard/Dashboard'
 // will probably remove the switch doesnt seem like much help
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/' component={Landing} />
           <Route path='/blogpost/:id' component={BlogPage} />
+          <Route path='/admin' component={Dashboard} />
         </Switch>
     </div>
   )
