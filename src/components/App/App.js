@@ -16,6 +16,7 @@ function App() {
           <Route exact path='/' component={Landing} />
           <Route path='/blogpost/:id' component={BlogPage} />
           <Route path='/dashboard' component={Dashboard} />
+          <Route exact path='/dashboard/pages' component={Pages}/>
         </Switch>
     </div>
   )
