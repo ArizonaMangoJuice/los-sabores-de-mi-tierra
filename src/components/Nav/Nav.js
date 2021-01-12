@@ -31,7 +31,7 @@ class Nav extends React.Component{
             <nav className='dashboard-nav'>
                 {NavButtons}
                 {/* <NavButton  iconName="fas fa-power-off" color='#2fa53e' name="logout" bottom='bottom' /> */}
-                <button onClick={() => {this.props.dispatch(clearAuth()); clearToken()}} className='nav-button bottom' style={{borderLeft: '4px solid seagreen'}}>
+                <button onClick={() => {this.props.dispatch(clearAuth()); clearToken()}} className='nav-button ' style={{borderLeft: '4px solid seagreen'}}>
                     <div className='icon'>
                         <i className='seagreen fas fa-power-off'></i>
                     </div>
