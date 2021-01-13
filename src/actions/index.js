@@ -25,6 +25,7 @@ export const CLEAR_LINKNAME = 'CLEAR_LINKNAME'
 export const CLEAR_LINK = 'CLEAR_LINK'
 export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 export const ADD_LIST = 'ADD_LIST'
+export const NEW_ITEM = 'NEW_ITEM'
 
 
 // action creators 
@@ -126,6 +127,15 @@ export function changeBody(body){
     return {
         type: CHANGE_BODY,
         body
+    }
+}
+
+export function newItem(object){
+    return {
+        type: NEW_ITEM,
+        objectData: {
+            object
+        }
     }
 }
 

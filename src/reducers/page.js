@@ -7,7 +7,16 @@ import { CHANGE_TITLE,
         CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, ADD_IMAGE, ADD_LINK, ADD_LINK_NAME, ADD_LINK_STACK, CLEAR_LINKNAME, CLEAR_LINK, ADD_LINK_NAME_TO_BODY, ADD_LIST } from "../actions"
+        ADD_MAIN_IMAGE_PREVIEW, 
+        ADD_IMAGE, ADD_LINK, 
+        ADD_LINK_NAME, 
+        ADD_LINK_STACK, 
+        CLEAR_LINKNAME, 
+        CLEAR_LINK, 
+        ADD_LINK_NAME_TO_BODY, 
+        ADD_LIST ,
+        NEW_ITEM,
+    } from "../actions"
 
 let initialState = {
     title: '',
@@ -57,6 +66,19 @@ const page = (state = initialState, action) => {
                 body: '',
                 linkName: '',
                 stack: []
+            }
+        }
+        case NEW_ITEM: {
+            return {
+                ...state,
+                history: [
+                    ...state.history,
+                    {
+                        id: action.object.id,
+                        text: action.object.text
+                    }
+
+                ]
             }
         }
         case NEW_PARAGRAPH: {
