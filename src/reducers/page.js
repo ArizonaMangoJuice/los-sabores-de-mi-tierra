@@ -16,6 +16,7 @@ import { CHANGE_TITLE,
         ADD_LINK_NAME_TO_BODY, 
         ADD_LIST ,
         NEW_ITEM,
+        DELETE_ITEM,
     } from "../actions"
 
 let initialState = {
@@ -78,6 +79,13 @@ const page = (state = initialState, action) => {
                     }
 
                 ]
+            }
+        }
+        case DELETE_ITEM: {
+            let newHistory = state.history.filter(e => e.id != action.id);
+            return {
+                ...state,
+                history: newHistory
             }
         }
         case NEW_PARAGRAPH: {

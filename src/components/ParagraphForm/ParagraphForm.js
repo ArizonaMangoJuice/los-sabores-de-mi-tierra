@@ -1,8 +1,9 @@
-import React from 'react'
-
+import React from 'react';
+import {connect} from 'react-redux';
+import { deleteItem } from '../../actions';
 //this will be the adding paragraphs section 
 function ParagraphForm(props){
-    console.log(props)
+    console.log(props.dispatch, 'this is the dispatch')
     return (
         <div className='new-paragraph'>
             <nav className='paragraph-nav'>
@@ -13,7 +14,7 @@ function ParagraphForm(props){
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => props.delete(props.id, props.setHistory, props.history)}>
+                        <button onClick={() => props.dispatch(deleteItem(props.id))}>
                             X
                         </button>
                     </li>
@@ -29,4 +30,4 @@ function ParagraphForm(props){
     )
 }
 
-export default ParagraphForm;
+export default connect()(ParagraphForm);

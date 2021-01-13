@@ -26,6 +26,7 @@ export const CLEAR_LINK = 'CLEAR_LINK'
 export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 export const ADD_LIST = 'ADD_LIST'
 export const NEW_ITEM = 'NEW_ITEM'
+export const DELETE_ITEM = 'DELETE_ITEM'
 
 
 // action creators 
@@ -135,6 +136,13 @@ export function newItem(object){
         type: NEW_ITEM,
         object
         
+    }
+}
+
+export function deleteItem(id){
+    return {
+        type: DELETE_ITEM,
+        id
     }
 }
 
