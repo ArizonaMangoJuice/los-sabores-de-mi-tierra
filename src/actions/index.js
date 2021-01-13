@@ -28,7 +28,7 @@ export const ADD_LIST = 'ADD_LIST'
 export const NEW_ITEM = 'NEW_ITEM'
 export const DELETE_ITEM = 'DELETE_ITEM'
 export const RESET_ID = 'RESET_ID'
-
+export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
 // action creators 
 export function addListToState(list){
     return {
@@ -152,6 +152,15 @@ export function resethistoryId(){
     }
 }
 
+export function editParagraph(text,id){
+    return {
+        type: EDIT_PARAGRAPH,
+        data: {
+            text,
+            id
+        }
+    }
+}
 
 export function newParagraph(paragraph, stackId){
     // console.log(stackId)

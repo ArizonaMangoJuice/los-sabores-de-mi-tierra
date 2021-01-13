@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { deleteItem, resethistoryId } from '../../actions';
+import { deleteItem, editParagraph, resethistoryId } from '../../actions';
 //this will be the adding paragraphs section 
 
 
@@ -29,6 +29,7 @@ function ParagraphForm(props){
                 </ul>
             </nav>
             <textarea 
+                onChange={(e) => props.dispatch(editParagraph(e.target.value, props.id))}
                 className='paragraph-input'
             />
         </div>

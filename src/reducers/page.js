@@ -18,6 +18,7 @@ import { CHANGE_TITLE,
         NEW_ITEM,
         DELETE_ITEM,
         RESET_ID,
+        EDIT_PARAGRAPH,
     } from "../actions"
 
 let initialState = {
@@ -96,6 +97,19 @@ const page = (state = initialState, action) => {
                 ...state,
                 history: resetHistory
                 
+            }
+        }
+        case EDIT_PARAGRAPH: {
+            console.log('this is before the change', state.history)
+            let test = state.history.map(e => (
+                e.id === action.data.id
+                ? {id: e.id, text: action.data.text}
+                : e
+                ))
+            console.log('this is running', test)
+            return {
+                ...state,
+                history: test
             }
         }
         case NEW_PARAGRAPH: {
