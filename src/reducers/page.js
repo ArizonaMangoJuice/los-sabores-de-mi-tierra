@@ -17,6 +17,7 @@ import { CHANGE_TITLE,
         ADD_LIST ,
         NEW_ITEM,
         DELETE_ITEM,
+        RESET_ID,
     } from "../actions"
 
 let initialState = {
@@ -86,6 +87,15 @@ const page = (state = initialState, action) => {
             return {
                 ...state,
                 history: newHistory
+            }
+        }
+        case RESET_ID: {
+            let resetHistory = state.history.map((e, i) => ({...e, id: i}));
+            console.log('thi is the history',resetHistory);
+            return {
+                ...state,
+                history: resetHistory
+                
             }
         }
         case NEW_PARAGRAPH: {

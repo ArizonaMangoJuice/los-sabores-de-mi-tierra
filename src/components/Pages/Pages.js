@@ -8,13 +8,7 @@ import { newItem, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 
-let deleteBlock = (id, setHistory, history) => {
-    console.log('this is the id', id)
-    console.log('this is the history', history);
-    let newHistory = history.filter(e => e.id !== id);
 
-    setHistory(newHistory);
-};
 // make a reducer for the history
 const mapStateToProps = state => ({
     body: state.page.body,
@@ -33,8 +27,11 @@ function Pages(props){
         
         // let [addParagraph, setAddParagraph] = useState(false);
         // this will be a seperate component 
+        console.log('this is running everytime it resets', props.history.length)
         const newPar = {id: props.history.length, text: ''};
+
         let history = props.history.map(e => <ParagraphForm key={e.id} id={e.id} text={e.text}/>)
+
         return (
             <div className=''>
                 <button 

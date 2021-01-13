@@ -27,7 +27,7 @@ export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 export const ADD_LIST = 'ADD_LIST'
 export const NEW_ITEM = 'NEW_ITEM'
 export const DELETE_ITEM = 'DELETE_ITEM'
-
+export const RESET_ID = 'RESET_ID'
 
 // action creators 
 export function addListToState(list){
@@ -145,6 +145,13 @@ export function deleteItem(id){
         id
     }
 }
+
+export function resethistoryId(){
+    return {
+        type: RESET_ID
+    }
+}
+
 
 export function newParagraph(paragraph, stackId){
     // console.log(stackId)
