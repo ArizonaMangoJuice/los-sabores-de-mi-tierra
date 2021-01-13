@@ -74,8 +74,7 @@ const page = (state = initialState, action) => {
                 history: [
                     ...state.history,
                     {
-                        id: action.object.id,
-                        text: action.object.text
+                        ...action.object
                     }
 
                 ]

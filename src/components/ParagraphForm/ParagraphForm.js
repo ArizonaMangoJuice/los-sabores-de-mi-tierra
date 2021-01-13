@@ -17,6 +17,9 @@ function ParagraphForm(props){
                             X
                         </button>
                     </li>
+                    <li>
+                        {props.id}
+                    </li>
                 </ul>
             </nav>
             <textarea 

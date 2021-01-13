@@ -133,9 +133,8 @@ export function changeBody(body){
 export function newItem(object){
     return {
         type: NEW_ITEM,
-        objectData: {
-            object
-        }
+        object
+        
     }
 }
 
