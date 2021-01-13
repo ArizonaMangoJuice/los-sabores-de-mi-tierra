@@ -6,6 +6,7 @@ import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
 import { submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
+import ParagraphForm from '../ParagraphForm/ParagraphForm';
 
 let deleteBlock = (id, setHistory, history) => {
     console.log('this is the id', id)
@@ -53,30 +54,6 @@ function Pages(props){
             </div>
         )
 }
-//this will be the adding paragraphs section 
-function ParagraphForm(props){
-    console.log(props)
-    return (
-        <div className='new-paragraph'>
-            <nav className='paragraph-nav'>
-                <ul className='paragraph-list'>
-                    <li>
-                        <button>
-                            Move
-                        </button>
-                    </li>
-                    <li>
-                        <button onClick={() => props.delete(props.id, props.setHistory, props.history)}>
-                            X
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-            <textarea 
-                className='paragraph-input'
-            />
-        </div>
-    )
-}
+
 
 export default connect(mapStateToProps)(Pages)
