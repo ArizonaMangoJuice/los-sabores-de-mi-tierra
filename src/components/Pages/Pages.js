@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Pages.css'
 import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
@@ -7,6 +7,14 @@ import {connect} from 'react-redux'
 import { submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 
+let deleteBlock = (id, setHistory, history) => {
+    console.log('this is the id', id)
+    console.log('this is the history', history);
+    let newHistory = history.filter(e => e.id !== id);
+
+    setHistory(newHistory);
+};
+// make a reducer for the history
 const mapStateToProps = state => ({
     body: state.page.body,
     title: state.page.title,
@@ -19,91 +27,35 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        let {title, authToken, stack} = props
+        let {title, authToken, stack} = props;
+        let [history, setHistory] = useState([]);
+        // let [addParagraph, setAddParagraph] = useState(false);
         // this will be a seperate component 
-        let stackHistory = props.stack.map((element, i) => {
-            
-            if(props.imagePreview && element.name && element.stackId === 0){
-                return (<div key={'stack ' + i} className='image-history main-color card-hover'>
-                    <img
-                        className='stack-history-image'
-                        src={props.imagePreview}
-                        alt={element.name}/>
-                </div>)
-                
-            } else if(element.paragraph || element.paragraph === ''){
-                return (    
-                    <ParagraphHistory
-                        key={'stack ' + i}
-                        stackId={i}
-                        paragraph={element.paragraph}/>)
-            } else if(element.isOrdered){
-                return (
-                    <div className='main-color list-history card-hover'>
-                        <ol>
-                            {element.listArray.map(e => (
-                                <li>{e}</li>
-                            ))}
-                        </ol>
-                    </div>
-                )
-            } else if(!element.isOrdered && element.listArray){
-                return (
-                    <div className='main-color list-history card-hover'>
-                        <ul>
-                            {element.listArray.map(e => (
-                                <li>{e}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )
-            } else {
-                return (<div key={'stack ' + i} className='image-history main-color'>
-                    <img
-                        className='stack-history-image'
-                        src={element.link}
-                        alt={element.name}/>
-                </div>)
-            }
-            
-        })
         return (
-            <div className='dashboard-container'>
-                <Banner title='Create A New Blog!' />
-                <ParagraphForm />
-                {
-                    // refactor this into its own component
-                props.error ?
-                    <div className='error-background page-error card-hover' >
-                        <p className='error-msg'>{props.error}</p> 
-                    </div>
-                    : null
-                }
-                {props.success ? 
-                    <div className='success-background page-success card-hover' >
-                        <p className='success-msg'>{props.success}</p> 
-                    </div>
-                    : null
-                }
-                <PageTitleInput />
-                <div className='main-page '>
-                    <PageBody />
-                    <div className='page-body page-settings main-color'>
-                            <button className='dashboard-button nav-button' onClick={() => props.dispatch(submitPage(title, stack, authToken, props.stack, props.linkStack))}>
-                                Create Page 
-                            </button>
-                            
-                    </div>
-                    <div className='page-body page-settings '>
-                            {stackHistory}
-                            {/* <ImageUpload /> */}
-                    </div>
-                </div>
+            <div className=''>
+                <button 
+                    className='add-paragraph'
+                    onClick={() => 
+                        setHistory([
+                            ...history, 
+                            <ParagraphForm 
+                                key={history.length} 
+                                id={history.length} 
+                                history={history}
+                                setHistory={setHistory}
+                                delete={deleteBlock}
+                            />
+                    ])}
+                >
+                    Add Paragraph
+                </button>
+                {history}
             </div>
         )
 }
-
+//this will be the adding paragraphs section 
 function ParagraphForm(props){
+    console.log(props)
     return (
         <div className='new-paragraph'>
             <nav className='paragraph-nav'>
@@ -114,7 +66,7 @@ function ParagraphForm(props){
                         </button>
                     </li>
                     <li>
-                        <button>
+                        <button onClick={() => props.delete(props.id, props.setHistory, props.history)}>
                             X
                         </button>
                     </li>

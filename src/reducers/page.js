@@ -20,7 +20,8 @@ let initialState = {
     imagePreview: '',
     linkStack: [],
     hyperLink: '',
-    list: []
+    list: [], 
+    history: []
 }
 
 const page = (state = initialState, action) => {
