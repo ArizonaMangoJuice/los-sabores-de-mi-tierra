@@ -11,14 +11,7 @@ import ParagraphForm from '../ParagraphForm/ParagraphForm';
 
 // make a reducer for the history
 const mapStateToProps = state => ({
-    body: state.page.body,
-    title: state.page.title,
-    error: state.page.error,
-    success: state.page.success,
-    authToken: state.loginReducer.authToken,
-    stack: state.page.stack,
-    imagePreview: state.page.imagePreview,
-    linkStack: state.page.linkStack,
+    
     history: state.page.history
 })
 
@@ -28,7 +21,6 @@ function Pages(props){
         // let [addParagraph, setAddParagraph] = useState(false);
         // this will be a seperate component 
         console.log('this is running everytime it resets', props.history.length)
-        const newPar = {id: props.history.length, text: ''};
 
         let history = props.history.map(e => <ParagraphForm key={e.id} id={e.id} text={e.text}/>)
 
@@ -36,7 +28,7 @@ function Pages(props){
             <div className=''>
                 <button 
                     className='add-paragraph'
-                    onClick={() => props.dispatch(newItem(newPar))}
+                    onClick={() => props.dispatch(newItem())}
                 >
                     Add Paragraph
                 </button>
@@ -59,3 +51,12 @@ export default connect(mapStateToProps)(Pages)
 //                                 delete={deleteBlock}
 //                             />
 //                     ])
+
+// body: state.page.body,
+//     title: state.page.title,
+//     error: state.page.error,
+//     success: state.page.success,
+//     authToken: state.loginReducer.authToken,
+//     stack: state.page.stack,
+//     imagePreview: state.page.imagePreview,
+//     linkStack: state.page.linkStack,

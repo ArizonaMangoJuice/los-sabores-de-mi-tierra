@@ -131,11 +131,9 @@ export function changeBody(body){
     }
 }
 
-export function newItem(object){
+export function newItem(){
     return {
         type: NEW_ITEM,
-        object
-        
     }
 }
 
