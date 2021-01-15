@@ -85,24 +85,25 @@ const page = (state = initialState, action) => {
             }
         }
         case DELETE_ITEM: {
-            let array = [];
-            let newHistory = state.history.filter(e => e.id != action.id);
-            for(let i = 0; i < newHistory.length; i++){
-                array.push({
-                    ...newHistory[i],
-                    id: i
-                })
-            }
-            console.log(array)
+            let newHistory = state.history
+                .filter(e => e.id != action.id);
+                
+            // for(let i = 0; i < newHistory.length; i++){
+            //     array.push({
+            //         ...newHistory[i],
+            //         id: i
+            //     })
+            // }
+            console.log(newHistory)
             return {
                 ...state,
-                history: array
+                history: newHistory
             }
         }
 
         case RESET_ID: {
             let resetHistory = state.history.map((e, i) => ({...e, id: i}));
-            console.log('this is the history',resetHistory);
+            console.log('this is the history !!!!!!!!!!!!!!!!!!!!!!!!!!!!',resetHistory);
             return {
                 ...state,
                 history: resetHistory

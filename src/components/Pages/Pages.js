@@ -1,34 +1,42 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Pages.css'
 import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { newItem, submitPage} from '../../actions';
+import { newItem, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 
 
 // make a reducer for the history
 const mapStateToProps = state => ({
-    
     history: state.page.history
 })
 
 function Pages(props){
         const {title, authToken, stack} = props;
+        const [bloghistory, setBlogHistory] = useState(props.history)
+        useEffect(() => {
+            if(props.history){
+                setBlogHistory(props.history)
+            }
+            
+        }, [props.history])
         
         // let [addParagraph, setAddParagraph] = useState(false);
         // this will be a seperate component 
         console.log('this is running everytime it resets', props.history.length)
 
-        let history = props.history.map(e => <ParagraphForm key={e.id} id={e.id} text={e.text}/>)
+        let history = bloghistory.map(e => <ParagraphForm key={e.id} id={e.id} text={e.text}/>)
 
         return (
             <div className=''>
                 <button 
                     className='add-paragraph'
-                    onClick={() => props.dispatch(newItem())}
+                    onClick={() => {
+                        props.dispatch(newItem());
+                    }}
                 >
                     Add Paragraph
                 </button>
