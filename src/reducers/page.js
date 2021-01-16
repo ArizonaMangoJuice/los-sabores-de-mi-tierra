@@ -49,27 +49,14 @@ const page = (state = initialState, action) => {
             }}
         case DELETE_PARAGRAPH:{
             let {id} = action;
-            let array = [];
-            let count = 0;
+           
+            let newHistory = state.history
+                .filter(e => e.id !== id)
+                .map((e, i) => ({...e, id: `p${i}`}));
 
-            for(let i = 0; i < state.history.length; i++){
-                if(state.history[i].id === id){
-                    console.log('this passed')
-                    continue;
-                } else {
-                    let updatedId = {
-                        id: `p${count}`,
-                        text: state.history[i].text
-                    };
-                    array.push(updatedId);
-                    count++;
-                }
-            }
-
-            console.log('this is the array')
             return {
                 ...state,
-                history: array
+                history: newHistory
             }
         }
         case EDIT_PARAGRAPH: {
