@@ -15,30 +15,27 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        // let [addParagraph, setAddParagraph] = useState(false);
-        // this will be a seperate component 
-        const [history, setHistory] = useState([]);
-        let count = 0;
-        useEffect(() => {
-            let updatedHistory = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
-            setHistory(updatedHistory)
-        }, [props.history])
-
-
-        // let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
+        let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
 
         return (
-            <div className=''>
-                <button 
-                    className='add-paragraph'
-                    onClick={() => {
-                        props.dispatch(addParagraph(props.history.length));
-                    }}
-                >
-                    Add Paragraph
-                </button>
-                {history}
-            </div>
+            <>
+                <div className='creation-nav'>
+                    <button 
+                        className='add-paragraph'
+                        onClick={() => {
+                            props.dispatch(addParagraph(props.history.length));
+                        }}
+                    >
+                        Add Paragraph
+                    </button>
+                </div>
+                {/* this will show the main site preview
+                    it will get changed
+                */}
+                <div className='preview'>
+
+                </div>
+            </>
         )
 }
 
