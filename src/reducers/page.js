@@ -61,21 +61,16 @@ const page = (state = initialState, action) => {
         }
         case EDIT_PARAGRAPH: {
             let {id, text} = action;
-            console.log('editing from edit action', id)
-            let array = [];
-            for(let i = 0; i < state.history.length; i++){
-                if(state.history[i].id === id){
-                    array.push({
-                        text,
-                        id
-                    })
-                } else {
-                    array.push(state.history[i])
-                }
-            }
+            
+            let newHistory = state.history.map((e) => 
+                e.id === id 
+                ? {text, id}
+                : {...e})
+                
+            console.log('these are the updated ps', newHistory)
             return {
                 ...state,
-                history: array
+                history: newHistory
             }
         }
         default: 
