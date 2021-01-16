@@ -66,8 +66,7 @@ const page = (state = initialState, action) => {
                 e.id === id 
                 ? {text, id}
                 : {...e})
-                
-            console.log('these are the updated ps', newHistory)
+
             return {
                 ...state,
                 history: newHistory
