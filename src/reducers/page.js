@@ -54,6 +54,7 @@ const page = (state = initialState, action) => {
 
             for(let i = 0; i < state.history.length; i++){
                 if(state.history[i].id === id){
+                    console.log('this passed')
                     continue;
                 } else {
                     let updatedId = {

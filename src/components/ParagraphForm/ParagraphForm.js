@@ -33,6 +33,7 @@ function ParagraphForm(props){
                 </ul>
             </nav>
             <textarea 
+                value={props.text}
                 onChange={(e) => props.dispatch(editParagraph(e.target.value, props.id))}
                 className='paragraph-input'
             />
