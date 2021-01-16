@@ -4,7 +4,7 @@ import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { newItem, resethistoryId, submitPage} from '../../actions';
+import { addParagraph, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 
@@ -15,27 +15,24 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        const {title, authToken, stack} = props;
-        const [bloghistory, setBlogHistory] = useState(props.history)
-        useEffect(() => {
-            if(props.history){
-                setBlogHistory(props.history)
-            }
-            
-        }, [props.history])
-        
         // let [addParagraph, setAddParagraph] = useState(false);
         // this will be a seperate component 
-        console.log('this is running everytime it resets', props.history.length)
+        const [history, setHistory] = useState([]);
+        let count = 0;
+        useEffect(() => {
+            let updatedHistory = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
+            setHistory(updatedHistory)
+        }, [props.history])
 
-        let history = bloghistory.map(e => <ParagraphForm key={e.id} id={e.id} text={e.text}/>)
+
+        // let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
 
         return (
             <div className=''>
                 <button 
                     className='add-paragraph'
                     onClick={() => {
-                        props.dispatch(newItem());
+                        props.dispatch(addParagraph(props.history.length));
                     }}
                 >
                     Add Paragraph

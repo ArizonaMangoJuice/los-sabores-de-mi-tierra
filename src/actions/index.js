@@ -25,7 +25,7 @@ export const CLEAR_LINKNAME = 'CLEAR_LINKNAME'
 export const CLEAR_LINK = 'CLEAR_LINK'
 export const ADD_LINK_NAME_TO_BODY = 'ADD_LINK_NAME_TO_BODY'
 export const ADD_LIST = 'ADD_LIST'
-export const NEW_ITEM = 'NEW_ITEM'
+export const ADD_PARAGRAPH = 'ADD_PARAGRAPH'
 export const DELETE_ITEM = 'DELETE_ITEM'
 export const RESET_ID = 'RESET_ID'
 export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
@@ -131,15 +131,16 @@ export function changeBody(body){
     }
 }
 
-export function newItem(){
+export function addParagraph(itemId){
     return {
-        type: NEW_ITEM,
+        type: ADD_PARAGRAPH,
+        itemId
     }
 }
 
-export function deleteItem(id){
+export function deleteParagraph(id){
     return {
-        type: DELETE_ITEM,
+        type: DELETE_PARAGRAPH,
         id
     }
 }
@@ -153,10 +154,8 @@ export function resethistoryId(){
 export function editParagraph(text,id){
     return {
         type: EDIT_PARAGRAPH,
-        data: {
             text,
             id
-        }
     }
 }
 
@@ -181,12 +180,12 @@ export function changeParagraph(paragraph, stackId){
     }
 }
 
-export function deleteParagraph(stackId){
-    return {
-        type: DELETE_PARAGRAPH,
-        stackId
-    }
-}
+// export function deleteParagraph(stackId){
+//     return {
+//         type: DELETE_PARAGRAPH,
+//         stackId
+//     }
+// }
 
 export function pageError(error){
     return {

@@ -8,5 +8,5 @@ export default combineReducers({
     page,
     landingPage,
     loginReducer,
-    // blogPage
+    blogPage
 })
