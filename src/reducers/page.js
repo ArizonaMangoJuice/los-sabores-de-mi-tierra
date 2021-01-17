@@ -39,6 +39,18 @@ let initialState = {
 
 const page = (state = initialState, action) => {
     switch(action.type){
+        case ADD_MAIN_IMAGE:{
+            let newHistory = [{
+                mainImage: true,
+                isImage: true,
+                image: action.image,
+                id: `i${0}` 
+            }, ...state.history];
+            return {
+                ...state,
+                history: newHistory
+            }
+        }
         case ADD_PARAGRAPH:{
             return {
                 ...state,

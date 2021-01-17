@@ -4,10 +4,14 @@ import {connect} from 'react-redux'
 import { addMainImagePreview, addMainImage, addImage } from '../../actions'
 
 const mapStateToProps = state => ({
-    // imagePreview: state.page.imagePreview
+    // page: state.page
 })
 
-export const ImageUpload = (props) => {
+const mapDispatchToProps = dispatch => ({
+    dispatch
+})
+
+const ImageUpload = props => {
     // create a preview as a side effect, whenever selected file is changed
     useEffect(() => {
         // free memory when ever this component is unmounted
@@ -21,6 +25,7 @@ export const ImageUpload = (props) => {
 
         // I've kept this example simple by using the first image instead of multiple
         if(props && props.mainImage){
+            console.log('this is the file',e.target.files[0])
             props.dispatch(addMainImage(e.target.files[0]))
             props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
         } else {
@@ -46,4 +51,4 @@ export const ImageUpload = (props) => {
     )
 }
 
-export default connect(mapStateToProps)(ImageUpload)
+export default connect()(ImageUpload)

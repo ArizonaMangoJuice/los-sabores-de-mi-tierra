@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 import { addParagraph, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
+import ImageUpload  from '../ImageUpload/ImageUpload';
 
 
 // make a reducer for the history
@@ -28,12 +29,14 @@ function Pages(props){
                     >
                         Add Paragraph
                     </button>
+                    <ImageUpload mainImage={true}/>
+                    <ImageUpload mainImage={false} name={'Add Image'}/>
                 </div>
                 {/* this will show the main site preview
                     it will get changed
                 */}
                 <div className='preview'>
-
+                    {history}
                 </div>
             </>
         )
