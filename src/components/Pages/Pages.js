@@ -8,6 +8,8 @@ import { addParagraph, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
+import BlogPageBanner from '../BlogPageImage/BlogPageImage';
+import BlogPage from '../BlogPage/BlogPage';
 
 
 // make a reducer for the history
@@ -19,7 +21,7 @@ function Pages(props){
         let history = 
             props.history.map(
                 (e, i) => e.isImage 
-                ? <div key={`i${i}`}>this will be an image </div> 
+                ? <img src={e.imagePreview} key={`i${i}`} id={e.id} /> 
                 : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 
@@ -43,6 +45,8 @@ function Pages(props){
                     it will get changed
                 */}
                 <div className='preview'>
+                    The preview will go here
+                    <BlogPage />
                     {history}
                 </div>
             </>

@@ -3,6 +3,7 @@ import BlogPageBanner from '../BlogPageImage/BlogPageImage'
 import BlogPageParagraph from '../BlogPageParagraph/BlogPageParagraph'
 import './BlogPage.css'
 import BlogPageAuthorContainer from '../BlogPageAuthorContainer/BlogPageAuthorContainer'
+import {connect} from 'react-redux';
 
 // mock data 
 let staticParagraph = [
@@ -17,7 +18,7 @@ let staticParagraphs = staticParagraph.map( e =>
     <BlogPageParagraph text={e}/> 
 )
 
-export default function BlogPage(props){
+function BlogPage(props){
     return (
         <>
             <div className='blog-page-container'>
@@ -30,4 +31,6 @@ export default function BlogPage(props){
         </>       
     )
 }
+
+export default connect()(BlogPage)
 
