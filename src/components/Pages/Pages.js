@@ -46,7 +46,7 @@ function Pages(props){
                 */}
                 <div className='preview'>
                     The preview will go here
-                    <BlogPage />
+                    <BlogPage isHistory={true} />
                     {history}
                 </div>
             </>

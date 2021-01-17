@@ -14,12 +14,48 @@ let staticParagraph = [
     "Quos nisi redarguimus, omnis virtus, omne decus, omnis vera laus deserenda est. Sed eum qui audiebant, quoad poterant, defendebant sententiam suam. Fatebuntur Stoici haec omnia dicta esse praeclare, neque eam causam Zenoni desciscendi fuisse. Quisted est autem dignus nomine hominis, qui unum diem totum velit esse in genere isto voluptatis. Ad eos igitur convert te, quaeso. Duo Reges: constructio interrete. An est aliquid per se ipsum flagitiosum, etiamsi nulla comitetur infamia. Quid ad utilitatem tantae pecuniae? Duo enim genera quae erant, fecit tria. Et quod est munus, quod opus sapientiae? Sed in rebus apertissimis nimium longi sumus."
 ]
 
+const mapStateToProps = state => ({
+    history: state.page.history
+})
+
 let staticParagraphs = staticParagraph.map( e => 
     <BlogPageParagraph text={e}/> 
 )
 
 function BlogPage(props){
-    return (
+    console.log('this is the props', props)
+   let history;
+
+   if(props.isHistory){
+       history = props.history;
+       history = history.map((e, i) => {
+        if(e.isImage){
+            return (
+                <img key={e.id} src={e.imagePreview}/>
+            )
+        }   
+        if(e.text){
+            return (
+                <BlogPageParagraph key={e.id} text={e.text} />
+            )
+        }
+       })
+   } 
+   console.log('this is the blog page history',history)
+
+   return props.isHistory 
+    ?(    
+        <>
+            <div className='blog-page-container'>
+                <BlogPageBanner isHistory={true}/>
+                <div className='blog-page-text-container'>
+                    {history}
+                </div>
+                <BlogPageAuthorContainer />
+            </div>
+        </>       
+    )
+    : (
         <>
             <div className='blog-page-container'>
                 <BlogPageBanner />
@@ -32,5 +68,5 @@ function BlogPage(props){
     )
 }
 
-export default connect()(BlogPage)
+export default connect(mapStateToProps)(BlogPage)
 
