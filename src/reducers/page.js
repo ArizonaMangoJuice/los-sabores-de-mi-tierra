@@ -40,12 +40,16 @@ let initialState = {
 const page = (state = initialState, action) => {
     switch(action.type){
         case ADD_MAIN_IMAGE:{
+            let image = action.image;
+
             let newHistory = [{
                 mainImage: true,
                 isImage: true,
-                image: action.image,
+                image,
+                imagePreview: URL.createObjectURL(image),
                 id: `i${0}` 
             }, ...state.history];
+            
             return {
                 ...state,
                 history: newHistory

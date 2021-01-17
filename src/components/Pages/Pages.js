@@ -16,8 +16,15 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
-        let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>)
+        let history = 
+            props.history.map(
+                (e, i) => e.isImage 
+                ? <div key={`i${i}`}>this will be an image </div> 
+                : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
+            )    
 
+        {/* // let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>); */}
+        console.log(props.history, 'this is the history')
         return (
             <>
                 <div className='creation-nav'>

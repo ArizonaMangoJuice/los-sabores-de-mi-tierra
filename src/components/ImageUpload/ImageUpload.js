@@ -27,7 +27,7 @@ const ImageUpload = props => {
         if(props && props.mainImage){
             console.log('this is the file',e.target.files[0])
             props.dispatch(addMainImage(e.target.files[0]))
-            props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
+            // props.dispatch(addMainImagePreview(URL.createObjectURL(e.target.files[0])))
         } else {
             let file = e.target.files[0];
             let link = URL.createObjectURL(file)
