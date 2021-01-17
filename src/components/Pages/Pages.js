@@ -21,7 +21,7 @@ function Pages(props){
         let history = 
             props.history.map(
                 (e, i) => e.isImage 
-                ? <img src={e.imagePreview} key={`i${i}`} id={e.id} /> 
+                ? <img className='history-image' src={e.imagePreview} key={`i${i}`} id={e.id} /> 
                 : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 
@@ -45,7 +45,6 @@ function Pages(props){
                     it will get changed
                 */}
                 <div className='preview'>
-                    The preview will go here
                     {history}
                     <BlogPage isHistory={true} />
                     

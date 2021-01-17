@@ -138,3 +138,8 @@
     font-size: 18px;
     padding: 3px 10px;
 }
+
+.history-image{
+    max-height: 500px;
+    max-width: 750px;
+}
