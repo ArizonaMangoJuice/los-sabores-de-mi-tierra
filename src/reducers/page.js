@@ -55,6 +55,22 @@ const page = (state = initialState, action) => {
                 history: newHistory
             }
         }
+        case ADD_IMAGE: {
+            let image = action.image;
+
+            let newHistory = [...state.history,{
+                mainImage: false,
+                isImage: true,
+                image,
+                imagePreview: URL.createObjectURL(image),
+                id: `i${state.history.length}`
+            }]
+
+            return {
+                ...state,
+                history: newHistory
+            }
+        }
         case ADD_PARAGRAPH:{
             return {
                 ...state,
