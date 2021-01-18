@@ -29,6 +29,7 @@ export const ADD_PARAGRAPH = 'ADD_PARAGRAPH'
 export const DELETE_ITEM = 'DELETE_ITEM'
 export const RESET_ID = 'RESET_ID'
 export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
+export const ADD_TITLE = 'ADD_TITLE'
 // action creators 
 export function addListToState(list){
     return {

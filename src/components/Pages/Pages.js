@@ -4,7 +4,7 @@ import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { addParagraph, resethistoryId, submitPage} from '../../actions';
+import { addParagraph, changeTitle, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
@@ -14,7 +14,8 @@ import BlogPage from '../BlogPage/BlogPage';
 
 // make a reducer for the history
 const mapStateToProps = state => ({
-    history: state.page.history
+    history: state.page.history,
+    title: state.page.title
 })
 
 function Pages(props){
@@ -55,7 +56,18 @@ function Pages(props){
                     {
                         preview 
                             ? <BlogPage isHistory={true} />
-                            : <div className='history-page'>{history}</div>
+                            : <div className='history-page'>
+                                <div className='title-history-container'>
+                                    <input 
+                                        onChange={(e) => props.dispatch(changeTitle(e.target.value))} 
+                                        className='title-input' 
+                                        type='text' 
+                                        placeholder='Title Here' 
+                                        value={props.title}
+                                    />
+                                </div>
+                                {history}
+                            </div>
                     }
                     
                     

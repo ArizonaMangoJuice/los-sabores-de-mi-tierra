@@ -156,3 +156,14 @@
     max-width: 768px;
     margin: auto;
 }
+
+.title-history-container{
+    width: 768px;
+    margin: 15px auto;
+
+}
+
+.title-input{
+    width: 50%;
+    font-size: 24px;
+}

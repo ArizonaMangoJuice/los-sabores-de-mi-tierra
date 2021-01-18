@@ -23,7 +23,8 @@ import { CHANGE_TITLE,
     } from "../actions"
 
 let initialState = {
-    // title: '',
+    title: '',
+    readTime: '',
     // body: '',
     // linkName: '',
     // errror: undefined,
@@ -39,6 +40,13 @@ let initialState = {
 
 const page = (state = initialState, action) => {
     switch(action.type){
+        case CHANGE_TITLE: {
+            return {
+                ...state,
+                title: action.title
+            }
+        }
+
         case ADD_MAIN_IMAGE:{
             let image = action.image;
 

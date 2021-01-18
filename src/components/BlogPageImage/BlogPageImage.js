@@ -4,11 +4,13 @@ import {connect} from 'react-redux'
 let staticUrl = 'https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=8b1938d0d4ef26e336db84568708980a';
 
 const mapStateToProps = state => ({
-    history: state.page.history
+    history: state.page.history,
+    title: state.page.title
 })
 
 function BlogPageBanner(props){
     let mainImage;
+    let title;
 
     if(props.isHistory && props.history){
         if(props.history[0] && props.history[0].imagePreview) {
@@ -16,6 +18,8 @@ function BlogPageBanner(props){
         } else {
             mainImage = staticUrl;
         }
+        
+        title = props.title;
     } 
 
     return (
@@ -30,10 +34,10 @@ function BlogPageBanner(props){
 
                 </div>
                 <div className='blog-banner-title featured-title'>
-                    I'm passionate about food, the tradition of it, cooking it, sharing it
+                   {title}
                 </div>
                 <div className='blog-banner-author slide-author'>
-                    by <span className='normal-bold'>Sean Hamilton, Patricia Jenkins, James Bryant</span> 3 years ago
+                    by <span className='normal-bold'>Norma Vizcaino, Isael Lizama</span> 
                 </div>
                 <div className='slide-author'>
                     1 MIN READ
