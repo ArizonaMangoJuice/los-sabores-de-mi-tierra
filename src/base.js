@@ -1,6 +1,6 @@
-import firebase from 'firebase/app'
-import "firebase/storage"
-
+import firebase from 'firebase/app';
+import "firebase/storage";
+import "firebase/auth";
 const firebaseConfig = {
     apiKey: "AIzaSyDZv56n-yj4ARpLo7TmoI3tVIqPqpwmvpA",
     authDomain: "los-sabores.firebaseapp.com",
@@ -12,5 +12,12 @@ const firebaseConfig = {
     measurementId: "G-1BPPE3E9CJ"
   };
   // Initialize Firebase
- export const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+firebase.auth().signInAnonymously().catch(error => console.log('something is wrong', error));
+
+
 //   firebase.analytics();
+let storage = firebase.storage();
+export {
+    storage, firebase as default
+}

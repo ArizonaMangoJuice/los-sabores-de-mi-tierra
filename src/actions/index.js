@@ -1,7 +1,8 @@
 import Axios from "axios"
 import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
-import {storage} from '../storage.rules'
+// import {storage} from '../storage.rules'
+import firebase, {storage} from '../base'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -208,9 +209,11 @@ export function clearPage(){
 }
 // have to make this be able to upload multiple images and return array of links in order
     function uploadImage(image) {
+    firebase.auth().signInAnonymously().catch(error => console.log('something is wrong', error));
+
         return new Promise ((resolve, reject) => {
             let err
-            let uploadTask = storage.ref(`images/${image.name}`).put(image)
+            let uploadTask = storage.ref(`images/${image.image.name}`).put(image.image)
                 uploadTask.on('state_changed', (snapshot) => {
                     // progress function 
                     console.log(Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100))
@@ -221,7 +224,7 @@ export function clearPage(){
                     err = error
                 }, (complete) => {
                     // complete function
-                    storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                    storage.ref('images').child(image.image.name).getDownloadURL().then(url => {
                         // console.log(url.split('&').shift())
                         let imageStub = url.split('&').shift()
                         if(err){
@@ -243,44 +246,52 @@ function processArray(arr, fn) {
         );
 }
 
-export function submitPage(title, body, authToken, stack, linkStack) {
+export function submitPage(title, authToken, history) {
     let linkName = title;
-    let images = []
+    let page = {
+        title,
+
+    }
+    let images = history.filter(e => e.isImage)
     let imageIndex = []
 
-    stack.forEach(e => e && e.name ? images.push(e) : null)
-    stack.forEach(e => e && e.name ? imageIndex.push(e.stackId) : null)
-
-    
+    // stack.forEach(e => e && e.name ? images.push(e) : null)
+    history.forEach(e => e && e.isImage ? imageIndex.push(e.id) : null)
+    console.log(imageIndex, images);
     return (dispatch) => {
-        
         processArray(images, uploadImage)
-        .then(result => {
-            let finalArray = result.map((e, i) => ({link: e, stackId: imageIndex[i]}))
-            let pictures = [finalArray];
-            dispatch(clearPage())
-            title = title.trim()
-            Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
-                title,
-                body,
-                linkName,
-                pictures,
-                linkStack
-            },{
-                headers: { Authorization: `Bearer ${authToken}` }
+            .then(result => {
+                console.log(result);
             })
-            .then(response => {
-                console.log('response', response)
-                dispatch(pageSuccess())
-            })
-            .catch(error => {
-                let title = error.response.data.message
-                return dispatch(pageError(title))
-            })
-        })
-        .catch(e => console.log(e))
-        
     }
+    
+    // return (dispatch) => {
+        
+    //     processArray(images, uploadImage)
+    //     .then(result => {
+    //         let finalArray = result.map((e, i) => ({link: e, stackId: imageIndex[i]}))
+    //         let pictures = [finalArray];
+    //         dispatch(clearPage())
+    //         title = title.trim()
+    //         Axios.post(`${REACT_APP_SERVER_URL}/api/page`, {
+    //             title,
+    //             linkName,
+    //             pictures,
+    //         },{
+    //             headers: { Authorization: `Bearer ${authToken}` }
+    //         })
+    //         .then(response => {
+    //             console.log('response', response)
+    //             dispatch(pageSuccess())
+    //         })
+    //         .catch(error => {
+    //             let title = error.response.data.message
+    //             return dispatch(pageError(title))
+    //         })
+    //     })
+    //     .catch(e => console.log(e))
+        
+    // }
 }
 
 // **********************************************************

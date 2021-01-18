@@ -15,7 +15,8 @@ import BlogPage from '../BlogPage/BlogPage';
 // make a reducer for the history
 const mapStateToProps = state => ({
     history: state.page.history,
-    title: state.page.title
+    title: state.page.title,
+    authToken: state.loginReducer.authToken
 })
 
 function Pages(props){
@@ -49,7 +50,7 @@ function Pages(props){
                     >{preview ? 'Show Editor' : 'Show Preview'}</button>
                     <button 
                         className='add-paragraph body-tools-button custom-file-upload'
-                        
+                        onClick={() => props.dispatch(submitPage(props.title, props.authToken, props.history))}
                     >
                             Create Page</button>
                 </div>
