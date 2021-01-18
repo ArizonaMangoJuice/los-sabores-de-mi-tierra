@@ -31,7 +31,7 @@ function BlogPage(props){
        history = history.map((e, i) => {
         if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
             return (
-                <img key={e.id} src={e.imagePreview}/>
+                <img className='blog-images' key={e.id} src={e.imagePreview}/>
             )
         }   
         if(e.text){

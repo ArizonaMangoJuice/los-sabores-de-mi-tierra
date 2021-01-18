@@ -142,4 +142,10 @@
 .history-image{
     max-height: 500px;
     max-width: 750px;
+    margin: 15px auto;
+}
+
+.history-page{
+    display: flex;
+    flex-direction: column;
 }

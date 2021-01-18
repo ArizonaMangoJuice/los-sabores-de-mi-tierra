@@ -18,6 +18,8 @@ const mapStateToProps = state => ({
 })
 
 function Pages(props){
+    const [preview, setPreview] = useState(false);
+
         let history = 
             props.history.map(
                 (e, i) => e.isImage 
@@ -40,13 +42,19 @@ function Pages(props){
                     </button>
                     <ImageUpload mainImage={true}/>
                     <ImageUpload mainImage={false} name={'Add Image'}/>
+                    <button onClick={() => setPreview(e => !e)}>{preview ? 'Show Editor' : 'Show Preview'}</button>
                 </div>
                 {/* this will show the main site preview
                     it will get changed
                 */}
                 <div className='preview'>
-                    {history}
-                    <BlogPage isHistory={true} />
+                    
+                    {
+                        preview 
+                            ? <BlogPage isHistory={true} />
+                            : <div className='history-page'>{history}</div>
+                    }
+                    
                     
                 </div>
             </>

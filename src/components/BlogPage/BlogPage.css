@@ -85,3 +85,9 @@
 .blog-page-author-card-content{
     text-align: left;
 }
+
+.blog-images{
+    max-width: 700px;
+    max-height: 650px;
+    box-shadow: 2px 5px 39px -5px rgba(0,0,0,0.74);
+}
