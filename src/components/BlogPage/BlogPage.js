@@ -36,7 +36,7 @@ function BlogPage(props){
         }   
         if(e.text){
             return (
-                <BlogPageParagraph key={e.id} text={e.text} />
+                <BlogPageParagraph key={e.id}  text={e.text} />
             )
         }
        })

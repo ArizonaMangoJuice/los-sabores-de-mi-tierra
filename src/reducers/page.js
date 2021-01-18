@@ -49,6 +49,14 @@ const page = (state = initialState, action) => {
                 imagePreview: URL.createObjectURL(image),
                 id: `i${0}` 
             }, ...state.history];
+
+            newHistory = newHistory.map((e, i) => e.isImage ? ({
+                ...e,
+                id: `i${i}`
+            }) : ({
+                ...e,
+                id: `p${i}`
+            }))
             
             return {
                 ...state,
