@@ -47,6 +47,11 @@ function Pages(props){
                         onClick={() => setPreview(e => !e)}
                         className='add-paragraph body-tools-button custom-file-upload'
                     >{preview ? 'Show Editor' : 'Show Preview'}</button>
+                    <button 
+                        className='add-paragraph body-tools-button custom-file-upload'
+                        
+                    >
+                            Create Page</button>
                 </div>
                 {/* this will show the main site preview
                     it will get changed
