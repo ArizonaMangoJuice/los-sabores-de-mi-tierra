@@ -64,7 +64,7 @@ const page = (state = initialState, action) => {
             }
         }
         case ADD_IMAGE: {
-            let image = action.image;
+            let image = action.data.image;
 
             let newHistory = [...state.history,{
                 mainImage: false,
@@ -73,6 +73,14 @@ const page = (state = initialState, action) => {
                 imagePreview: URL.createObjectURL(image),
                 id: `i${state.history.length}`
             }]
+
+            newHistory = newHistory.map((e, i) => e.isImage ? ({
+                ...e,
+                id: `i${i}`
+            }) : ({
+                ...e,
+                id: `p${i}`
+            }));
 
             return {
                 ...state,
