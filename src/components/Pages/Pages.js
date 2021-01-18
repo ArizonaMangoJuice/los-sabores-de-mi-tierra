@@ -33,7 +33,7 @@ function Pages(props){
             <>
                 <div className='creation-nav'>
                     <button 
-                        className='add-paragraph'
+                        className='add-paragraph body-tools-button custom-file-upload'
                         onClick={() => {
                             props.dispatch(addParagraph(props.history.length));
                         }}
@@ -42,7 +42,10 @@ function Pages(props){
                     </button>
                     <ImageUpload mainImage={true}/>
                     <ImageUpload mainImage={false} name={'Add Image'}/>
-                    <button onClick={() => setPreview(e => !e)}>{preview ? 'Show Editor' : 'Show Preview'}</button>
+                    <button 
+                        onClick={() => setPreview(e => !e)}
+                        className='add-paragraph body-tools-button custom-file-upload'
+                    >{preview ? 'Show Editor' : 'Show Preview'}</button>
                 </div>
                 {/* this will show the main site preview
                     it will get changed
