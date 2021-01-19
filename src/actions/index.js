@@ -344,7 +344,7 @@ export const CLEAR_BLOG_PAGE = 'CLEAR_BLOG_PAGE'
 export function fetchPages(){
     return (dispatch) => {
         // dispatch()
-        Axios.get(`${REACT_APP_SERVER_URL}/api/page`)
+        Axios.get(`${REACT_APP_SERVER_URL}/api/user/post`)
             .then(response => {
                 dispatch(addPages(response.data))
                 // console.log(response.data)

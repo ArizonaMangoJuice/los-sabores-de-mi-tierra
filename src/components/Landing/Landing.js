@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Articles from '../Articles';
 import CircleClick from '../CirleClick';
 import Footer from '../Footer';
 import Header from '../Header/Header';
 import ImageSlider from '../ImageSlider';
-import NewImageUpload from '../NewImageUpload';
 import SideBanner from '../SideBanner';
+import {connect} from 'react-redux';
+import { fetchPages } from '../../actions';
 
-export default function Landing(props){
+function Landing(props){
+    useEffect(() => {
+        props.dispatch(fetchPages());
+    }, [])
+
     return (
         <>
             <SideBanner />
@@ -15,7 +20,8 @@ export default function Landing(props){
             <Articles />
             <CircleClick />
             <Footer />
-            <NewImageUpload />
         </>
     )
 }
+
+export default connect()(Landing)

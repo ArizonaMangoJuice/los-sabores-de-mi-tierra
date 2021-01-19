@@ -10,6 +10,7 @@ import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
 import BlogPageBanner from '../BlogPageImage/BlogPageImage';
 import BlogPage from '../BlogPage/BlogPage';
+import BlogImageEditor from '../BlogImageEditor/BlogImageEditor';
 
 
 // make a reducer for the history
@@ -26,14 +27,7 @@ function Pages(props){
             props.history.map(
                 (e, i) => e.isImage 
                 // this will be moved to seperate component
-                ? <div className='image-history' key={`i${i}`}> 
-                    <nav className='image-history-buttons'>
-                        <button onClick={() => props.dispatch(deleteImage(e.id))}> 
-                            X
-                        </button>
-                    </nav>
-                    <img className='history-image' src={e.imagePreview}  id={e.id} />
-                  </div> 
+                ? <BlogImageEditor key={`i${i}`} image={e.imagePreview} id={e.id}/>
                 : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 
