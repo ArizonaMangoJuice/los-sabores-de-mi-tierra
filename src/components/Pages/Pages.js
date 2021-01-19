@@ -4,7 +4,7 @@ import Banner from '../Banner/Banner';
 import PageTitleInput from '../PageTitleInput/PageTitleInput';
 import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { addParagraph, changeTitle, resethistoryId, submitPage} from '../../actions';
+import { addParagraph, changeTitle, deleteImage, resethistoryId, submitPage} from '../../actions';
 import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
@@ -25,7 +25,15 @@ function Pages(props){
         let history = 
             props.history.map(
                 (e, i) => e.isImage 
-                ? <img className='history-image' src={e.imagePreview} key={`i${i}`} id={e.id} /> 
+                // this will be moved to seperate component
+                ? <div className='image-history' key={`i${i}`}> 
+                    <nav className='image-history-buttons'>
+                        <button onClick={() => props.dispatch(deleteImage(e.id))}> 
+                            X
+                        </button>
+                    </nav>
+                    <img className='history-image' src={e.imagePreview}  id={e.id} />
+                  </div> 
                 : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 

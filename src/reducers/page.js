@@ -20,6 +20,7 @@ import { CHANGE_TITLE,
         RESET_ID,
         EDIT_PARAGRAPH,
         ADD_PARAGRAPH,
+        DELETE_IMAGE,
     } from "../actions"
 
 let initialState = {
@@ -95,6 +96,15 @@ const page = (state = initialState, action) => {
                 history: newHistory
             }
         }
+        case DELETE_IMAGE: {
+            let newHistory = state.history.filter(e => e.id !== action.id);
+            console.log('this is the new history after delete image', newHistory)
+            return {
+                ...state,
+                history: newHistory
+            }
+        }
+
         case ADD_PARAGRAPH:{
             return {
                 ...state,

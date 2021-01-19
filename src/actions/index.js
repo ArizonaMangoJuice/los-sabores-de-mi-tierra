@@ -31,6 +31,7 @@ export const DELETE_ITEM = 'DELETE_ITEM'
 export const RESET_ID = 'RESET_ID'
 export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
 export const ADD_TITLE = 'ADD_TITLE'
+export const DELETE_IMAGE = 'DELETE_IMAGE'
 // action creators 
 export function addListToState(list){
     return {
@@ -182,12 +183,12 @@ export function changeParagraph(paragraph, stackId){
     }
 }
 
-// export function deleteParagraph(stackId){
-//     return {
-//         type: DELETE_PARAGRAPH,
-//         stackId
-//     }
-// }
+export function deleteImage(id){
+    return {
+        type: DELETE_IMAGE,
+        id
+    }
+}
 
 export function pageError(error){
     return {
