@@ -1,12 +1,28 @@
-import React, {Component} from 'react'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import {Carousel} from 'react-responsive-carousel'
-import './ImageSlider.css'
-import { faStar } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, {Component} from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import {Carousel} from 'react-responsive-carousel';
+import './ImageSlider.css';
+import BannerItem from '../BannerItem';
+import {connect} from 'react-redux';
 
-export default class ImageSlider extends Component{
-    render(){
+
+const mapStateToProps = state => ({
+    pages: state.landingPage.pages
+});
+
+function ImageSlider(props) {
+        let bannerItems;
+        if(props.pages.length > 0){
+            bannerItems = props.pages.map((e,i) => (
+                <BannerItem
+                    image={e.history[0].imageUrl}
+                    time={e.date}
+                    title={e.title}
+                    key={`post${i}`} 
+                />
+            ));
+            bannerItems = bannerItems.slice(0,3)
+        } 
         return (
             <Carousel 
                 infiniteLoop={true} 
@@ -19,47 +35,13 @@ export default class ImageSlider extends Component{
                 swipeable={true}
                 showIndicators={false}
             >
-               <BannerItem/>
-               <BannerItem/>
-               <BannerItem/>
+               {bannerItems}
             </Carousel>
         )
-    }
-}
-
-// change functionality of banner item
-// make image position absolute so you only show half
-function BannerItem(props){
-    return (
-        <div className='featured'>
-                    <div className='image-container'>
-                        <img className='featured-image' src='https://images.unsplash.com/photo-1524222717473-730000096953?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=8b1938d0d4ef26e336db84568708980a' />
-                    </div>
-                    <div className='text-outer-container'>
-                        <div className='text-container'>
-                            <div className='featured-text'>
-                                <FontAwesomeIcon style={{color: 'white', marginRight: '5px'}} icon={faStar} /> 
-                                <FontAwesomeIcon /> FEATURED
-                            </div>
-                            <p className='featured-title'>
-                                I'm passionate about food, the tradition of it, cooking it, sharing it
-                            </p>
-                            <p className='slide-author'>
-                                By <span className='normal-bold'>Norma Vizcaino</span> 
-                                <span className='featured-date'> 4 years ago</span>
-                            </p>
-                        </div>
-                    </div>
-                    {/* <div className='next-container'>
-                        <div className='next'>
-                            <i className='arrow right'></i>
-                        </div>
-                    </div> */}
-                </div>
-    )
 }
 
 
+export default connect(mapStateToProps)(ImageSlider);
 
 
 
