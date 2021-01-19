@@ -209,7 +209,6 @@ export function clearPage(){
 }
 // have to make this be able to upload multiple images and return array of links in order
     function uploadImage(image) {
-    firebase.auth().signInAnonymously().catch(error => console.log('something is wrong', error));
 
         return new Promise ((resolve, reject) => {
             let err
@@ -248,21 +247,56 @@ function processArray(arr, fn) {
 
 export function submitPage(title, authToken, history) {
     let linkName = title;
-    let page = {
-        title,
-
-    }
-    let images = history.filter(e => e.isImage)
-    let imageIndex = []
+    let finalTitle = title.trim();
+    let images = history.filter(e => e.isImage);
+    let imageIndex = [];
 
     // stack.forEach(e => e && e.name ? images.push(e) : null)
     history.forEach(e => e && e.isImage ? imageIndex.push(e.id) : null)
-    console.log(imageIndex, images);
+    console.log(imageIndex, images, 'this is the authtoken', authToken);
     return (dispatch) => {
         processArray(images, uploadImage)
             .then(result => {
-                console.log(result);
+                let count = 0;
+                let i = 0;
+                let finalHistory = [];
+                //have to find a way to refactor this too overly complicated
+                while(i < history.length){
+                    if(history[i].isImage){
+                        history[i] = {
+                            ...history[i],
+                            imageUrl: result[count],
+                            name: history[i].image.name,
+                        };
+                        delete history[i].image;
+                        delete history[i].imagePreview;
+                        finalHistory.push(history[i]);
+                        count++;
+                    }else {
+                        finalHistory.push(history[i]);
+                    }
+                    i++;
+                }
+                dispatch(clearPage());
+                // let finalHistory = history.map((e) => e.isImage ? ({...e, imageUrl:}));
+                console.log(finalHistory);
+
+                Axios.post(`${REACT_APP_SERVER_URL}/api/user/post`, {
+                    title: finalTitle,
+                    history: finalHistory
+                }, {
+                    headers: {Authorization: `Bearer ${authToken}`}
+                })
+                .then(response => {
+                    console.log('this is the create response');
+                    dispatch(pageSuccess());
+                })
+                .catch( error => {
+                    let title = error.response.data.message;
+                    return dispatch(pageError())
+                });
             })
+            .catch(error => console.log(error));
     }
     
     // return (dispatch) => {

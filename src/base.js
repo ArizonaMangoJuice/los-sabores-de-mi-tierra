@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import "firebase/storage";
 import "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyDZv56n-yj4ARpLo7TmoI3tVIqPqpwmvpA",
     authDomain: "los-sabores.firebaseapp.com",
@@ -13,7 +14,8 @@ const firebaseConfig = {
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.auth().signInAnonymously().catch(error => console.log('something is wrong', error));
+
+// firebase.auth().signInAnonymously().catch(error => console.log('something is wrong', error));
 
 
 //   firebase.analytics();

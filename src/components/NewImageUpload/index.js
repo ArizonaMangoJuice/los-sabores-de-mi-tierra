@@ -8,9 +8,9 @@ function NewImageUpload() {
     //   const fileRef = storageRef.child(file.name);
     //   fileRef.put(file).then(() => console.log("Uploaded a file"))
     // }
-    // return (
-    //   <input type="file" onChange={onChange} />
-    // );
+    return (
+      <input type="file"  />
+    );
 }
 
 export default NewImageUpload;
