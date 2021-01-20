@@ -55,11 +55,11 @@ function BlogPage(props){
    } 
 
    useEffect(() => {
-      if(!props.isHistory && !props.blogPage.title){
+    if(!props.title || title !== props.title && !props.isHistory){
         
           props.dispatch(fetchPage(title))   
        }
-   })
+   },[])
 
    if(!props.isHistory) {
        console.log('its not history')
