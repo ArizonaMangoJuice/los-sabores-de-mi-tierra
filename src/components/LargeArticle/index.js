@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function LargeArticle(props) {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <div 
+        <Link 
+            to={`/blogpost/${props.title}`}
             className={`lg-section ${hovered ? 'hover' : ''} `} 
             onMouseEnter={() => setHovered(true)} 
             onMouseLeave={() => setHovered(false)}
@@ -29,7 +31,7 @@ function LargeArticle(props) {
                     Non Removal Ads
                 </button> */}
             </section>
-        </div>
+        </Link>
     )
 }
 

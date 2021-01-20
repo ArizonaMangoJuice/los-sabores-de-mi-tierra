@@ -360,11 +360,12 @@ export function fetchPages(){
 export function fetchPage(title){
     return (dispatch) => {
         dispatch(fetchLoading())
-        return Axios.get(`${REACT_APP_SERVER_URL}/api/page/${title}`)
+        return Axios.get(`${REACT_APP_SERVER_URL}/api/user/post/${title}`)
             .then(response => {
-                dispatch(addBlogTitle(response.data[0].title))
-                dispatch(fetchCompleted())
-                dispatch(addBlog(response.data[0]))
+                console.log('this is the response', response)
+                // dispatch(addBlogTitle(response.data[0].title))
+                // dispatch(fetchCompleted())
+                // dispatch(addBlog(response.data[0]))
                 // console.log(response)
                 return
             })

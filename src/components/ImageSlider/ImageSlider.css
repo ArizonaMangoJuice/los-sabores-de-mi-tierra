@@ -118,6 +118,9 @@
     margin: auto;
     padding: 50px;
 }
+.carousel .slide {
+    background-color: white;
+}
 
 .carousel .slide img{
     object-fit: cover;

@@ -14,11 +14,10 @@ function App() {
           <Route path='/' component={Header} />
           <Route path='/dashboard' component={Dashboard} />
           <Route exact path='/dashboard/pages' component={Pages}/>
+          <Route path='/blogpost/:title' component={BlogPage} />
         <Switch>
           <Route exact path='/login' component={Login} />
           <Route exact path='/' component={Landing} />
-          <Route path='/blogpost/:id' component={BlogPage} />
-          
         </Switch>
     </div>
   )
