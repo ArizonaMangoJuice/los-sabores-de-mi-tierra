@@ -17,10 +17,12 @@ function Articles(props){
             i % 2 === 0 
                 ? <SmallArticle 
                     mainImage={e.history[0].imageUrl} 
+                    key={e.id}
                     title={e.title}
                     date={e.date}
                 /> 
                 : <LargeArticle
+                    key={e.id}
                     mainImage={e.history[0].imageUrl} 
                     title={e.title}
                     date={e.date}

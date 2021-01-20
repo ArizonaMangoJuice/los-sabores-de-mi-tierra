@@ -68,7 +68,7 @@ function BlogPage(props){
         blog = blog.map((e, i) => {
             if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
                 return (
-                    <div>
+                    <div key={`div${e.id}`}>
                         <img className='blog-images' key={e.id} src={e.imagePreview}/>
                     </div>
                 )

@@ -16,8 +16,8 @@ function BannerItem(props){
                     <div className='text-outer-container'>
                         <div className='text-container'>
                             <div className='featured-text'>
-                                <FontAwesomeIcon style={{color: 'white', marginRight: '5px'}} icon={faStar} /> 
-                                <FontAwesomeIcon /> FEATURED
+                                {/* <FontAwesomeIcon style={{color: 'white', marginRight: '5px'}} icon={faStar} />  */}
+                                {/* <FontAwesomeIcon /> FEATURED */}
                             </div>
                             <p className='featured-title'>
                                 {props.title}
