@@ -11,11 +11,22 @@ const mapStateToProps = state => ({
 })
 
 function Articles(props){
-
-    let articles = props.pages.map((e, i) => 
-        i % 2 === 0 ? <SmallArticle /> : <LargeArticle />
-    );
-
+    let articles;
+    if(props.pages.length > 0){
+        articles = props.pages.map((e, i) => 
+            i % 2 === 0 
+                ? <SmallArticle 
+                    mainImage={e.history[0].imageUrl} 
+                    title={e.title}
+                    date={e.date}
+                /> 
+                : <LargeArticle
+                    mainImage={e.history[0].imageUrl} 
+                    title={e.title}
+                    date={e.date}
+                />
+        );
+    }
     return (
         // <div>
             <div className='article-container'>
