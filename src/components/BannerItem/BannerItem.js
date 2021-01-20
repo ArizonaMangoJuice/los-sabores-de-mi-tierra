@@ -1,6 +1,4 @@
 import React from 'react';
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {connect} from 'react-redux';
 let stockPhotoUrl = 'https://firebasestorage.googleapis.com/v0/b/los-sabores.appspot.com/o/images%2FStockfood.jpg?alt=media';
 // change functionality of banner item
@@ -11,7 +9,7 @@ function BannerItem(props){
     return (
         <div className='featured'>
                     <div className='image-container'>
-                        <img className='featured-image' src={props.image ? props.image : stockPhotoUrl} />
+                        <img className='featured-image' alt={`Main Cooking Dish`} src={props.image ? props.image : stockPhotoUrl} />
                     </div>
                     <div className='text-outer-container'>
                         <div className='text-container'>

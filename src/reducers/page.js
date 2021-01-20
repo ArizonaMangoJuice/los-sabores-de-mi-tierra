@@ -1,23 +1,7 @@
 import { CHANGE_TITLE, 
-        CHANGE_BODY, 
-        PAGE_ERROR, 
-        PAGE_SUCCESS, 
-        CLEAR_PAGE, 
-        NEW_PARAGRAPH,
-        CHANGE_PARAGRAPH, 
         DELETE_PARAGRAPH, 
         ADD_MAIN_IMAGE, 
-        ADD_MAIN_IMAGE_PREVIEW, 
-        ADD_IMAGE, ADD_LINK, 
-        ADD_LINK_NAME, 
-        ADD_LINK_STACK, 
-        CLEAR_LINKNAME, 
-        CLEAR_LINK, 
-        ADD_LINK_NAME_TO_BODY, 
-        ADD_LIST ,
-        NEW_ITEM,
-        DELETE_ITEM,
-        RESET_ID,
+        ADD_IMAGE, 
         EDIT_PARAGRAPH,
         ADD_PARAGRAPH,
         DELETE_IMAGE,
@@ -98,7 +82,7 @@ const page = (state = initialState, action) => {
         }
         case DELETE_IMAGE: {
             let newHistory = state.history.filter(e => e.id !== action.id);
-            console.log('this is the new history after delete image', newHistory)
+            // console.log('this is the new history after delete image', newHistory)
             return {
                 ...state,
                 history: newHistory

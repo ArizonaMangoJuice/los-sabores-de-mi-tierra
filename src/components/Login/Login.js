@@ -4,7 +4,7 @@ import './Login.css'
 import {connect} from 'react-redux'
 import {login} from '../../actions'
 
-console.log('inside the login');
+// console.log('inside the login');
 
 const mapStateToProps = state => {
     return {
@@ -19,19 +19,19 @@ function Login(props){
     let [password, setPassword] = useState('')
     let [error, setError] = useState('');
 
-    console.log('username: ', username, 'password: ', password)
-    console.log(props.authToken);
+    // console.log('username: ', username, 'password: ', password)
+    // console.log(props.authToken);
     const handleSubmit = (e) => {
         e.preventDefault();
         if(username.length === 0 || password.length === 0){
             setError('One of the inputs is empty');
         } else {
             setError('');
-            console.log('you hit the login button')
+            // console.log('you hit the login button')
             props.dispatch(login(username,password))
         } 
     }
-    let errorhtml = error.length != 0  
+    let errorhtml = error.length !== 0  
         ? <div className='form-error'>
             <p className='error-text'>{error}</p>
           </div> 

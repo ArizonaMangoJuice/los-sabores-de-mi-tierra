@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 // import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {fab, faTwitterSquare, faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
+import { faTwitterSquare, faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icons";
 
 
 export default function Footer(props){
@@ -12,19 +12,19 @@ export default function Footer(props){
                 <img alt='isael-blog-logo' src='https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2Flogo.png?alt=media' className='footer-logo' />
             </Link> */}
             <div className='footer-main-container'>
-                <img className='footer-logo'  src={require('../../images/LSDMTLogo.png')}/>
+                <img alt={`animated logo that dazzles`} className='footer-logo'  src={require('../../images/LSDMTLogo.png')}/>
                 <ul className='footer-links-container'>
                     <li className='footer-li-links'>
-                        <a className='footer-links'>Features</a>
+                        {/* <a className='footer-links'>Features</a> */}
                     </li>
                     <li className='footer-li-links'>
-                        <a className='footer-links'>Recipes</a>
+                        {/* <a className='footer-links'>Recipes</a> */}
                     </li>
                     <li className='footer-li-links'>
-                        <a className='footer-links'>Membership</a>
+                        {/* <a className='footer-links'>Membership</a> */}
                     </li>
                     <li className='footer-li-links'>
-                        <a className='footer-links'>Contact</a>
+                        {/* <a className='footer-links'>Contact</a> */}
                     </li>
                 </ul>
                 <div className='social-bar-container'>

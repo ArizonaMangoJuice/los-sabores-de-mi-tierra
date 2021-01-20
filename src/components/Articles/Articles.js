@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LargeArticle from '../LargeArticle';
-import MediumArticle from '../MediumArticle';
 import SmallArticle from '../SmallArticle';
 import {connect} from 'react-redux';
 

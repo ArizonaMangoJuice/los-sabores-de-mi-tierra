@@ -6,6 +6,7 @@ function BlogPageAuthor(props){
     return (
         <div className='blog-page-author-container-card'>
             <img 
+                alt={`this is the author of the site`}
                 className='blog-page-author-image'
                 src={authorPic}    
             />

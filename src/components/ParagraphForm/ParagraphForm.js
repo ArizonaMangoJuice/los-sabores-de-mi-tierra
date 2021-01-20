@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {  deleteParagraph, editParagraph, resethistoryId } from '../../actions';
+import {  deleteParagraph, editParagraph } from '../../actions';
 //this will be the adding paragraphs section 
 
 const mapStateToProps = state => ({
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 
 function ParagraphForm(props){
-    console.log(props, 'this is the id')
+    // console.log(props, 'this is the id')
     return (
         <div className='new-paragraph'>
             <nav className='paragraph-nav'>

@@ -6,25 +6,15 @@ import BlogPageAuthorContainer from '../BlogPageAuthorContainer/BlogPageAuthorCo
 import {connect} from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { fetchPage } from '../../actions'
-import blogPage from '../../reducers/blogPage'
 
-// mock data 
-let staticParagraph = [
-    "Audio equidem philosophi vocem, Epicure, sed quid tibi dicendum sit oblitus es. Haec et tu ita posuisti, et verba vestra sunt. Contemnit enim disserendi elegantiam, confuse loquitur. Bona autem corporis huic sunt, quod posterius posui, similiora. Quod cum ita sit, perspicuum est omnis rectas res atque laudabilis eo referri, ut cum voluptate vivatur.",
-    "Quasi vero aut concedatur in omnibus stultis aeque magna esse vitia, et eadem inbecillitate et inconstantia L. Levatio igitur vitiorum magna fit in iis, qui habent ad virtutem progressionis aliquantum. Tertium autem omnibus aut maximis rebus iis, quae secundum naturam sint, fruentem vivere. Materiam vero rerum et copiam apud hos exilem, apud illos uberrimam reperiemus. Atque his de rebus et splendida est eorum et illustris oratio.",
-    "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur.",
-    "Age, inquies, ista parva sunt. Ad eos igitur converte te, quaeso. Haec para/doca illi, nos admirabilia dicamus. Universa enim illorum ratione cum tota vestra confligendum puto.",
-    "Quos nisi redarguimus, omnis virtus, omne decus, omnis vera laus deserenda est. Sed eum qui audiebant, quoad poterant, defendebant sententiam suam. Fatebuntur Stoici haec omnia dicta esse praeclare, neque eam causam Zenoni desciscendi fuisse. Quisted est autem dignus nomine hominis, qui unum diem totum velit esse in genere isto voluptatis. Ad eos igitur convert te, quaeso. Duo Reges: constructio interrete. An est aliquid per se ipsum flagitiosum, etiamsi nulla comitetur infamia. Quid ad utilitatem tantae pecuniae? Duo enim genera quae erant, fecit tria. Et quod est munus, quod opus sapientiae? Sed in rebus apertissimis nimium longi sumus."
-]
+
 
 const mapStateToProps = state => ({
     history: state.page.history,
     blogPage: state.blogPage
 })
 
-let staticParagraphs = staticParagraph.map( e => 
-    <BlogPageParagraph text={e}/> 
-)
+
 
 function BlogPage(props){
     // console.log('this is the props', props)
@@ -42,7 +32,7 @@ function BlogPage(props){
         if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
             return (
                 <div>
-                    <img className='blog-images' key={e.id} src={e.imagePreview}/>
+                    <img alt={`various perspectives of the recipes`} className='blog-images' key={e.id} src={e.imagePreview}/>
                 </div>
             )
         }   
@@ -51,25 +41,28 @@ function BlogPage(props){
                 <BlogPageParagraph key={e.id}  text={e.text} />
             )
         }
+        // this needs t0 change to a really confusiong ternary so it can look cleaner and smaller
+        return null;
        })
    } 
 
    useEffect(() => {
-    if(!props.title || title !== props.title && !props.isHistory){
+    if((!props.title || title !== props.title) && !props.isHistory){
         
           props.dispatch(fetchPage(title))   
        }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
    },[])
 
    if(!props.isHistory) {
-       console.log('its not history')
+    //    console.log('its not history')
         blog = props.blogPage.blog;
 
         blog = blog.map((e, i) => {
             if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
                 return (
                     <div key={`div${e.id}`}>
-                        <img className='blog-images' key={e.id} src={e.imagePreview}/>
+                        <img alt={`various perspectives of cooking recipe`} className='blog-images' key={e.id} src={e.imagePreview}/>
                     </div>
                 )
             } 
@@ -82,6 +75,7 @@ function BlogPage(props){
             }
 
             blogMainImage = props.blogPage.blog[0].imageUrl
+            return null;
         })
    }
 

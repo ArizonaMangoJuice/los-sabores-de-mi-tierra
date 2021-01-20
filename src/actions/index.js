@@ -2,7 +2,7 @@ import Axios from "axios"
 import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
 // import {storage} from '../storage.rules'
-import firebase, {storage} from '../base'
+import  {storage} from '../base'
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -216,11 +216,11 @@ export function clearPage(){
             let uploadTask = storage.ref(`images/${image.image.name}`).put(image.image)
                 uploadTask.on('state_changed', (snapshot) => {
                     // progress function 
-                    console.log(Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100))
+                    // console.log(Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100))
                     
                 }, (error) => {
                     // error function
-                    console.log(error) 
+                    // console.log(error) 
                     err = error
                 }, (complete) => {
                     // complete function
@@ -247,7 +247,7 @@ function processArray(arr, fn) {
 }
 
 export function submitPage(title, authToken, history) {
-    let linkName = title;
+    // let linkName = title;
     let finalTitle = title.trim();
     let images = history.filter(e => e.isImage);
     let imageIndex = [];
@@ -280,7 +280,7 @@ export function submitPage(title, authToken, history) {
                 }
                 dispatch(clearPage());
                 // let finalHistory = history.map((e) => e.isImage ? ({...e, imageUrl:}));
-                console.log(finalHistory);
+                // console.log(finalHistory);
 
                 Axios.post(`${REACT_APP_SERVER_URL}/api/user/post`, {
                     title: finalTitle,
@@ -289,11 +289,11 @@ export function submitPage(title, authToken, history) {
                     headers: {Authorization: `Bearer ${authToken}`}
                 })
                 .then(response => {
-                    console.log('this is the create response');
+                    // console.log('this is the create response');
                     dispatch(pageSuccess());
                 })
                 .catch( error => {
-                    let title = error.response.data.message;
+                    // let title = error.response.data.message;
                     return dispatch(pageError())
                 });
             })

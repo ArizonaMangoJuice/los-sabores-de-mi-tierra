@@ -15,7 +15,7 @@ const BlogImageEditor = ({id,image, dispatch}) => {
                     X
                 </button>
             </nav>
-            <img className='history-image' src={image}  id={id} />
+            <img alt={`cooking${id}`} className='history-image' src={image}  id={id} />
         </div> 
     )
 }

@@ -29,6 +29,7 @@ function BlogPageBanner(props){
         <div className='blog-banner-container '>
             <div className='blog-banner-image-container'>
                 <img
+                    alt={`Main Cooking Dishes`}
                     className='blog-banner-image'
                     src={mainImage}/>
             </div>

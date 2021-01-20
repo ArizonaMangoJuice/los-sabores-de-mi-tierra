@@ -1,14 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './Pages.css'
-import Banner from '../Banner/Banner';
-import PageTitleInput from '../PageTitleInput/PageTitleInput';
-import PageBody from '../PageBody/PageBody';
 import {connect} from 'react-redux'
-import { addParagraph, changeTitle, deleteImage, resethistoryId, submitPage} from '../../actions';
-import ParagraphHistory from '../ParagraphHistory/ParagraphHistory';
+import { addParagraph, changeTitle, submitPage} from '../../actions';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
-import BlogPageBanner from '../BlogPageImage/BlogPageImage';
 import BlogPage from '../BlogPage/BlogPage';
 import BlogImageEditor from '../BlogImageEditor/BlogImageEditor';
 
@@ -31,8 +26,6 @@ function Pages(props){
                 : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 
-        {/* // let history = props.history.map((e, i) => <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text}/>); */}
-        console.log(props.history, 'this is the history')
         return (
             <>
                 <div className='creation-nav'>

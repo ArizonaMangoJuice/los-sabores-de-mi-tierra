@@ -1,15 +1,7 @@
 import React, {useEffect} from 'react'
 import './ImageUpload.css'
 import {connect} from 'react-redux'
-import { addMainImagePreview, addMainImage, addImage } from '../../actions'
-
-const mapStateToProps = state => ({
-    // page: state.page
-})
-
-const mapDispatchToProps = dispatch => ({
-    dispatch
-})
+import {  addMainImage, addImage } from '../../actions'
 
 const ImageUpload = props => {
     // create a preview as a side effect, whenever selected file is changed
