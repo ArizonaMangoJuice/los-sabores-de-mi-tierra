@@ -20,7 +20,10 @@ function BlogPageBanner(props){
         }
         
         title = props.title;
-    } 
+    } else {
+        title = props.blogTitle;
+        mainImage = props.blogMainImage
+    }
 
     return (
         <div className='blog-banner-container '>

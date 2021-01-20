@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import BlogPageBanner from '../BlogPageImage/BlogPageImage'
 import BlogPageParagraph from '../BlogPageParagraph/BlogPageParagraph'
 import './BlogPage.css'
 import BlogPageAuthorContainer from '../BlogPageAuthorContainer/BlogPageAuthorContainer'
 import {connect} from 'react-redux';
+import { useParams } from 'react-router-dom'
+import { fetchPage } from '../../actions'
+import blogPage from '../../reducers/blogPage'
 
 // mock data 
 let staticParagraph = [
@@ -15,7 +18,8 @@ let staticParagraph = [
 ]
 
 const mapStateToProps = state => ({
-    history: state.page.history
+    history: state.page.history,
+    blogPage: state.blogPage
 })
 
 let staticParagraphs = staticParagraph.map( e => 
@@ -23,8 +27,14 @@ let staticParagraphs = staticParagraph.map( e =>
 )
 
 function BlogPage(props){
-    console.log('this is the props', props)
+    // console.log('this is the props', props)
+   let params = useParams();
+   let {title} = params;
    let history;
+   let blog;
+   let blogMainImage;
+
+    // console.log('this is the slug for the site', title)
 
    if(props.isHistory){
        history = props.history;
@@ -43,7 +53,41 @@ function BlogPage(props){
         }
        })
    } 
-   console.log('this is the blog page history',history)
+
+   useEffect(() => {
+      if(!props.isHistory && !props.blogPage.title){
+        
+          props.dispatch(fetchPage(title))   
+       }
+   })
+
+   if(!props.isHistory) {
+       console.log('its not history')
+        blog = props.blogPage.blog;
+
+        blog = blog.map((e, i) => {
+            if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
+                return (
+                    <div>
+                        <img className='blog-images' key={e.id} src={e.imagePreview}/>
+                    </div>
+                )
+            } 
+
+            if(e.text){
+                // console.log('this is the text', e.text)
+                return (
+                    <BlogPageParagraph key={e.id}  text={e.text} />
+                )
+            }
+
+            blogMainImage = props.blogPage.blog[0].imageUrl
+        })
+   }
+
+   
+//    if(props.blogPage.history && props.blogPage.history.length > 0) console.log('this is the blog page history', blog, props.blogPage.history)
+
 
    return props.isHistory 
     ?(    
@@ -60,9 +104,12 @@ function BlogPage(props){
     : (
         <>
             <div className='blog-page-container'>
-                <BlogPageBanner />
+                <BlogPageBanner 
+                    blogTitle={props.blogPage.title} 
+                    blogMainImage={blogMainImage}
+                />
                 <div className='blog-page-text-container'>
-                    {staticParagraphs}
+                    {blog}
                 </div>
                 <BlogPageAuthorContainer />
             </div>

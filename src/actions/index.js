@@ -358,14 +358,15 @@ export function fetchPages(){
 }
 
 export function fetchPage(title){
+    // clear the blog page when going somewhere else
     return (dispatch) => {
         dispatch(fetchLoading())
         return Axios.get(`${REACT_APP_SERVER_URL}/api/user/post/${title}`)
             .then(response => {
                 console.log('this is the response', response)
-                // dispatch(addBlogTitle(response.data[0].title))
-                // dispatch(fetchCompleted())
-                // dispatch(addBlog(response.data[0]))
+                dispatch(addBlogTitle(response.data[0].title))
+                dispatch(fetchCompleted())
+                dispatch(addBlog(response.data[0].history))
                 // console.log(response)
                 return
             })
