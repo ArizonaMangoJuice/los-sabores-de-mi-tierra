@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Pages.css'
 import {connect} from 'react-redux'
-import { addParagraph, changeTitle, submitPage} from '../../actions';
+import { addParagraph, changeTitle, changeYoutubeUrl, submitPage} from '../../actions';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
 import BlogPage from '../BlogPage/BlogPage';
@@ -12,6 +12,7 @@ import BlogImageEditor from '../BlogImageEditor/BlogImageEditor';
 const mapStateToProps = state => ({
     history: state.page.history,
     title: state.page.title,
+    url: state.page.youtubeUrl,
     authToken: state.loginReducer.authToken
 })
 
@@ -27,8 +28,15 @@ function Pages(props){
             )    
 
         return (
-            <>
+            <>  
+                {/* this will be its own component */}
                 <div className='creation-nav'>
+                    {/* <button 
+                        className='add-paragraph body-tools-button custom-file-upload'
+                        onClick={() => console.log('this will add the video url')}
+                    >
+                        Add Video Link
+                    </button> */}
                     <button 
                         className='add-paragraph body-tools-button custom-file-upload'
                         onClick={() => {
@@ -46,8 +54,7 @@ function Pages(props){
                     <button 
                         className='add-paragraph body-tools-button custom-file-upload'
                         onClick={() => props.dispatch(submitPage(props.title, props.authToken, props.history))}
-                    >
-                            Create Page</button>
+                    >Create Page</button>
                 </div>
                 {/* this will show the main site preview
                     it will get changed
@@ -66,6 +73,13 @@ function Pages(props){
                                         placeholder='Title Here' 
                                         value={props.title}
                                     />
+                                    <input 
+                                        onChange={(e) => props.dispatch(changeYoutubeUrl(e.target.value))} 
+                                        className='title-input' 
+                                        type='text' 
+                                        placeholder='youtube url ' 
+                                        value={props.url}
+                                    />
                                 </div>
                                 {history}
                             </div>
@@ -80,23 +94,3 @@ function Pages(props){
 
 export default connect(mapStateToProps)(Pages)
 
-// () => 
-//                         setHistory([
-//                             ...history, 
-//                             <ParagraphForm 
-//                                 key={history.length} 
-//                                 id={history.length} 
-//                                 history={history}
-//                                 setHistory={setHistory}
-//                                 delete={deleteBlock}
-//                             />
-//                     ])
-
-// body: state.page.body,
-//     title: state.page.title,
-//     error: state.page.error,
-//     success: state.page.success,
-//     authToken: state.loginReducer.authToken,
-//     stack: state.page.stack,
-//     imagePreview: state.page.imagePreview,
-//     linkStack: state.page.linkStack,

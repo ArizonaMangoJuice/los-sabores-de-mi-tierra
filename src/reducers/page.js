@@ -5,6 +5,7 @@ import { CHANGE_TITLE,
         EDIT_PARAGRAPH,
         ADD_PARAGRAPH,
         DELETE_IMAGE,
+        CHANGE_YOUTUBE_URL
     } from "../actions"
 
 let initialState = {
@@ -20,6 +21,7 @@ let initialState = {
     // linkStack: [],
     // hyperLink: '',
     // list: [], 
+    youtubeUrl: '',
     history: []
 }
 
@@ -31,7 +33,12 @@ const page = (state = initialState, action) => {
                 title: action.title
             }
         }
-
+        case CHANGE_YOUTUBE_URL: {
+            return {
+                ...state,
+                youtubeUrl: action.url
+            }
+        }
         case ADD_MAIN_IMAGE:{
             let image = action.image;
 

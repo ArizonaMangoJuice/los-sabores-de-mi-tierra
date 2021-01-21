@@ -32,6 +32,7 @@ export const RESET_ID = 'RESET_ID'
 export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
 export const ADD_TITLE = 'ADD_TITLE'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
+export const CHANGE_YOUTUBE_URL = 'CHANGE_YOUTUBE_URL'
 // action creators 
 export function addListToState(list){
     return {
@@ -124,6 +125,13 @@ export function changeTitle(title){
     return {
         type: CHANGE_TITLE,
         title
+    }
+}
+
+export function changeYoutubeUrl(url){
+    return {
+        type: CHANGE_YOUTUBE_URL,
+        url
     }
 }
 
