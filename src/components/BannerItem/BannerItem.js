@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 let stockPhotoUrl = 'https://firebasestorage.googleapis.com/v0/b/los-sabores.appspot.com/o/images%2FStockfood.jpg?alt=media';
 // change functionality of banner item
 // make image position absolute so you only show half
@@ -7,7 +8,7 @@ let stockPhotoUrl = 'https://firebasestorage.googleapis.com/v0/b/los-sabores.app
 function BannerItem(props){
     let time = props.time.slice(0,10);
     return (
-        <div className='featured'>
+        <Link to={`/blogpost/${props.title}`} className='featured'>
                     <div className='image-container'>
                         <img className='featured-image' alt={`Main Cooking Dish`} src={props.image ? props.image : stockPhotoUrl} />
                     </div>
@@ -31,7 +32,7 @@ function BannerItem(props){
                             <i className='arrow right'></i>
                         </div>
                     </div> */}
-                </div>
+                </Link>
     )
 }
 

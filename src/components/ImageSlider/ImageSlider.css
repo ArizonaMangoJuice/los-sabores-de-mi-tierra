@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    text-decoration: none;
     /* padding: 50px; */
     justify-content: center;
     width: 100%;
