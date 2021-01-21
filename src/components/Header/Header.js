@@ -7,7 +7,9 @@ function Header(props){
     // console.log('inside the header', props)
     return (
         <header className='header'>
-            <img className='logo' alt='los sabores de mi tierra' src={require('../../images/LSDMTLogo.png')}></img>
+            <Link to='/'>
+                <img className='logo' alt='los sabores de mi tierra' src={require('../../images/LSDMTLogo.png')}></img>
+            </Link>
             <nav className='header-nav'>
                 <ul className='nav-list'>
                     {/* <li className='nav-list-font'><a className='link-style' href=''>Features</a></li>

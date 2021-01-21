@@ -53,7 +53,10 @@ function Pages(props){
                     >{preview ? 'Show Editor' : 'Show Preview'}</button>
                     <button 
                         className='add-paragraph body-tools-button custom-file-upload'
-                        onClick={() => props.dispatch(submitPage(props.title, props.authToken, props.history))}
+                        onClick={() => {
+                            if(props.title === '') return;
+                            props.dispatch(submitPage(props.title, props.authToken, props.history))
+                        }}
                     >Create Page</button>
                 </div>
                 {/* this will show the main site preview
