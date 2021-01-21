@@ -166,3 +166,36 @@
     width: 50%;
     font-size: 24px;
 }
+
+.custom-file-upload {
+    /* border: 1px solid #ccc; */
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: white;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.body-tools-nav{
+    padding: 15px 15px 0 15px;
+    display: flex;
+}
+
+.body-tools-button{
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 5px 0 5px;
+    padding: 5px;
+}
+
+.body-tools-button:hover{
+    transition: .2s linear;
+    background-color: white;
+    color: #212121;
+}
