@@ -53,7 +53,7 @@ const mapStateToProps = state => ({
 
     return (
         <div className='list-container relative'>
-            <button onClick={() => setListClicked(!listClicked)} className='body-tools-button main-color'>
+            <button onClick={() => setListClicked(!listClicked)} className=''>
                 Add List
             </button>
 
@@ -62,7 +62,7 @@ const mapStateToProps = state => ({
                     <label className='link-clicked-input' >
                         {ordered}
                     </label>
-                    <button onClick={() => listArray.length === 0 ? null : addToState()} className='body-tools-button success-background'>
+                    <button onClick={() => listArray.length === 0 ? null : addToState()} className=''>
                         finish
                     </button>
                 </nav>
@@ -70,7 +70,7 @@ const mapStateToProps = state => ({
                 <div className='list-add-container'>
                     <input value={list} onChange={e => addList(e.target.value)} type='text' placeholder='add the list name here'/>
                     
-                    <button onClick={() => list.length === 0 ? null : addListButton()} className='body-tools-button main-color'>
+                    <button onClick={() => list.length === 0 ? null : addListButton()} className=''>
                         Add List
                     </button>
                 </div>

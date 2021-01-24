@@ -6,6 +6,7 @@ import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
 import BlogPage from '../BlogPage/BlogPage';
 import BlogImageEditor from '../BlogImageEditor/BlogImageEditor';
+import PageList from '../PageList/PageList';
 
 
 // make a reducer for the history
@@ -37,6 +38,9 @@ function Pages(props){
                     >
                         Add Video Link
                     </button> */}
+                    <div className='pages-button-inline-block'>
+                        <PageList />
+                    </div>
                     <button 
                         className='add-paragraph body-tools-button custom-file-upload'
                         onClick={() => {

@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    color: white;
+    color: black;
 }
 
 .list-clicked{
@@ -20,23 +20,29 @@
 
 .list-add-container{
     display: flex;
+
     flex-direction: row;
     justify-content: center;
-    padding: 15px;
+    padding: 15px; 
+}
+
+.pages-button-inline-block{
+    display: inline-block;
+    position: relative;
 }
 
 .list-add-container input {
     width: 60%;
     font-size: 18px;
-    background-color: #212121;
+    background-color: white;
     border: none;
     padding: 0 15px;
-    color: white;
+    color: black;
 }
 
 .list-output{
-    color: white;
-    background: #212121;
+    color: black;
+    background: white;
     padding: 15px 5px;
 }
 
@@ -48,7 +54,7 @@ input[type="checkbox"]{
 
 .order-button{
     border: none;
-    color: white;
+    color: black;
     font-size: 16px;
     margin: 0;
     padding: 5px;
@@ -56,11 +62,11 @@ input[type="checkbox"]{
 }
 
 .ordered{
-    color: white;
+    color: black;
     border: none;
 }
 
 .unordered{
-    color: white;
+    color: black;
     border: none;
 }
