@@ -16,6 +16,7 @@ let initialState = {
     readTime: '',
     // body: '',
     // linkName: '',
+    success: false,
     errror: undefined,
     success: undefined,
     // stack: [],
@@ -160,6 +161,7 @@ const page = (state = initialState, action) => {
                 // linkStack: [],
                 // hyperLink: '',
                 // list: [], 
+                success: false,
                 youtubeUrl: '',
                 history: []
             }

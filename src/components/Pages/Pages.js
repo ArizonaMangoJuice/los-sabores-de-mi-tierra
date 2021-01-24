@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
     history: state.page.history,
     title: state.page.title,
     url: state.page.youtubeUrl,
-    authToken: state.loginReducer.authToken
+    authToken: state.loginReducer.authToken,
+    success: state.page.success
 })
 
 function Pages(props){
@@ -49,6 +50,9 @@ function Pages(props){
         return (
             <>  
                 {/* this will be its own component */}
+                <div>
+                    {props.success ? 'SUCCESS' : ''}
+                </div>
                 <div className='creation-nav'>
                     {/* <button 
                         className='add-paragraph body-tools-button custom-file-upload'
