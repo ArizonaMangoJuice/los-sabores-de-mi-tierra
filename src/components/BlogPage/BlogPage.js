@@ -90,7 +90,7 @@ function BlogPage(props){
             if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
                 return (
                     <div key={`div${e.id}`}>
-                        <img alt={`various perspectives of cooking recipe`} className='blog-images' key={e.id} src={e.imagePreview}/>
+                        <img alt={`various perspectives of cooking recipe`} className='blog-images' key={e.id} src={e.imageUrl}/>
                     </div>
                 )
             } 
