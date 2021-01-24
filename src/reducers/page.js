@@ -5,7 +5,8 @@ import { CHANGE_TITLE,
         EDIT_PARAGRAPH,
         ADD_PARAGRAPH,
         DELETE_IMAGE,
-        CHANGE_YOUTUBE_URL
+        CHANGE_YOUTUBE_URL,
+        ADD_LIST,
     } from "../actions"
 
 let initialState = {
@@ -27,6 +28,20 @@ let initialState = {
 
 const page = (state = initialState, action) => {
     switch(action.type){
+        case ADD_LIST: {
+            console.log('inside the add list')
+            return {
+                ...state,
+                history: [
+                    ...state.history, 
+                    {
+                        ...action.list,
+                        isList: true,
+                        id: `l${state.history.length}`
+                    }
+                ]
+            }
+        }
         case CHANGE_TITLE: {
             return {
                 ...state,

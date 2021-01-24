@@ -28,6 +28,8 @@ function BlogPage(props){
     // console.log('this is the slug for the site', title)
 
    if(props.isHistory){
+       console.log('this is the history');
+
        history = props.history;
        history = history.map((e, i) => {
         if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
@@ -37,6 +39,29 @@ function BlogPage(props){
                 </div>
             )
         }   
+        console.log(e)
+        // if(e.id[0] === 'l'){
+        //     console.log('this is a list and should return tthis')
+        //     return (
+        //         <div className='main-color list-history card-hover'>
+        //             {e.isOrdered 
+        //                 ? 
+        //                     <ol>
+        //                         {e.listArray.map(e => (
+        //                             <li>{e}</li>
+        //                         ))}
+        //                     </ol>
+        //                 : 
+        //                     <ol>
+        //                         {e.listArray.map(e => (
+        //                             <li>{e}</li>
+        //                         ))}
+        //                     </ol>
+                    
+        //             }
+        //         </div>
+        //     )
+        // }
         if(e.text){
             return (
                 <BlogPageParagraph key={e.id}  text={e.text} />
@@ -56,10 +81,11 @@ function BlogPage(props){
    },[])
 
    if(!props.isHistory) {
-    //    console.log('its not history')
+       console.log('its not history')
         blog = props.blogPage.blog;
 
         blog = blog.map((e, i) => {
+            // convert this to a switch
             if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
                 return (
                     <div key={`div${e.id}`}>
@@ -67,6 +93,28 @@ function BlogPage(props){
                     </div>
                 )
             } 
+
+            if(e.isList){
+                return (
+                    <div className='main-color list-history card-hover'>
+                        {e.isOrdered 
+                            ? 
+                                <ol>
+                                    {e.listArray.map(e => (
+                                        <li>{e}</li>
+                                    ))}
+                                </ol>
+                            : 
+                                <ol>
+                                    {e.listArray.map(e => (
+                                        <li>{e}</li>
+                                    ))}
+                                </ol>
+                        
+                        }
+                    </div>
+                )
+            }
 
             if(e.text){
                 // console.log('this is the text', e.text)

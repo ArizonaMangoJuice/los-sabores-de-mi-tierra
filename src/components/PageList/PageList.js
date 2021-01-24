@@ -4,7 +4,7 @@ import {addListToState} from '../../actions/index'
 import './PageList.css'
 
 const mapStateToProps = state => ({
-    stack: state.page.stack
+    // stack: state.page.stack
 })
 
  function PageList(props){
@@ -14,10 +14,10 @@ const mapStateToProps = state => ({
     const [list, addList] = useState('')
 
     let addToState = () => {
-        let stackId = props.stack.length
+        // let stackId = props.stack.length
         props.dispatch(addListToState({
                                         listArray,
-                                        stackId,
+                                        // stackId,
                                         isOrdered
                                     }))
         addList('')
@@ -45,8 +45,8 @@ const mapStateToProps = state => ({
     
     let finalList
 
-    let listLi = listArray.map(e => (
-    <li className='page-list'>{e}</li>
+    let listLi = listArray.map((e, i) => (
+    <li key={`list${i}`}className='page-list'>{e}</li>
     )) 
       
     isOrdered ? finalList = <ol>{listLi}</ol> : finalList = <ul>{listLi}</ul>
