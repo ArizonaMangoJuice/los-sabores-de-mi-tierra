@@ -77,7 +77,7 @@ function Pages(props){
                         className='add-paragraph body-tools-button custom-file-upload'
                         onClick={() => {
                             if(props.title === '') return;
-                            props.dispatch(submitPage(props.title, props.authToken, props.history))
+                            props.dispatch(submitPage(props.title, props.authToken, props.history, props.url));
                         }}
                     >Create Page</button>
                 </div>

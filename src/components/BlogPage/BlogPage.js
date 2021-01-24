@@ -12,7 +12,8 @@ import YoutubeVideo from '../YoutubeVideo'
 const mapStateToProps = state => ({
     history: state.page.history,
     youtubeUrl: state.page.youtubeUrl,
-    blogPage: state.blogPage
+    blogPage: state.blogPage,
+    blogUrl: state.blogPage.blogUrl
 })
 
 
@@ -153,6 +154,7 @@ function BlogPage(props){
                     blogMainImage={blogMainImage}
                 />
                 <div className='blog-page-text-container'>
+                    {props.blogUrl !==  '' ? <YoutubeVideo youtubeUrl={props.blogUrl}/> : null}
                     {blog}
                 </div>
                 <BlogPageAuthorContainer />

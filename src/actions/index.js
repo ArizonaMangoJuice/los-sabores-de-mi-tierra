@@ -33,11 +33,19 @@ export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
 export const ADD_TITLE = 'ADD_TITLE'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
 export const CHANGE_YOUTUBE_URL = 'CHANGE_YOUTUBE_URL'
+export const ADD_BLOG_URL = 'ADD_BLOG_URL'
 // action creators 
 export function addListToState(list){
     return {
         type: ADD_LIST,
         list
+    }
+}
+
+export function addBlogUrl(url){
+    return {
+        type: ADD_BLOG_URL,
+        url
     }
 }
 
@@ -254,7 +262,7 @@ function processArray(arr, fn) {
         );
 }
 
-export function submitPage(title, authToken, history) {
+export function submitPage(title, authToken, history, youtubeUrl) {
     // let linkName = title;
     let finalTitle = title.trim();
     let images = history.filter(e => e.isImage);
@@ -292,7 +300,8 @@ export function submitPage(title, authToken, history) {
 
                 Axios.post(`${REACT_APP_SERVER_URL}/api/user/post`, {
                     title: finalTitle,
-                    history: finalHistory
+                    history: finalHistory,
+                    youtubeUrl
                 }, {
                     headers: {Authorization: `Bearer ${authToken}`}
                 })
@@ -372,9 +381,10 @@ export function fetchPage(title){
         return Axios.get(`${REACT_APP_SERVER_URL}/api/user/post/${title}`)
             .then(response => {
                 console.log('this is the response', response)
-                dispatch(addBlogTitle(response.data[0].title))
-                dispatch(fetchCompleted())
-                dispatch(addBlog(response.data[0].history))
+                dispatch(addBlogTitle(response.data[0].title));
+                dispatch(fetchCompleted());
+                dispatch(addBlog(response.data[0].history));
+                dispatch(addBlogUrl(response.data[0].youtubeUrl));
                 // console.log(response)
                 return
             })

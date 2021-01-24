@@ -1,4 +1,4 @@
-import { FETCH_LOADING, FETCH_COMPLETED, ADD_BLOG, ADD_BLOG_TITLE } from "../actions"
+import { FETCH_LOADING, FETCH_COMPLETED, ADD_BLOG, ADD_BLOG_TITLE, ADD_BLOG_URL } from "../actions"
 
 let initialState = {
     loading: false,
@@ -21,6 +21,12 @@ const blogPage = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 completed: true
+            }
+        }
+        case ADD_BLOG_URL: {
+            return {
+                ...state,
+                blogUrl: action.url
             }
         }
         case ADD_BLOG: {
