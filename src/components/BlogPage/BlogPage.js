@@ -6,11 +6,12 @@ import BlogPageAuthorContainer from '../BlogPageAuthorContainer/BlogPageAuthorCo
 import {connect} from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { fetchPage } from '../../actions'
-
+import YoutubeVideo from '../YoutubeVideo'
 
 
 const mapStateToProps = state => ({
     history: state.page.history,
+    youtubeUrl: state.page.youtubeUrl,
     blogPage: state.blogPage
 })
 
@@ -89,6 +90,7 @@ function BlogPage(props){
             <div className='blog-page-container'>
                 <BlogPageBanner isHistory={true}/>
                 <div className='blog-page-text-container'>
+                    <YoutubeVideo youtubeUrl={props.youtubeUrl}/>
                     {history}
                 </div>
                 <BlogPageAuthorContainer />
