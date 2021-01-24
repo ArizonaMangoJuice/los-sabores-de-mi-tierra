@@ -18,7 +18,6 @@ let initialState = {
     // linkName: '',
     success: false,
     errror: undefined,
-    success: undefined,
     // stack: [],
     // imagePreviews: [],
     // imagePreview: '',
@@ -149,18 +148,10 @@ const page = (state = initialState, action) => {
         }
         case CLEAR_PAGE: {
             return {
+                ...state,
                 title: '',
                 readTime: '',
-                // body: '',
-                // linkName: '',
                 errror: undefined,
-                success: undefined,
-                // stack: [],
-                // imagePreviews: [],
-                // imagePreview: '',
-                // linkStack: [],
-                // hyperLink: '',
-                // list: [], 
                 success: false,
                 youtubeUrl: '',
                 history: []
