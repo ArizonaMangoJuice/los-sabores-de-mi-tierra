@@ -90,7 +90,7 @@ function BlogPage(props){
             <div className='blog-page-container'>
                 <BlogPageBanner isHistory={true}/>
                 <div className='blog-page-text-container'>
-                    <YoutubeVideo youtubeUrl={props.youtubeUrl}/>
+                    {props.youtubeUrl !==  '' ? <YoutubeVideo youtubeUrl={props.youtubeUrl}/> : null}
                     {history}
                 </div>
                 <BlogPageAuthorContainer />
