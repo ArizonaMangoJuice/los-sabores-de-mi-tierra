@@ -154,7 +154,7 @@ function BlogPage(props){
                     blogMainImage={blogMainImage}
                 />
                 <div className='blog-page-text-container'>
-                    {props.blogUrl !==  '' ? <YoutubeVideo youtubeUrl={props.blogUrl}/> : null}
+                    {props.blogUrl && props.blogUrl !==  '' ? <YoutubeVideo youtubeUrl={props.blogUrl}/> : null}
                     {blog}
                 </div>
                 <BlogPageAuthorContainer />
