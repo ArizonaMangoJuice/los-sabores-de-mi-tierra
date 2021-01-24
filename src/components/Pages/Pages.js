@@ -25,7 +25,25 @@ function Pages(props){
                 (e, i) => e.isImage 
                 // this will be moved to seperate component
                 ? <BlogImageEditor key={`i${i}`} image={e.imagePreview} id={e.id}/>
-                : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
+                : e.isList 
+                    ? 
+                        e.isOrdered 
+                        ? 
+                            <div className='main-color list-history card-hover'><ol>
+                                {e.listArray.map(e => (
+                                    <li>{e}</li>
+                                ))}
+                            </ol></div>
+                        : 
+                            <div className='main-color list-history card-hover'><ol>
+                                {e.listArray.map(e => (
+                                    <li>{e}</li>
+                                ))}
+                            </ol></div>
+                    : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
+                    
+
+                // <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
             )    
 
         return (

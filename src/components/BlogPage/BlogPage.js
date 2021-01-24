@@ -29,7 +29,7 @@ function BlogPage(props){
 
    if(props.isHistory){
        console.log('this is the history');
-
+       
        history = props.history;
        history = history.map((e, i) => {
         if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
@@ -40,28 +40,28 @@ function BlogPage(props){
             )
         }   
         console.log(e)
-        // if(e.id[0] === 'l'){
-        //     console.log('this is a list and should return tthis')
-        //     return (
-        //         <div className='main-color list-history card-hover'>
-        //             {e.isOrdered 
-        //                 ? 
-        //                     <ol>
-        //                         {e.listArray.map(e => (
-        //                             <li>{e}</li>
-        //                         ))}
-        //                     </ol>
-        //                 : 
-        //                     <ol>
-        //                         {e.listArray.map(e => (
-        //                             <li>{e}</li>
-        //                         ))}
-        //                     </ol>
+        if(e.id[0] === 'l'){
+            console.log('this is a list and should return tthis')
+            return (
+                <div className='main-color list-history card-hover'>
+                    {e.isOrdered 
+                        ? 
+                            <ol>
+                                {e.listArray.map(e => (
+                                    <li>{e}</li>
+                                ))}
+                            </ol>
+                        : 
+                            <ol>
+                                {e.listArray.map(e => (
+                                    <li>{e}</li>
+                                ))}
+                            </ol>
                     
-        //             }
-        //         </div>
-        //     )
-        // }
+                    }
+                </div>
+            )
+        }
         if(e.text){
             return (
                 <BlogPageParagraph key={e.id}  text={e.text} />
