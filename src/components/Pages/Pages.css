@@ -59,7 +59,9 @@
 }
 
 .list-history{
-    margin: 15px 0 15px 0;
+    /* margin: 15px 0 15px 0; */
+    width: 400px;
+    margin: auto;
     padding: 25px;
     border-radius: 5px;
     color: black;

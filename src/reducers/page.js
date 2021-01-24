@@ -7,6 +7,8 @@ import { CHANGE_TITLE,
         DELETE_IMAGE,
         CHANGE_YOUTUBE_URL,
         ADD_LIST,
+        CLEAR_PAGE,
+        PAGE_SUCCESS
     } from "../actions"
 
 let initialState = {
@@ -142,6 +144,30 @@ const page = (state = initialState, action) => {
             return {
                 ...state,
                 history: newHistory
+            }
+        }
+        case CLEAR_PAGE: {
+            return {
+                title: '',
+                readTime: '',
+                // body: '',
+                // linkName: '',
+                errror: undefined,
+                success: undefined,
+                // stack: [],
+                // imagePreviews: [],
+                // imagePreview: '',
+                // linkStack: [],
+                // hyperLink: '',
+                // list: [], 
+                youtubeUrl: '',
+                history: []
+            }
+        }
+        case PAGE_SUCCESS: {
+            return {
+                ...state,
+                success: true
             }
         }
         default: 
