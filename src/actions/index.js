@@ -360,16 +360,18 @@ export const CLEAR_BLOG_PAGE = 'CLEAR_BLOG_PAGE'
 
 export function fetchPages(){
     return (dispatch) => {
-        // dispatch()
+        dispatch(fetchLoading());
         Axios.get(`${REACT_APP_SERVER_URL}/api/user/post`)
             .then(response => {
-                dispatch(addPages(response.data))
+                dispatch(addPages(response.data));
+                dispatch(fetchCompleted())
+                // setTimeout(() => ,2000)
                 // console.log(response.data)
-                return
+                return;
             })
             .catch(error => {
-                console.log(error)
-                return
+                console.log(error);
+                return;
             })
     }
 }

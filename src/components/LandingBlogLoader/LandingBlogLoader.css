@@ -1,0 +1,59 @@
+/* css  */
+.holder{
+  position: relative;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  margin: auto;
+  width: 100%;
+}
+
+.loader-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 240px;
+  width: 240px;
+  /* border: red; */
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  border-radius: 50%;
+  border-top: 18px solid #2821fc;
+  width: 240px;
+  height: 240px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.loader1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  border-radius: 50%;
+  border-top: 18px solid red;
+  width: 240px;
+  height: 240px;
+  -webkit-animation: spin1 2s linear infinite; /* Safari */
+  animation: spin1 2s linear infinite;
+}
+
+@keyframes spin1 {
+  0% { transform: rotate(720deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}

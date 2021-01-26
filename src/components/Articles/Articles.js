@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import './articles.css';
 
 const mapStateToProps = state => ({
-    pages: state.landingPage.pages
+    pages: state.landingPage.pages, 
+    loading: state.landingPage.loading,
 })
 
 function Articles(props){

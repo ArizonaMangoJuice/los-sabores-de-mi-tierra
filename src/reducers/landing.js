@@ -1,7 +1,8 @@
-import { ADD_PAGES } from "../actions"
+import { ADD_PAGES, FETCH_LOADING, FETCH_COMPLETED } from "../actions"
 
 let initialState = {
-    pages: []
+    pages: [],
+    loading: false,
 }
 
 const landingPage = (state = initialState, action) => {
@@ -11,6 +12,18 @@ const landingPage = (state = initialState, action) => {
                 ...state,
                 pages: action.pages
             }
+        case FETCH_LOADING: {
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case FETCH_COMPLETED: {
+            return {
+                ...state,
+                loading: false
+            }
+        }
         default: 
             return state
     }
