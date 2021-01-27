@@ -30,17 +30,23 @@ function Pages(props){
                     ? 
                         e.isOrdered 
                         ? 
-                            <div className='main-color list-history card-hover'><ol>
-                                {e.listArray.map(e => (
-                                    <li>{e}</li>
-                                ))}
-                            </ol></div>
+                            <div className='main-color list-history card-hover'>
+                                <button>X</button>
+                                <ol>
+                                    {e.listArray.map(e => (
+                                        <li>{e}</li>
+                                    ))}
+                                </ol>
+                            </div>
                         : 
-                            <div className='main-color list-history card-hover'><ol>
-                                {e.listArray.map(e => (
-                                    <li>{e}</li>
-                                ))}
-                            </ol></div>
+                            <div className='main-color list-history card-hover'>
+                                <button>X</button>
+                                <ol>
+                                    {e.listArray.map(e => (
+                                        <li>{e}</li>
+                                    ))}
+                                </ol>
+                            </div>
                     : <ParagraphForm key={`paragraph ${i}`} id={`p${i}`} text={e.text} />
                     
 

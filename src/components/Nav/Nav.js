@@ -10,7 +10,6 @@ let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd'];
 let text = ['Dashboard', 'Source', 'Forms', 'Pages'];
 let icons = ['fa-home','fa-laptop-code','fa-wpforms','fa-file'];
 
-// let color = Math.floor(Math.random() * Math.floor(5));
 let to = ['home','source', 'forms', 'pages']
 
 

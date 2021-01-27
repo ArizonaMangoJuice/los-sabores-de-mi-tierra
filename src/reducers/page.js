@@ -7,6 +7,7 @@ import { CHANGE_TITLE,
         DELETE_IMAGE,
         CHANGE_YOUTUBE_URL,
         ADD_LIST,
+        DELETE_LIST,
         CLEAR_PAGE,
         PAGE_SUCCESS
     } from "../actions"
@@ -43,6 +44,13 @@ const page = (state = initialState, action) => {
                     }
                 ]
             }
+        }
+        case DELETE_LIST: {
+            let newState = state.history.filter(e => e !== action.id);
+            return {
+                ...state,
+                history: newState
+            };
         }
         case CHANGE_TITLE: {
             return {

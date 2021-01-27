@@ -31,6 +31,7 @@ export const DELETE_ITEM = 'DELETE_ITEM'
 export const RESET_ID = 'RESET_ID'
 export const EDIT_PARAGRAPH = 'EDIT_PARAGRAPH'
 export const ADD_TITLE = 'ADD_TITLE'
+export const DELETE_LIST = 'DELETE_LIST'
 export const DELETE_IMAGE = 'DELETE_IMAGE'
 export const CHANGE_YOUTUBE_URL = 'CHANGE_YOUTUBE_URL'
 export const ADD_BLOG_URL = 'ADD_BLOG_URL'
@@ -39,6 +40,13 @@ export function addListToState(list){
     return {
         type: ADD_LIST,
         list
+    }
+}
+
+export function deleteListToState(id){
+    return {
+        type: DELETE_LIST,
+        id
     }
 }
 
