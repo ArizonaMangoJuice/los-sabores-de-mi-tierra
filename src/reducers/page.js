@@ -32,7 +32,6 @@ let initialState = {
 const page = (state = initialState, action) => {
     switch(action.type){
         case ADD_LIST: {
-            console.log('inside the add list')
             return {
                 ...state,
                 history: [
@@ -47,7 +46,6 @@ const page = (state = initialState, action) => {
         }
         case DELETE_LIST: {
             let newState = state.history.filter(e => e.id !== action.id);
-            console.log('deleted', newState)
             return {
                 ...state,
                 history: newState

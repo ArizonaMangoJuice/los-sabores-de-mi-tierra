@@ -20,7 +20,7 @@ const mapStateToProps = state => ({
 
 function Pages(props){
     const [preview, setPreview] = useState(false);
-
+    
         let history = 
             props.history.map(
                 (e, i) => e.isImage 
