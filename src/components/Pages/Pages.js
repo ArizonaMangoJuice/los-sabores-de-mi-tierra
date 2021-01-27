@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Pages.css'
 import {connect} from 'react-redux'
-import { addParagraph, changeTitle, changeYoutubeUrl, submitPage} from '../../actions';
+import { addParagraph, changeTitle, changeYoutubeUrl, deleteList, submitPage} from '../../actions';
 import ParagraphForm from '../ParagraphForm/ParagraphForm';
 import ImageUpload  from '../ImageUpload/ImageUpload';
 import BlogPage from '../BlogPage/BlogPage';
@@ -31,7 +31,7 @@ function Pages(props){
                         e.isOrdered 
                         ? 
                             <div className='main-color list-history card-hover'>
-                                <button>X</button>
+                                <button onClick={() => props.dispatch(deleteList(e.id))}>X</button>
                                 <ol>
                                     {e.listArray.map(e => (
                                         <li>{e}</li>
@@ -40,7 +40,7 @@ function Pages(props){
                             </div>
                         : 
                             <div className='main-color list-history card-hover'>
-                                <button>X</button>
+                                <button onClick={() => props.dispatch(deleteList(e.id))}>X</button>
                                 <ol>
                                     {e.listArray.map(e => (
                                         <li>{e}</li>

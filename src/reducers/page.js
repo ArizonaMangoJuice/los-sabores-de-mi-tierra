@@ -46,7 +46,8 @@ const page = (state = initialState, action) => {
             }
         }
         case DELETE_LIST: {
-            let newState = state.history.filter(e => e !== action.id);
+            let newState = state.history.filter(e => e.id !== action.id);
+            console.log('deleted', newState)
             return {
                 ...state,
                 history: newState

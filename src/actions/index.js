@@ -43,7 +43,7 @@ export function addListToState(list){
     }
 }
 
-export function deleteListToState(id){
+export function deleteList(id){
     return {
         type: DELETE_LIST,
         id
