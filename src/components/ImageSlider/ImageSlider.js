@@ -25,8 +25,8 @@ function ImageSlider(props) {
                     key={`post${i}`} 
                 />
             ))
-            : stock.map(e => (
-                <LandingBlogLoader />
+            : stock.map((e, i) => (
+                <LandingBlogLoader key={`loader${i}`} />
             ));
             bannerItems = bannerItems.slice(0,3);
             console.log('these are the banner items', bannerItems);

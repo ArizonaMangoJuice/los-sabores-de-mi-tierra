@@ -62,11 +62,16 @@
     /* margin: 15px 0 15px 0; */
     width: 400px;
     margin: auto;
-    padding: 25px;
+    padding: 5px;
     border-radius: 5px;
     color: black;
-    font-size: 24px;
+    font-size: 18px;
     min-height: 100px;
+    text-align: left;
+}
+
+.list-history li{
+    padding: 5px 10px;
 }
 
 .history-paragraphs{
