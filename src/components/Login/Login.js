@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom'
 import './Login.css'
 import {connect} from 'react-redux'
 import {login} from '../../actions'
+import Footer from '../Footer'
 
 // console.log('inside the login');
 
@@ -38,6 +39,7 @@ function Login(props){
         : null;
     
     return (
+        <>
         <div className='login-container'>
             {
                 props.authToken 
@@ -45,41 +47,30 @@ function Login(props){
                     : null
             }
             <div className='login-image'></div>
-            <div className='login-login-container'>
-                <h1>Welcome Back</h1>
-                <p>Sign Into Your Account</p>
-                {/* /login-form-container half */}
-                    <div className='back-link'>
-                        <div className='left-arrow'></div>
-                        <h4>Back to Homepage</h4>
-                    </div>
-                    <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
-                        {errorhtml}
-                        <input onChange={(e) => setUsername(e.target.value)} className='login-input-text' type='text' placeholder='Username' value={username}/>
-                        <input onChange={(e) => setPassword(e.target.value)} className='login-input-text' type='password' placeholder='Password' value={password}/>
-                        <button className='login-button'>Login</button>
-                    </form>
-                    {/* this will be random quotes soon tm */}
-                    <div className='sign-in-quotes'>
-                        <p><span>LSDMT.</span> Recipes, thoughts, ideas.</p> 
-                    </div>
-            </div>
-            {/* {props.authToken ? <Redirect to='/dashboard' /> : null}
-            <div className='login-page-container'>
-                <div className='login-container card-hover relative'>
-                    <div className='logo half'>
-                      <i className="far fa-user"></i>
-                    </div>
-                    <div className='login-form-container half'>
+            <div className='login-wrapper'>
+                <div className='login-login-container'>
+                    <h1>Welcome Back</h1>
+                    <p>Sign Into Your Account</p>
+                    {/* /login-form-container half */}
+                        <div className='back-link'>
+                            <div className='left-arrow'></div>
+                            <h4>Back to Homepage</h4>
+                        </div>
                         <form onSubmit={(e) => handleSubmit(e)} className='login-form'>
-                            <input onChange={(e) => setUsername(e.target.value)} className='main-color card-hover' type='text' placeholder='Username' value={username}/>
-                            <input onChange={(e) => setPassword(e.target.value)} className='main-color card-hover' type='password' placeholder='Password' value={password}/>
-                            <button className='login-button card-hover'>Login</button>
+                            {errorhtml}
+                            <input onChange={(e) => setUsername(e.target.value)} className='login-input-text' type='text' placeholder='Username' value={username}/>
+                            <input onChange={(e) => setPassword(e.target.value)} className='login-input-text' type='password' placeholder='Password' value={password}/>
+                            <button className='login-button'>Login</button>
                         </form>
-                    </div>
+                        {/* this will be random quotes soon tm */}
+                        <div className='sign-in-quotes'>
+                            <p><span>LSDMT.</span> Recipes, thoughts, ideas.</p> 
+                        </div>
                 </div>
-            </div> */}
+            </div>
         </div>
+        <Footer />
+        </>
     )
 }
 

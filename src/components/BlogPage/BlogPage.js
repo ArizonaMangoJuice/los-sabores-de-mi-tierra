@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import { useParams } from 'react-router-dom'
 import { fetchPage } from '../../actions'
 import YoutubeVideo from '../YoutubeVideo'
+import Footer from '../Footer'
 
 
 const mapStateToProps = state => ({
@@ -144,6 +145,7 @@ function BlogPage(props){
                 </div>
                 <BlogPageAuthorContainer />
             </div>
+            <Footer />
         </>       
     )
     : (
@@ -159,6 +161,7 @@ function BlogPage(props){
                 </div>
                 <BlogPageAuthorContainer />
             </div>
+            <Footer />
         </>       
     )
 }
