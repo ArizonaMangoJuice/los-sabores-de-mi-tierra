@@ -365,7 +365,8 @@ export function fetchPages(){
             .then(response => {
                 dispatch(addPages(response.data));
                 dispatch(fetchCompleted())
-                // setTimeout(() => ,2000)
+                //this comment out area is just for checking the loader
+                // setTimeout(() => dispatch(fetchCompleted()),100000)
                 // console.log(response.data)
                 return;
             })

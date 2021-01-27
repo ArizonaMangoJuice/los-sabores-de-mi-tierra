@@ -4,6 +4,7 @@ import SmallArticle from '../SmallArticle';
 import {connect} from 'react-redux';
 
 import './articles.css';
+import LandingBlogLoader from '../LandingBlogLoader';
 
 const mapStateToProps = state => ({
     pages: state.landingPage.pages, 
@@ -12,8 +13,10 @@ const mapStateToProps = state => ({
 
 function Articles(props){
     let articles;
+    let stock = [0,0,0];
     if(props.pages.length > 0){
-        articles = props.pages.map((e, i) => 
+        articles = !props.loading 
+        ? props.pages.map((e, i) => 
             i % 2 === 0 
                 ? <SmallArticle 
                     mainImage={e.history[0].imageUrl} 
@@ -27,7 +30,11 @@ function Articles(props){
                     title={e.title}
                     date={e.date}
                 />
-        );
+        )
+        : stock.map(e => (
+            <LandingBlogLoader />
+        ));
+        
     }
     return (
         // <div>
