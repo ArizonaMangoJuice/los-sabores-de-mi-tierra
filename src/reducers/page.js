@@ -10,7 +10,7 @@ import { CHANGE_TITLE,
         DELETE_LIST,
         CLEAR_PAGE,
         PAGE_SUCCESS
-    } from "../actions"
+    } from "../actions";
 
 let initialState = {
     title: '',
@@ -27,7 +27,7 @@ let initialState = {
     // list: [], 
     youtubeUrl: '',
     history: []
-}
+};
 
 const page = (state = initialState, action) => {
     switch(action.type){

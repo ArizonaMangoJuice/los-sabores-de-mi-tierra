@@ -6,11 +6,11 @@ import { clearAuth } from '../../actions'
 import { clearToken } from '../../localStorage/localStorage'
 
 // this will be moved when i use redux
-let colors = ['#e6463c', '#ee7f1e', '#6450c8', '#6cb4dd'];
-let text = ['Dashboard', 'Source', 'Forms', 'Pages'];
-let icons = ['fa-home','fa-laptop-code','fa-wpforms','fa-file'];
+let colors = ['#e6463c', '#6450c8', '#6cb4dd'];
+let text = ['Edit Blogs', 'Forms', 'Pages'];
+let icons = ['fa-laptop-code','fa-wpforms','fa-file'];
 
-let to = ['home','source', 'forms', 'pages']
+let to = ['editblogs', 'forms', 'pages']
 
 
 
