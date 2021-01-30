@@ -508,10 +508,18 @@ export const login = (username, password) => dispatch => {
 
 // *************EDIT BLOGS ACTIONS MOVE TO SEPERATE FILE TOO BIG*********************************************
 export const FETCH_BLOGS_TO_EDIT = 'FETCH_BLOGS_TO_EDIT';
+export const STORE_BLOG_POSTS = 'STORE_BLOG_POSTS';
+
+export const storeBlogPosts = result => {
+    return {
+        type: STORE_BLOG_POSTS,
+        result
+    }
+}
 
 export const fetchBlogsToEdit = (key, amount) => dispatch => {
     Axios.get(`${REACT_APP_SERVER_URL}/api/user/post/allarticles`)
         .then(response => {
-            console.log(response)
-        })
+            dispatch(storeBlogPosts(response.data))
+        });
 } 
