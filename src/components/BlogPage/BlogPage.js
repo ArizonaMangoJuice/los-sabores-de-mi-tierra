@@ -85,7 +85,7 @@ function BlogPage(props){
    if(!props.isHistory) {
        console.log('its not history')
         blog = props.blogPage.blog;
-
+        
         blog = blog.map((e, i) => {
             // convert this to a switch
             if(e.isImage && !e.text && e.id !== 'i0' && !e.mainImage){
