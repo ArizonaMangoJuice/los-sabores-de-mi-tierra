@@ -41,7 +41,15 @@ function EditBlogs(props) {
                     {
                         blogInfo && blogInfo.history 
                             ? blogInfo.history.map(e => (
-                                e.isImage
+                                e.isImage 
+                                    ? <div>
+                                        <img src={e.imageUrl} />
+                                      </div>
+                                    : e.text 
+                                        ? <div> 
+                                            <textarea value={e.text} />
+                                          </div>
+                                        : ''//this will need to show the lists as well
                             ))
                             : ''
                     }
