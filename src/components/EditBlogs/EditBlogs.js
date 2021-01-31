@@ -10,6 +10,8 @@ const mapStateToProps = state => ({
 
 function EditBlogs(props) {
     const [isArticlesEmpty, setArticle] = useState(true);
+    const [isClicked, setClicked] = useState(false);
+    const [blogInfo, setBlogInfo] = useState({});
 
     useEffect(() => {
         if(isArticlesEmpty){
@@ -21,18 +23,31 @@ function EditBlogs(props) {
         // }
     }, [isArticlesEmpty])
 
-    let test = !isArticlesEmpty ? props.articles.map(e => (
-        <EditBlogCard title={e.title} history={e.history}/>
+    let editBlogCards = !isArticlesEmpty ? props.articles.map(e => (
+        <EditBlogCard key={e.title} title={e.title} history={e.history} setBlogInfo={setBlogInfo} setClicked={setClicked}/>
     ))
         : null;
 
-    console.log(test)
+    console.log(isClicked)
 
 
     return (
         <>
             <div className='edit-blog-container'>
-                {test}
+                <div className={`${isClicked ? 'edit-blog-editor' : 'hidden'}`}>
+                    <nav>
+                        <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
+                    </nav>
+                    <p>{blogInfo && blogInfo.title ? blogInfo.title : ''}</p>
+                    {
+                        blogInfo && blogInfo.history 
+                            ? blogInfo.history.map(e => (<p>hello</p>))
+                            : ''
+                    }
+                </div>
+                <div className={`${isClicked ? 'hidden' : ''}`}>
+                    {editBlogCards}
+                </div>
             </div>
         </>
     )

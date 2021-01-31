@@ -4,6 +4,14 @@ import './edit-blog-card.css';
 const EditBlogCard = props => {
     return (
         <button 
+            onClick={ () => {
+                props.setClicked(true)
+                props.setBlogInfo({
+                    history: props.history,
+                    title: props.title
+                })
+                }
+            }
             className='edit-blog-card' 
             style={{
                 backgroundImage: `url(${props.history[0].imageUrl})`
@@ -12,8 +20,6 @@ const EditBlogCard = props => {
             <div className='card-inner-container'>
                 <h1 className='edit-blog-card-title'>{props.title}</h1>
             </div>
-            {/* <p>{props.history[0].imageUrl}</p> */}
-            {/* <img className='edit-blog-card' /> */}
         </button>
     )
 }
