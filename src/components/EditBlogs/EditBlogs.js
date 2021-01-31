@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+    import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { fetchBlogsToEdit } from '../../actions';
 import EditBlogCard from '../EditBlogCard';
@@ -22,7 +22,7 @@ function EditBlogs(props) {
     }, [isArticlesEmpty])
 
     let test = !isArticlesEmpty ? props.articles.map(e => (
-        <EditBlogCard title={e.title} />
+        <EditBlogCard title={e.title} history={e.history}/>
     ))
         : null;
 
@@ -31,10 +31,9 @@ function EditBlogs(props) {
 
     return (
         <>
-            <p>
-                hello
-            </p>
-            {test}
+            <div className='edit-blog-container'>
+                {test}
+            </div>
         </>
     )
 }
