@@ -3,10 +3,10 @@ import './LandingBlogLoader.css';
 
 const LandingBlogLoader = ({loaderCss}) => {
     return (
-    <div class='holder'>
+    <div className='holder'>
         <div className={loaderCss ? loaderCss : 'loader-container'}>
-            <div class="loader"></div>
-            <div class="loader1"></div>
+            <div className="loader"></div>
+            <div className="loader1"></div>
         </div>
     </div>
     )

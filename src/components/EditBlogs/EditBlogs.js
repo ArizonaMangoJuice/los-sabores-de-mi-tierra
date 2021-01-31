@@ -21,14 +21,14 @@ function EditBlogs(props) {
         // return () => {
             
         // }
-    }, [isArticlesEmpty])
+    }, [isArticlesEmpty, props])
 
     let editBlogCards = !isArticlesEmpty ? props.articles.map(e => (
         <EditBlogCard key={e.title} title={e.title} history={e.history} setBlogInfo={setBlogInfo} setClicked={setClicked}/>
     ))
         : null;
 
-    console.log(isClicked)
+    // console.log(isClicked)
 
     return (
         <>
@@ -43,7 +43,7 @@ function EditBlogs(props) {
                             ? blogInfo.history.map(e => (
                                 e.isImage 
                                     ? <div>
-                                        <img src={e.imageUrl} />
+                                        <img alt='shows the recipes mentioned' src={e.imageUrl} />
                                       </div>
                                     : e.text 
                                         ? <div> 

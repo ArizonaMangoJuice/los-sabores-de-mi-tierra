@@ -278,7 +278,7 @@ export function submitPage(title, authToken, history, youtubeUrl) {
 
     // stack.forEach(e => e && e.name ? images.push(e) : null)
     history.forEach(e => e && e.isImage ? imageIndex.push(e.id) : null)
-    console.log(imageIndex, images, 'this is the authtoken', authToken);
+    // console.log(imageIndex, images, 'this is the authtoken', authToken);
     return (dispatch) => {
         processArray(images, uploadImage)
             .then(result => {
@@ -391,7 +391,7 @@ export function fetchPage(title){
         dispatch(fetchLoading())
         return Axios.get(`${REACT_APP_SERVER_URL}/api/user/post/${title}`)
             .then(response => {
-                console.log('this is the response', response)
+                // console.log('this is the response', response)
                 dispatch(addBlogTitle(response.data[0].title));
                 dispatch(fetchCompleted());
                 dispatch(addBlog(response.data[0].history));
