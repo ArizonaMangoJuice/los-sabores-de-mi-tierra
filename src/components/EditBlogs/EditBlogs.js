@@ -30,7 +30,6 @@ function EditBlogs(props) {
 
     console.log(isClicked)
 
-
     return (
         <>
             <div className='edit-blog-container'>
@@ -38,10 +37,12 @@ function EditBlogs(props) {
                     <nav>
                         <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
                     </nav>
-                    <p>{blogInfo && blogInfo.title ? blogInfo.title : ''}</p>
+                    <input value={blogInfo && blogInfo.title ? blogInfo.title : ''}></input>
                     {
                         blogInfo && blogInfo.history 
-                            ? blogInfo.history.map(e => (<p>hello</p>))
+                            ? blogInfo.history.map(e => (
+                                e.isImage
+                            ))
                             : ''
                     }
                 </div>
