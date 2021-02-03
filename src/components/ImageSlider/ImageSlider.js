@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 function ImageSlider(props) {
         let bannerItems;
         let stock = [0,0,0];
-        if(props.pages.length > 0){
+        // if(props.pages.length > 0){
             bannerItems = !props.loading 
             ? props.pages.map((e,i) => (
                 <BannerItem
@@ -30,7 +30,7 @@ function ImageSlider(props) {
             ));
             bannerItems = bannerItems.slice(0,3);
             console.log('these are the banner items', bannerItems);
-        } 
+        // } 
         return (
             <Carousel 
                 infiniteLoop={true} 

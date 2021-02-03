@@ -26,8 +26,6 @@ function EditBlogs(props) {
     ))
         : null;
 
-    console.log(test)
-
 
     return (
         <>
