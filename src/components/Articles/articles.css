@@ -86,7 +86,8 @@
 }
 
 .lg-article-title{
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
+    font-size: 30px;
     font-weight: 400;
     margin-left: 15%;
     text-align: left;
