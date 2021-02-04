@@ -14,6 +14,7 @@ const mapStateToProps = state => ({
 function Articles(props){
     let articles;
     let stock = [0,0,0];
+    //this needs to be refactored
     if(props.pages.length > 0){
         articles = !props.loading 
         ? props.pages.map((e, i) => 
