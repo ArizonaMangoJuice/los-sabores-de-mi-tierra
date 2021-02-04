@@ -30,7 +30,7 @@ function BlogPage(props){
     // console.log('this is the slug for the site', title)
 
    if(props.isHistory){
-       console.log('this is the history');
+    //    console.log('this is the history');
        
        history = props.history;
        history = history.map((e, i) => {
@@ -41,9 +41,9 @@ function BlogPage(props){
                 </div>
             )
         }   
-        console.log(e)
+        // console.log(e)
         if(e.id[0] === 'l'){
-            console.log('this is a list and should return tthis')
+            // console.log('this is a list and should return tthis')
             return (
                 <div className='main-color list-history card-hover'>
                     {e.isOrdered 
@@ -83,7 +83,7 @@ function BlogPage(props){
    },[])
 
    if(!props.isHistory) {
-       console.log('its not history')
+    //    console.log('its not history')
         blog = props.blogPage.blog;
         
         blog = blog.map((e, i) => {

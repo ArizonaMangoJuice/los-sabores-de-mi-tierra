@@ -29,8 +29,8 @@ function ImageSlider(props) {
                 <LandingBlogLoader key={`loader${i}`} />
             ));
             bannerItems = bannerItems.slice(0,3);
-            console.log('these are the banner items', bannerItems);
-        // } 
+            // console.log('these are the banner items', bannerItems);
+        } 
         return (
             <Carousel 
                 infiniteLoop={true} 

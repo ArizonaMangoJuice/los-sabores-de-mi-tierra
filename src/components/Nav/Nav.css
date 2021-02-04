@@ -1,6 +1,7 @@
 .dashboard-nav{
     position: fixed;
     left: 0;
+    top: 0;
     height: 100vh;
     width: 50px;
     display: flex;
@@ -19,4 +20,9 @@
 .dashboard-nav:hover{
     transition: 0.05s linear;
     width: 250px;
+}
+
+/* move to general css */
+.hidden{
+    display: none;
 }

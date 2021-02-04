@@ -20,19 +20,19 @@ function Articles(props){
             i % 2 === 0 
                 ? <SmallArticle 
                     mainImage={e.history[0].imageUrl} 
-                    key={e.id}
+                    key={`small${e.id}`}
                     title={e.title}
                     date={e.date}
                 /> 
                 : <LargeArticle
-                    key={e.id}
+                    key={`large${e.id}`}
                     mainImage={e.history[0].imageUrl} 
                     title={e.title}
                     date={e.date}
                 />
         )
-        : stock.map(e => (
-            <LandingBlogLoader />
+        : stock.map((e, i) => (
+            <LandingBlogLoader key={`loader${i}`} />
         ));
         
     }

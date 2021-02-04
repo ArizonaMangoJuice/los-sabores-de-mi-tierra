@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Articles from '../Articles';
-import CircleClick from '../CirleClick';
+// import CircleClick from '../CirleClick';
 import Footer from '../Footer';
 import ImageSlider from '../ImageSlider';
 import SideBanner from '../SideBanner';
@@ -18,7 +18,7 @@ function Landing(props){
             <SideBanner />
             <ImageSlider />
             <Articles />
-            <CircleClick />
+            {/* <CircleClick /> */}
             <Footer />
         </>
     )
