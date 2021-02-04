@@ -30,7 +30,6 @@ function ImageSlider(props) {
             ));
             bannerItems = bannerItems.slice(0,3);
             // console.log('these are the banner items', bannerItems);
-        } 
         return (
             <Carousel 
                 infiniteLoop={true} 
