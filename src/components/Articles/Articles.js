@@ -30,11 +30,13 @@ function Articles(props){
                     title={e.title}
                     date={e.date}
                 />
-        )
-        : stock.map((e, i) => (
+            )
+        : null;
+    }
+    if(props.loading){
+        articles = stock.map((e, i) => (
             <LandingBlogLoader key={`loader${i}`} />
         ));
-        
     }
     return (
         // <div>

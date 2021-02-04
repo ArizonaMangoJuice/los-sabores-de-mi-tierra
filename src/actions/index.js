@@ -372,12 +372,14 @@ export function fetchPages(){
         Axios.get(`${REACT_APP_SERVER_URL}/api/user/post`)
             .then(response => {
                 dispatch(addPages(response.data));
-                dispatch(fetchCompleted());
+                
                 //this comment out area is just for checking the loader
                 // setTimeout(() => dispatch(fetchCompleted()),100000)
                 // console.log(response.data)
                 return;
             })
+            // setTimeout(() => dispatch(fetchCompleted()), 100)
+            .then(() => dispatch(fetchCompleted()))
             .catch(error => {
                 console.log(error);
                 return;
