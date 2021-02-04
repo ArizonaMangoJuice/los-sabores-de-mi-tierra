@@ -14,7 +14,7 @@ function BlogPageAuthor(props){
                 <h3 className='blog-page-author-card-title'>
                     Norma Vizcaino
                 </h3>
-                <p className='blog-page-author-card-content'>Respondeat totidem verbis. Utinam quidem dicerent alium alio beatiorem, Iam ruinas videres. Quamquam ab iis philosophiam et omnes ingenuas disciplinas habemus.</p>
+                {/* <p className='blog-page-author-card-content'>Respondeat totidem verbis. Utinam quidem dicerent alium alio beatiorem, Iam ruinas videres. Quamquam ab iis philosophiam et omnes ingenuas disciplinas habemus.</p> */}
             </div>
         </div>
     )
