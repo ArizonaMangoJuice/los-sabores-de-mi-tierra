@@ -1,6 +1,6 @@
 import React from 'react'
 
-let authorPic = 'https://firebasestorage.googleapis.com/v0/b/los-sabores.appspot.com/o/images%2FNorma%20Vizcaino.jpg?alt=media';
+let authorPic = 'https://firebasestorage.googleapis.com/v0/b/los-sabores.appspot.com/o/images%2FNormaNew.jpg?alt=media';
 
 function BlogPageAuthor(props){
     return (
