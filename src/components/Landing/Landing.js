@@ -11,7 +11,7 @@ function Landing(props){
     useEffect(() => {
         props.dispatch(fetchPages());
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    })
 
     return (
         <>

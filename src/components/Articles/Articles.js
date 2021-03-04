@@ -9,7 +9,7 @@ import LandingBlogLoader from '../LandingBlogLoader';
 const mapStateToProps = state => ({
     pages: state.landingPage.pages, 
     loading: state.landingPage.loading,
-})
+});
 
 function Articles(props){
     let articles;
@@ -21,12 +21,12 @@ function Articles(props){
             i % 2 === 0 
                 ? <SmallArticle 
                     mainImage={e.history[0].imageUrl} 
-                    key={`small${e.id}`}
+                    key={`small${e.id} ${e.title}`}
                     title={e.title}
                     date={e.date}
                 /> 
                 : <LargeArticle
-                    key={`large${e.id}`}
+                    key={`large${e.id} ${e.title}`}
                     mainImage={e.history[0].imageUrl} 
                     title={e.title}
                     date={e.date}
@@ -48,7 +48,7 @@ function Articles(props){
     )
 }
 
-export default connect(mapStateToProps)(Articles)
+export default connect(mapStateToProps)(Articles);
 
 
 

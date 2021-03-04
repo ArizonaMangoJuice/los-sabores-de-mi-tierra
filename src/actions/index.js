@@ -3,9 +3,11 @@ import jwtDecode from 'jwt-decode'
 import {saveToken} from '../localStorage/localStorage'
 // import {storage} from '../storage.rules'
 import  {storage} from '../base'
+require('dotenv').config();
+
 
 let REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
-
+console.log(REACT_APP_SERVER_URL)
 
 export const CHANGE_TITLE = 'CHANGE_TITLE'
 export const CHANGE_BODY = 'CHANGE_BODY'
