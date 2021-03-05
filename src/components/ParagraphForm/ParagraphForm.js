@@ -16,7 +16,12 @@ function ParagraphForm(props){
                 <ul className='paragraph-list'>
                     <li>
                         <button>
-                            Move
+                            Move Up 
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            Move Down
                         </button>
                     </li>
                     <li>

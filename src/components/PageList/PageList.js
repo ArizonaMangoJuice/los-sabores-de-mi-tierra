@@ -53,7 +53,10 @@ const mapStateToProps = state => ({
 
     return (
         <div className='list-container relative'>
-            <button onClick={() => setListClicked(!listClicked)} className=''>
+            <button 
+                className='body-tools-button custom-file-upload' 
+                onClick={() => setListClicked(!listClicked)} 
+            >
                 Add List
             </button>
 

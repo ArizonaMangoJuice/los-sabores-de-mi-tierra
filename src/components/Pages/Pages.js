@@ -103,14 +103,14 @@ function Pages(props){
                                 <div className='title-history-container'>
                                     <input 
                                         onChange={(e) => props.dispatch(changeTitle(e.target.value))} 
-                                        className='title-input' 
+                                        className='login-input-text black' 
                                         type='text' 
                                         placeholder='Title Here' 
                                         value={props.title}
                                     />
                                     <input 
                                         onChange={(e) => props.dispatch(changeYoutubeUrl(e.target.value))} 
-                                        className='title-input' 
+                                        className='login-input-text black' 
                                         type='text' 
                                         placeholder='youtube url ' 
                                         value={props.url}

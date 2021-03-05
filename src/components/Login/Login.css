@@ -126,6 +126,11 @@
 .login-input-text::placeholder{
     color: #e2e5ed;
 }
+
+.black::placeholder{
+    color: gray;
+}
+
 .login-input-text:focus{
     transition: .4s;
     border-color: #2821FC;
