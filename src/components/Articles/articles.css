@@ -1,8 +1,8 @@
 
 
 .hover {
-    transform: translateY(-5px);
-    transition: .2s;
+    /* transform: translateY(-10px) !important;
+    transition: .2s  !important; */
 }
 
 .sm-section{
@@ -14,12 +14,18 @@
     background: -moz-linear-gradient(top left, #D7482A, #872BCA);
     background: linear-gradient(to bottom right, #D7482A, #872BCA);
     color: white;
-    position: relative;
     margin: 2% 2% 0% 2%;
-    position: relative;
     z-index: 9999;
     text-decoration: none;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: relative;
+    transform: translateY(5px) !important;
+    transition: .4s;
+}
+
+.sm-section:hover{
+    transform: translateY(-10px) !important;
+    transition: .2s  !important;
 }
 
 .md-section{
@@ -36,6 +42,11 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.md-section:hover{
+    transform: translateY(-10px) !important;
+    transition: .2s  !important;
+}
+
 .lg-section{
     position: relative;
     height: 325px;
@@ -48,7 +59,14 @@
     margin: 2% 2% 0% 2%;
     z-index: 9999;
     text-decoration: none;
+    transform: translateY(5px) !important;
+    transition: .4s;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.lg-section:hover{
+    transform: translateY(-10px) !important;
+    transition: .2s  !important;
 }
 
 .background{
