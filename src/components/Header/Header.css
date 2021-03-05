@@ -26,6 +26,11 @@
     padding: 0;
 }
 
+.nav-list a{
+    
+    color: white;
+}
+
 .nav-list-font{
     display: inline-block;
     margin: 5px 10px;
@@ -69,7 +74,7 @@
 }
 
 .sign-in{
-    background-color: #cccccc;
+    background-color: #2821FC;
 }
 
 /* LINK STYLE MOVE TO MAIN CSS */
