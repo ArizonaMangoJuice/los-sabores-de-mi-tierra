@@ -1,10 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 import {connect} from 'react-redux'
 
-function Header(props){
+function Header({}){
     // console.log('inside the header', props)
+    //this gives me the pathname of the current route
+    const location = useLocation();
+    const currentLocation = location.pathname.split('/').includes('dashboard');
+   
     return (
         <header className='header'>
             <Link to='/'>
@@ -15,9 +19,9 @@ function Header(props){
                     {/* <li className='nav-list-font'><a className='link-style' href=''>Features</a></li>
                     <li className='nav-list-font'><a className='link-style' href=''>Recipes</a></li>
                     <li className='nav-list-font'><a className='link-style' href=''>Memberships</a></li> */}
-                    <Link to='/login'>
+                    { currentLocation ? null : <Link to='/login'>
                         <li className='sign-in nav-list-user-button sign-in'>Sign In</li>
-                    </Link>
+                    </Link>}
                     {/* <li  className='sign-up nav-list-user-button sign-up'>Sign Up</li> */}
                 </ul>
             </nav>
