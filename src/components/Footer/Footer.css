@@ -91,3 +91,19 @@ footer p{
         padding: 15px !important;
     }
 } */
+
+@media screen and (max-width: 600px){
+    .footer-main-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-p{
+        width: 80%;
+        text-align: center;
+        padding: 30px 0 30px 0;
+    }
+}

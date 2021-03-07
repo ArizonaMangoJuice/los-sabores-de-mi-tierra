@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import './Header.css'
 import {connect} from 'react-redux'
 
-function Header({}){
+function Header(){
     // console.log('inside the header', props)
     //this gives me the pathname of the current route
     const location = useLocation();
