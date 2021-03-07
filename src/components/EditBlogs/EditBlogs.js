@@ -1,12 +1,14 @@
-    import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { fetchBlogsToEdit } from '../../actions';
 import EditBlogCard from '../EditBlogCard';
+import './EditBlogs.css';
 
 const mapStateToProps = state => ({
     articles : state.editPageBlog.articles,
-
 });
+
+// this will need a move up and down action and button
 
 function EditBlogs(props) {
     const [isArticlesEmpty, setArticle] = useState(true);
@@ -37,13 +39,17 @@ function EditBlogs(props) {
                     <nav>
                         <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
                     </nav>
-                    <input value={blogInfo && blogInfo.title ? blogInfo.title : ''}></input>
+                    <input className='login-input-text black' value={blogInfo && blogInfo.title ? blogInfo.title : ''}></input>
                     {
                         blogInfo && blogInfo.history 
                             ? blogInfo.history.map(e => (
                                 e.isImage 
-                                    ? <div>
-                                        <img alt='shows the recipes mentioned' src={e.imageUrl} />
+                                    ? <div className='image-history' >
+                                        <nav className='image-history-nav'>
+                                            <button className='image-history-button'>Move Up</button>
+                                            <button className='image-history-button'>Move Down</button>
+                                        </nav>
+                                        <img className='edit-blog-image' alt='shows the recipes mentioned' src={e.imageUrl} />
                                       </div>
                                     : e.text 
                                         ? <div> 

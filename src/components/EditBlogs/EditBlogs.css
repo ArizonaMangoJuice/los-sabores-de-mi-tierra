@@ -1,0 +1,18 @@
+.edit-blog-image{
+    width: 100%;
+}
+
+.image-history{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-history-nav{
+    /* display: flex; */
+    /* padding: 10px; */
+}
+
+.image-history-button{
+    /* border: none; */
+    padding: 5px 15px;
+}
