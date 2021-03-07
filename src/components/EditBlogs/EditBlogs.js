@@ -14,6 +14,7 @@ function EditBlogs(props) {
     const [isArticlesEmpty, setArticle] = useState(true);
     const [isClicked, setClicked] = useState(false);
     const [blogInfo, setBlogInfo] = useState({});
+    const [title, setTitle] = useState();
 
     useEffect(() => {
         if(isArticlesEmpty){
@@ -25,12 +26,19 @@ function EditBlogs(props) {
         // }
     }, [isArticlesEmpty, props])
 
+        useEffect(() => {
+            if(blogInfo){
+                console.log('this is the articles', blogInfo)
+                setTitle(blogInfo.title);
+            }
+        }, [blogInfo])
+
     let editBlogCards = !isArticlesEmpty ? props.articles.map(e => (
         <EditBlogCard key={e.title} title={e.title} history={e.history} setBlogInfo={setBlogInfo} setClicked={setClicked}/>
     ))
         : null;
 
-    // console.log(isClicked)
+    // console.log(title, blogInfo.title)
 
     return (
         <>
@@ -39,7 +47,7 @@ function EditBlogs(props) {
                     <nav>
                         <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
                     </nav>
-                    <input className='login-input-text black' value={blogInfo && blogInfo.title ? blogInfo.title : ''}></input>
+                    <input onChange={e => setTitle(e.currentTarget.value)} className='login-input-text black' value={blogInfo && title ? title : ''}></input>
                     {
                         blogInfo && blogInfo.history 
                             ? blogInfo.history.map(e => (
@@ -52,8 +60,12 @@ function EditBlogs(props) {
                                         <img className='edit-blog-image' alt='shows the recipes mentioned' src={e.imageUrl} />
                                       </div>
                                     : e.text 
-                                        ? <div> 
-                                            <textarea value={e.text} />
+                                        ? <div className='new-paragraph'> 
+                                            <nav className='image-history-nav'>
+                                                <button className='image-history-button'>Move Up</button>
+                                                <button className='image-history-button'>Move Down</button>
+                                            </nav>
+                                            <textarea className='paragraph-input' value={e.text} />
                                           </div>
                                         : ''//this will need to show the lists as well
                             ))
