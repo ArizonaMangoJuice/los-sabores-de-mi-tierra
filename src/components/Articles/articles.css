@@ -161,3 +161,20 @@
     border: 2px solid white;
     border-radius: 10px;
 }
+
+@media screen and (max-width: 600px){
+    .sm-section{
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    .lg-section{
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    .article-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
