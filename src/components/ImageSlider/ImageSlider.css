@@ -206,3 +206,19 @@
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 } */
+
+@media screen and (max-width: 600px){
+    .featured{
+        flex-direction: column;
+    }
+
+    .carousel-root{
+        width: 100%;
+        margin: auto;
+        padding: 50px 0;
+    }
+
+    .text-outer-container{
+        width: 100%;
+    }
+}
