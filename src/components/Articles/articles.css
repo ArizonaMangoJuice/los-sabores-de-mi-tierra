@@ -21,6 +21,7 @@
     position: relative;
     transform: translateY(5px) !important;
     transition: .4s;
+    margin-bottom: 30px;
 }
 
 .sm-section:hover{
