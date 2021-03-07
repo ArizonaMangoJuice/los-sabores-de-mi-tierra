@@ -223,3 +223,9 @@ input[type="file"] {
     background-color: white;
     color: #212121;
 }
+
+@media screen and (max-width: 600px){
+    .list-history{
+        width: fit-content;
+    }
+}

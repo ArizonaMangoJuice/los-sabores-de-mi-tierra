@@ -229,4 +229,12 @@
     .image-container{
         width: auto;
     }
+
+    .featured-title{
+        text-align: center;
+    }
+
+    .slide-author{
+        text-align: center;
+    }
 }

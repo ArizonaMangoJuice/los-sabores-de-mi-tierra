@@ -54,10 +54,9 @@
 .blog-page-author-container-card{
     max-width: 220px;
     min-height: 125px;
-    margin: 8px;
     box-sizing: border-box;
     border-radius: 15px;
-    margin: auto;
+    margin: 40px auto;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -92,4 +91,31 @@
     max-width: 100%;
     max-height: 650px;
     box-shadow: 2px 5px 39px -5px rgba(0,0,0,0.74);
+}
+
+@media screen and (max-width: 600px){
+    .blog-banner-image{
+        width: 100%;
+    }
+
+    .blog-banner-desc{
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: white;
+        padding: 0 !important;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    .blog-page-text-container{
+        width: 100%;
+        padding: 45px 10px;
+    }
+
+    .blog-page-paragraph{
+        width: 90%;
+    }
 }
