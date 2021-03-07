@@ -20,7 +20,7 @@ function SmallArticle(props){
                 >  
                 </div>
                 <h4 className='sm-article-title'>{props.title}</h4>
-                <h5 className='author'>by Norma {props.date}</h5>
+                <h5 className='author'>by Norma </h5>
                 <section className='tag-ad-container'>
                     <button className='tag article-button'>
                         Recipe

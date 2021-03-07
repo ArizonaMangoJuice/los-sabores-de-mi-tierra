@@ -22,7 +22,7 @@ function LargeArticle(props) {
             >  
             </div>
             <h4 className='lg-article-title'>{props.title}</h4>
-            <h5 className='author'>by Norma Vizcaino {props.date}</h5>
+            <h5 className='author'>by Norma Vizcaino </h5>
             <section className='tag-ad-container'>
                 <button className='tag article-button'>
                     Recipe
