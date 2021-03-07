@@ -213,12 +213,20 @@
     }
 
     .carousel-root{
-        width: 100% !important;
+        max-width: 100% !important;
         margin: auto;
         padding: 50px 0;
     }
 
     .text-outer-container{
         width: 100%;
+    }
+
+    .carousel.carousel-slider .control-arrow{
+        display: none;
+    }
+
+    .image-container{
+        width: auto;
     }
 }
