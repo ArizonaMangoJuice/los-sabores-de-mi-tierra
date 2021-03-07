@@ -177,4 +177,8 @@
     .login-wrapper{
         width: 100%;
     }   
+
+    .sign-in-quotes{
+        display: none;
+    }
 }

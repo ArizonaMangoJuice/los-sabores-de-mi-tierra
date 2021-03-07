@@ -13,20 +13,20 @@ export default function Footer(props){
             </Link> */}
             <div className='footer-main-container'>
                 <img alt={`animated logo that dazzles`} className='footer-logo'  src={require('../../images/LSDMTLogo.png')}/>
-                <ul className='footer-links-container'>
+                {/* <ul className='footer-links-container'>
                     <li className='footer-li-links'>
-                        {/* <a className='footer-links'>Features</a> */}
+                        <a className='footer-links'>Features</a>
                     </li>
                     <li className='footer-li-links'>
-                        {/* <a className='footer-links'>Recipes</a> */}
+                        <a className='footer-links'>Recipes</a>
                     </li>
                     <li className='footer-li-links'>
-                        {/* <a className='footer-links'>Membership</a> */}
+                        <a className='footer-links'>Membership</a>
                     </li>
                     <li className='footer-li-links'>
-                        {/* <a className='footer-links'>Contact</a> */}
+                        <a className='footer-links'>Contact</a>
                     </li>
-                </ul>
+                </ul> */}
                 <div className='social-bar-container'>
                     <div className='social-bar'>
                         <a href='https://github.com/ArizonaMangoJuice'><FontAwesomeIcon icon={faGithub} /></a>
