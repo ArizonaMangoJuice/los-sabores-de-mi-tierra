@@ -2,8 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { fetchBlogsToEdit } from '../../actions';
 import EditBlogCard from '../EditBlogCard';
+import EditBlogsMoveButtons from '../EditBlogsMoveButtons';
+import EditBlogsMoveButton from '../EditBlogsMoveButtons';
 import EditBlogText from '../EditBlogText';
 import './EditBlogs.css';
+
+// refactor this component into smaller pieces goal is 70 lines or less per component
 
 const mapStateToProps = state => ({
     articles : state.editPageBlog.articles,
@@ -15,7 +19,6 @@ function EditBlogs(props) {
     const [isArticlesEmpty, setArticle] = useState(true);
     const [isClicked, setClicked] = useState(false);
     const [blogInfo, setBlogInfo] = useState({});
-    const [title, setTitle] = useState();
 
     useEffect(() => {
         if(isArticlesEmpty){
@@ -27,20 +30,34 @@ function EditBlogs(props) {
         // }
     }, [isArticlesEmpty, props])
 
-        useEffect(() => {
-            if(blogInfo){
-                console.log('this is the articles', blogInfo)
-                setTitle(blogInfo.title);
-            }
-        }, [blogInfo])
+  
 
     let editBlogCards = !isArticlesEmpty ? props.articles.map(e => (
         <EditBlogCard key={e.title} title={e.title} history={e.history} setBlogInfo={setBlogInfo} setClicked={setClicked}/>
     ))
         : null;
 
-    console.log(blogInfo)
-
+    const test = blogInfo && blogInfo.history 
+    ? blogInfo.history.map(e => (
+        e.isImage 
+            ? <div  className='image-history' key={e.title + e.id} >
+                <EditBlogsMoveButtons blogInfo={{...blogInfo}} test={() => setBlogInfo()} id={e.id}/>
+                <img className='edit-blog-image' alt='shows the recipes mentioned' src={e.imageUrl} />
+              </div>
+            : e.text 
+                ? <div className='new-paragraph' key={e.title + e.id}> 
+                    <EditBlogsMoveButton blogInfo={{...blogInfo}} test={setBlogInfo} id={e.id} />
+                    <EditBlogText
+                        blogInfo={{...blogInfo}}
+                        updateBlog={setBlogInfo} 
+                        text={e.text} 
+                        id={e.id}
+                    />
+                  </div>
+                : ''//this will need to show the lists as well
+    ))
+    : '';
+    console.log('this is the editblogs', blogInfo)
     return (
         <>
             <div className='edit-blog-container'>
@@ -49,34 +66,9 @@ function EditBlogs(props) {
                         <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
                         <button>Updated Blog</button>
                     </nav>
-                    <input onChange={e => setTitle(e.currentTarget.value)} className='login-input-text black' value={blogInfo && title ? title : ''}></input>
+                    <input onChange={e => setBlogInfo({...blogInfo, title: e.currentTarget.value})} className='login-input-text black' value={blogInfo && blogInfo.title ? blogInfo.title : ''} />
                     {
-                        blogInfo && blogInfo.history 
-                            ? blogInfo.history.map(e => (
-                                e.isImage 
-                                    ? <div  className='image-history' >
-                                        <nav className='image-history-nav'>
-                                            <button className='image-history-button'>Move Up</button>
-                                            <button className='image-history-button'>Move Down</button>
-                                        </nav>
-                                        <img className='edit-blog-image' alt='shows the recipes mentioned' src={e.imageUrl} />
-                                      </div>
-                                    : e.text 
-                                        ? <div className='new-paragraph'> 
-                                            <nav className='image-history-nav'>
-                                                <button className='image-history-button'>Move Up</button>
-                                                <button className='image-history-button'>Move Down</button>
-                                            </nav>
-                                            <EditBlogText
-                                                blogInfo={blogInfo}
-                                                updateBlog={setBlogInfo} 
-                                                text={e.text} 
-                                                id={e.id}
-                                            />
-                                          </div>
-                                        : ''//this will need to show the lists as well
-                            ))
-                            : ''
+                        test
                     }
                 </div>
                 <div className={`${isClicked ? 'hidden' : ''}`}>

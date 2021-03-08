@@ -4,7 +4,7 @@ export const EditBlogText = ({text, id, blogInfo, updateBlog}) => {
     let oldBlogInfo = blogInfo;
     blogInfo = blogInfo.history;
     const [updatedText, setUpdatedText] = useState(text);
-    // console.log(id)
+    
     return (
         <textarea
             className='paragraph-input' 
@@ -21,7 +21,6 @@ export const EditBlogText = ({text, id, blogInfo, updateBlog}) => {
                     ...oldBlogInfo,
                     history: newArray
                 });
-                console.log('this is the blog info', blogInfo, newArray)
             }}
         />
     )
