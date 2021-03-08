@@ -1,6 +1,7 @@
 import React from 'react';
 
 const EditorBlogList = ({isOrdered, listArray}) => {
+    // let newBlogInfo = {...blogInfo}
     return (
         <div className='main-color list-history card-hover'>
         {isOrdered 
