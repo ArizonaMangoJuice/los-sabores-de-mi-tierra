@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { fetchBlogsToEdit } from '../../actions';
 import EditBlogCard from '../EditBlogCard';
+import EditBlogText from '../EditBlogText';
 import './EditBlogs.css';
 
 const mapStateToProps = state => ({
@@ -38,7 +39,7 @@ function EditBlogs(props) {
     ))
         : null;
 
-    // console.log(title, blogInfo.title)
+    console.log(blogInfo)
 
     return (
         <>
@@ -46,13 +47,14 @@ function EditBlogs(props) {
                 <div className={`${isClicked ? 'edit-blog-editor' : 'hidden'}`}>
                     <nav>
                         <button onClick={() => setClicked(false) && setBlogInfo({})}>Close Blog</button>
+                        <button>Updated Blog</button>
                     </nav>
                     <input onChange={e => setTitle(e.currentTarget.value)} className='login-input-text black' value={blogInfo && title ? title : ''}></input>
                     {
                         blogInfo && blogInfo.history 
                             ? blogInfo.history.map(e => (
                                 e.isImage 
-                                    ? <div className='image-history' >
+                                    ? <div  className='image-history' >
                                         <nav className='image-history-nav'>
                                             <button className='image-history-button'>Move Up</button>
                                             <button className='image-history-button'>Move Down</button>
@@ -65,7 +67,12 @@ function EditBlogs(props) {
                                                 <button className='image-history-button'>Move Up</button>
                                                 <button className='image-history-button'>Move Down</button>
                                             </nav>
-                                            <textarea className='paragraph-input' value={e.text} />
+                                            <EditBlogText
+                                                blogInfo={blogInfo}
+                                                updateBlog={setBlogInfo} 
+                                                text={e.text} 
+                                                id={e.id}
+                                            />
                                           </div>
                                         : ''//this will need to show the lists as well
                             ))
