@@ -7,14 +7,18 @@ const EditorBlogList = ({isOrdered, listArray}) => {
             ? 
                 <ol>
                     {listArray.map(e => (
-                    <li>{e}</li>
+                    <li>
+                        <input value={e} />
+                    </li>
                     ))}
                 </ol>
             : 
                 <ol>
                 {listArray.map(e => (
-                <li>{e}</li>
-                    ))}
+                    <li>
+                        <input value={e} />
+                    </li>
+                ))}
                 </ol>
                     
         }
