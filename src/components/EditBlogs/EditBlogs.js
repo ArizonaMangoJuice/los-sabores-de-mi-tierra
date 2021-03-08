@@ -41,7 +41,7 @@ function EditBlogs(props) {
     ? blogInfo.history.map(e => (
         e.isImage 
             ? <div  className='image-history' key={e.title + e.id} >
-                <EditBlogsMoveButtons blogInfo={{...blogInfo}} test={() => setBlogInfo()} id={e.id}/>
+                <EditBlogsMoveButtons blogInfo={{...blogInfo}} test={setBlogInfo} id={e.id}/>
                 <img className='edit-blog-image' alt='shows the recipes mentioned' src={e.imageUrl} />
               </div>
             : e.text 
