@@ -1,27 +1,29 @@
 import React from 'react';
 
+function moveUp (history, indexNum){
+    const newHistory = [];
+
+    for(let i = 0; i < history.length; i++){
+        let curr = history[i];
+        let prev = history[i-1];
+        if(indexNum === i && indexNum !== 1){
+            newHistory[i] = prev;
+            newHistory[i-1] = curr;
+        } else {
+            newHistory[i] = history[i]
+        }
+    }
+    return newHistory;
+}
+
 const EditBlogsMoveButtons = ({blogInfo, test, id}) => {
-    // console.log('this is the blog info inside buttons', blogInfo)
     const oldBlogInfo = {...blogInfo};
     const history = blogInfo && blogInfo.history ? [...blogInfo.history] : [];
     const indexNum = history.findIndex(e => e.id === id);
         
     const move = (updateBlog, direction) => {
-        const newHistory = [];
-        // console.log('this is the history for editblog buttons', history)
         if(direction === 'up'){
-            
-            for(let i = 0; i < history.length; i++){
-                let curr = history[i];
-                let prev = history[i-1];
-                if(indexNum === i && indexNum !== 1){
-                    newHistory[i] = prev;
-                    newHistory[i-1] = curr;
-                } else {
-                    newHistory[i] = history[i]
-                }
-            }
-            // console.log( blogInfo, history, newHistory)
+            const newHistory = moveUp(history,indexNum);
             test({...oldBlogInfo, history: newHistory});
         }
     }
