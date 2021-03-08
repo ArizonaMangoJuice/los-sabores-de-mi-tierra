@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {connect} from 'react-redux';
 import { fetchBlogsToEdit } from '../../actions';
 import EditBlogCard from '../EditBlogCard';
+import EditorBlogList from '../EditBlogList';
 import EditBlogsMoveButtons from '../EditBlogsMoveButtons';
 import EditBlogsMoveButton from '../EditBlogsMoveButtons';
 import EditBlogText from '../EditBlogText';
@@ -54,7 +55,7 @@ function EditBlogs(props) {
                         id={e.id}
                     />
                   </div>
-                : ''//this will need to show the lists as well
+                : <EditorBlogList isOrdered={e.isOrdered} listArray={e.listArray} />
     ))
     : '';
     console.log('this is the editblogs', blogInfo)

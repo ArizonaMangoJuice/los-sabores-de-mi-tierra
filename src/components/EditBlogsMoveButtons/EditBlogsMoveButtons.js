@@ -26,6 +26,9 @@ const EditBlogsMoveButtons = ({blogInfo, test, id}) => {
             const newHistory = moveUp(history,indexNum);
             test({...oldBlogInfo, history: newHistory});
         }
+        if(direction === 'down'){
+            
+        }
     }
     // console.log('this is the index num', indexNum)
     return (
