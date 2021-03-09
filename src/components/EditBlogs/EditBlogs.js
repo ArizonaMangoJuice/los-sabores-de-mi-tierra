@@ -55,7 +55,7 @@ function EditBlogs(props) {
                         id={e.id}
                     />
                   </div>
-                : <div className='new-paragraph'>
+                : <div className='new-paragraph' key={e.title + e.id}>
                     <EditBlogsMoveButton blogInfo={{...blogInfo}} test={setBlogInfo} id={e.id}/>
                     <EditorBlogList isOrdered={e.isOrdered} listArray={e.listArray} blogInfo={blogInfo} setBlogInfo={setBlogInfo}/>
                   </div> 

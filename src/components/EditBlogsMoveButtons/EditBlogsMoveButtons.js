@@ -16,6 +16,20 @@ function moveUp (history, indexNum){
     return newHistory;
 }
 
+function moveDown(history, indexNum){
+    const newHistory = [];
+    for(let i = 0; i < history.length; i++){
+        if(indexNum === i && history[i + 1]){
+            newHistory[i] = history[i + 1];
+            newHistory[i + 1] = history[i];
+            i++;
+        }else {
+            newHistory[i] = history[i];
+        }
+    }
+    return newHistory;
+}
+
 const EditBlogsMoveButtons = ({blogInfo, test, id}) => {
     const oldBlogInfo = {...blogInfo};
     const history = blogInfo && blogInfo.history ? [...blogInfo.history] : [];
@@ -27,7 +41,8 @@ const EditBlogsMoveButtons = ({blogInfo, test, id}) => {
             test({...oldBlogInfo, history: newHistory});
         }
         if(direction === 'down'){
-            
+            const newHistory = moveDown(history,indexNum);
+            test({...oldBlogInfo, history: newHistory});
         }
     }
     // console.log('this is the index num', indexNum)
@@ -37,7 +52,7 @@ const EditBlogsMoveButtons = ({blogInfo, test, id}) => {
             ? (
                 <>
                     <button onClick={() => move(test, 'up')} className='image-history-button'>Move Up</button>
-                    <button className='image-history-button'>Move Down</button>
+                    <button onClick={() => move(test, 'down')} className='image-history-button'>Move Down</button>
                 </>
             )
                 : null
