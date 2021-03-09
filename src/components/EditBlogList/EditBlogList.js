@@ -6,18 +6,18 @@ const EditorBlogList = ({isOrdered, listArray}) => {
         <div className='main-color list-history card-hover'>
         {isOrdered 
             ? 
-                <ol>
-                    {listArray.map(e => (
-                    <li>
-                        <input value={e} />
+                <ol >
+                    {listArray.map((e, i) => (
+                    <li key={e + i}>
+                        <input onChange={() => console.log('hello')} value={e} />
                     </li>
                     ))}
                 </ol>
             : 
-                <ol>
-                {listArray.map(e => (
-                    <li>
-                        <input value={e} />
+                <ol >
+                {listArray.map((e, i) => (
+                    <li key={e + i}>
+                        <input onChange={() => console.log('hello')} value={e} />
                     </li>
                 ))}
                 </ol>

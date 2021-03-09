@@ -62,7 +62,7 @@ function EditBlogs(props) {
                 
     ))
     : '';
-    console.log('this is the editblogs', blogInfo)
+    // console.log('this is the editblogs', blogInfo)
     return (
         <>
             <div className='edit-blog-container'>
