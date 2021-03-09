@@ -35,7 +35,7 @@ const EditorBlogList = ({isOrdered, listArray, blogInfo, setBlogInfo, id}) => {
                 <ol >
                     {listArray.map((item, i) => (
                     <li key={item + i}>
-                        <input autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
+                        <input className='login-input-text black' autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
                     </li>
                     ))}
                 </ol>
@@ -43,7 +43,7 @@ const EditorBlogList = ({isOrdered, listArray, blogInfo, setBlogInfo, id}) => {
                 <ol >
                 {listArray.map((item, i) => (
                     <li key={item + i}>
-                        <input autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
+                        <input className='login-input-text black' autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
                     </li>
                 ))}
                 </ol>
