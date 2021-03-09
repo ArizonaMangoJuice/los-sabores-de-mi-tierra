@@ -7,7 +7,7 @@ import EditBlogsMoveButtons from '../EditBlogsMoveButtons';
 import EditBlogsMoveButton from '../EditBlogsMoveButtons';
 import EditBlogText from '../EditBlogText';
 import './EditBlogs.css';
-
+//refactor these function to have less parameters
 // refactor this component into smaller pieces goal is 70 lines or less per component
 
 const mapStateToProps = state => ({
@@ -57,7 +57,7 @@ function EditBlogs(props) {
                   </div>
                 : <div className='new-paragraph' key={e.title + e.id}>
                     <EditBlogsMoveButton blogInfo={{...blogInfo}} test={setBlogInfo} id={e.id}/>
-                    <EditorBlogList isOrdered={e.isOrdered} listArray={e.listArray} blogInfo={blogInfo} setBlogInfo={setBlogInfo}/>
+                    <EditorBlogList isOrdered={e.isOrdered} listArray={e.listArray} blogInfo={blogInfo} setBlogInfo={setBlogInfo} id={e.id}/>
                   </div> 
                 
     ))
