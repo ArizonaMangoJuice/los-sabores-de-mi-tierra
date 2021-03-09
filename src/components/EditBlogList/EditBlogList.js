@@ -1,6 +1,8 @@
 import React from 'react';
 
 //refactor these function to have less parameters
+//fixed bug with band aid really bad 
+//need to fix this rerender bug
 
 function updateBlog(array, blogInfo, setBlogInfo, id){
     let newBlog = {...blogInfo};
@@ -14,7 +16,6 @@ function updateBlog(array, blogInfo, setBlogInfo, id){
 }
 
 function editListItem(indexNum, listArray, e, blogInfo, setBlogInfo, id){
-    console.log('hello', indexNum, listArray)
     let newItem = e.currentTarget.value;
     listArray = listArray.map((e, i) => 
         indexNum === i 
@@ -34,7 +35,7 @@ const EditorBlogList = ({isOrdered, listArray, blogInfo, setBlogInfo, id}) => {
                 <ol >
                     {listArray.map((item, i) => (
                     <li key={item + i}>
-                        <input key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
+                        <input autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
                     </li>
                     ))}
                 </ol>
@@ -42,7 +43,7 @@ const EditorBlogList = ({isOrdered, listArray, blogInfo, setBlogInfo, id}) => {
                 <ol >
                 {listArray.map((item, i) => (
                     <li key={item + i}>
-                        <input key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
+                        <input autoFocus  key={i} onChange={(e) => editListItem(i, listArray, e, blogInfo, setBlogInfo, id)} value={item} />
                     </li>
                 ))}
                 </ol>
