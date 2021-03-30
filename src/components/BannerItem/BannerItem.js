@@ -22,7 +22,7 @@ function BannerItem(props){
                                 {props.title}
                             </p>
                             <p className='slide-author'>
-                                By <span className='normal-bold'>Norma Vizcaino, Isael Lizama	&nbsp;	&nbsp;</span> 
+                                By <span className='normal-bold'>Norma Vizcaino &nbsp;	&nbsp;</span> 
                                 <span className='featured-date'>{time}</span>
                             </p>
                         </div>

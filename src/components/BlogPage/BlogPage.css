@@ -91,6 +91,22 @@
     max-width: 100%;
     max-height: 650px;
     box-shadow: 2px 5px 39px -5px rgba(0,0,0,0.74);
+    border-radius: 16px;
+    margin: 16px 0px;
+}
+
+
+@media screen and (max-width: 768px){
+    .blog-page-container{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .blog-page-text-container{
+        width: 100%;
+        padding: 45px 10px;
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -119,7 +135,17 @@
         padding: 45px 10px;
     }
 
+    .list-history{
+        margin: 0;
+    }
+
+    .list-history ol li{
+        font-size: 16px;
+    }
+
     .blog-page-paragraph{
+        font-size: 16px;
+        line-height: 1.8;
         width: 90%;
     }
 }
