@@ -12,7 +12,8 @@ function Landing(props){
         props.dispatch(fetchPages());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     })
-
+    document.title = 'Los Sabores De Mi Tierra';
+    
     return (
         <>
             <SideBanner />
