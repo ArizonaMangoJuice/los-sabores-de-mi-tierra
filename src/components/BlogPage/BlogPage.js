@@ -27,6 +27,8 @@ function BlogPage(props){
    let blog;
    let blogMainImage;
 
+   document.title = title;
+
     // console.log('this is the slug for the site', title)
 
    if(props.isHistory){
